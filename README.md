@@ -1,155 +1,326 @@
-# AgileSpec - An Agile, Specification-Driven Workflow for AI-Native Software Development
+# AgileSpec — An Agile, Specification-Driven Workflow for AI-Native
+  Software Development
 
 ## Motivation
 
-Traditional software engineering processes took shape when people performed most
-development tasks themselves, from translating requirements into designs to
-writing and testing code. AI agents can now take on much of this work, changing
-how developers move from an idea to a working feature. As implementation becomes
-faster, developers need a clear way to communicate intent, review decisions, and
-check that the result meets their expectations.
+Agile software engineering processes took shape when developers
+performed most development tasks themselves, from translating
+requirements into designs to writing and testing code. However, AI
+agents can now take on much of this work, changing how developers move
+from an idea to a working feature.
 
-Traditional agile methods therefore need to adapt to a world where producing code
-costs less time and effort, and AI can contribute throughout the development
-process. Beyond implementation, AI can help refine requirements, explore design
-decisions, and verify whether the software behaves as intended. This calls for
-rethinking how developers organize the work and collaborate with AI across these
-activities.
+As implementation becomes faster, developers need new workflows to
+specify requirements, generate code with AI agents, and verify that the
+resulting software meets its specifications. In particular, traditional
+agile methods must adapt to a world where producing code requires less
+time and effort, and AI can contribute throughout the development
+process.
+
+To address this need, we propose **AgileSpec**, a workflow for
+developing software with AI coding agents that
+emphasizes **lightweight, living specifications**.
 
 ## AgileSpec
 
-AgileSpec organizes development around small user stories and concise Markdown
-documents. It draws inspiration from agile methods such as Scrum and XP through
-small deliveries, feedback, and incremental refinement. However, it centers the
-work on concise specifications that guide AI agents. People review the expected
-behavior, technical design, and interface before implementation, then validate
-the application after automated tests. Project documentation preserves global
-context as the software evolves.
+AgileSpec draws inspiration from agile methods such as Scrum and XP. It
+organizes specifications into two main levels: **project-level
+specifications** and **user story-level specifications**.
 
-```mermaid
-flowchart LR
-    A[Select a user story] --> B[Specify and design]
-    B --> C[Human review]
-    C --> D[Implement and test]
-    D --> E[Human validation]
-    E -->|Adjust| B
-    E -->|Accept| F[Update docs and backlog]
-    F --> A
-```
+We recommend storing these specifications in a directory named
+`AgileSpec/` at the root of the project.
 
-### Main Directories and Documents
+### Project-Level Specifications
 
-AgileSpec uses two levels of specification: global project context and
-story-specific decisions.
+AgileSpec starts with a set of documents that provide a shared
+understanding of the project. These documents serve as global project
+documentation, guiding development decisions and providing context for
+AI coding agents. They should remain accessible and up to date
+throughout development.
 
-**`docs/`** contains project-wide decisions and the current state of the software.
+At this level, the key documentation consists of five Markdown files
+stored in the `AgileSpec/project/` directory:
 
-- **`backlog.md`**: user stories, priorities, and completion status.
-- **`tech-stack.md`**: technologies, dependencies, and environment choices.
-- **`architecture.md`**: application structure and module responsibilities.
-- **`database.md`**: implemented database schema and persistence decisions.
-- **`ui.md`**: shared interface conventions.
+- **`backlog.md`**: The product backlog, containing a prioritized list
+    of user stories, typically written in the format: "As a [role], I
+    want [feature] so that [benefit]."
 
-Developers can write these documents manually or ask an AI agent to draft them
-with human guidance and review. In either case, developers remain responsible
-for the decisions they record.
+- **`tech-stack.md`**: A high-level description of the technologies used
+    in the project, including programming languages, frameworks,
+    libraries, and development tools.
 
-**`work/`** contains development artifacts. To use AgileSpec, developers should
-create a directory for each user story as development progresses, such as
-`story1/`, `story2/`, and so on.
+- **`architecture.md`**: A high-level description of the system's
+    architecture, including its main modules, their responsibilities,
+    and architectural constraints. For example, UI components must
+    access the database through a service layer rather than directly.
 
-Each `work/storyN/` directory should contain three documents describing the story's
-expected behavior, implementation, and interface. Developers can write them
-manually or create them with AI assistance, using human guidance and review to
-refine and approve their contents before implementation.
+- **`database.md`**: The database schema, including tables, fields,
+    relationships, constraints, and key persistence decisions.
 
-- **`spec.md`**: the user story and acceptance criteria, split into Normal Flow
-  and Edge Cases.
-- **`design.md`**: implementation approach and data changes.
-- **`ui.md`**: screen layouts, components, and button labels.
+- **`ui.md`**: The overall user interface structure, navigation, and
+    shared design conventions. For example, it may specify that the
+    application uses a sidebar for navigation, consistent button
+    labels, and a common layout for displaying items.
 
-An optional `setup/` directory holds **`tasks.md`**, a checklist for preparing
-the development environment.
+The backlog is a central artifact of agile development, capturing
+requirements as user stories that can be prioritized and implemented
+incrementally. The remaining documents provide the technical context
+needed to implement these stories.
 
-Once the three documents have been created and reviewed, the story can be
-implemented using a prompt like the following. Replace `N` with the story number.
+Although these documents provide project-wide guidance, **they do not
+need to be complete before implementation begins**. Requiring detailed
+specifications upfront would contradict agile principles and risk
+introducing Big Design Up Front (BDUF), an approach in which detailed
+design decisions are made before development starts.
 
-```text
-Implement story N using the approved files in work/storyN/:
-spec.md, design.md, and ui.md.
+Instead, AgileSpec treats project documentation as a set of **living
+documents** that evolve alongside the software. They are progressively
+refined and extended as user stories are implemented. More
+specifically, after each story is completed and verified, the relevant
+project-level documents should be updated to reflect the implemented
+changes.
 
-Read docs/ for project context. Preserve existing functionality
-and ask if requirements conflict or important decisions are missing.
+AI agents can help create, maintain, and synchronize these documents
+with the codebase. However, developers remain responsible for reviewing
+and approving their content, ensuring that the documentation accurately
+reflects the system and its intended evolution.
 
-Add and run tests for Normal Flow and Edge Cases.
-Report changes, test results, and how to validate the app.
+### User Story-Level Specifications
 
-After my validation, update affected docs/ files and mark the story
-complete in the backlog.
-```
+As in traditional agile methods, AgileSpec organizes development around
+individual user stories. A Product Owner or Product Manager selects a
+story from `backlog.md` and assigns it to a developer for
+implementation.
 
-### Workflow
+The developer then creates a directory for the story under
+`AgileSpec/stories/`, using the story's identifier as its name
+(e.g., `story1/`, `story2/`, and so on).
 
-1. **Select a story.** Choose a story from `docs/backlog.md`, review the global
-   project context, and create its directory in `work/`.
-2. **Specify the behavior.** Write `spec.md`, manually or with AI assistance.
-   Review the Normal Flow and Edge Cases until they express what you want to build.
-3. **Prepare the design and UI.** Write or ask the AI to draft `design.md` and
-   `ui.md`. Review the approach and resolve open decisions before approving implementation.
-4. **Request implementation.** Give the AI the approved documents and a prompt
-   like the example above. Ask it to implement the story, add and run tests, and
-   report the results.
-5. **Validate the result.** Review the changes and test results, then try the
-   application yourself. Request adjustments and update the affected specifications
-   when your requirements or design decisions change.
-6. **Close the story.** Once you accept the result, ask the AI to update affected
-   documents in `docs/` and mark the story complete in the backlog. Review those
-   updates before moving to the next story.
+Each story directory contains three Markdown files:
 
-Keep documents short and avoid repeating information across files. Tell the AI
-explicitly when you approve implementation or accept the result.
+- **`spec.md`**: The story's functional requirements and acceptance
+    criteria, organized into **Normal Flow** and **Edge Cases**. The
+    former describes expected behavior under typical conditions, while
+    the latter covers exceptional situations, invalid inputs, and
+    boundary conditions.
+
+- **`design.md`**: A low-level design describing how the specific story
+    will be implemented. It may identify the classes, functions,
+    modules, algorithms, and data structures to be created or modified,
+    as well as any required database changes. Unlike `architecture.md`,
+    which describes the overall system structure, this document focuses
+    on implementation decisions for a single story.
+
+- **`ui.md`**: The user interface requirements for the story, including
+    screen layouts, UI components, navigation, input fields, buttons,
+    and labels. It may also describe user interactions, validation
+    messages, and visual states. For stories without UI changes, this
+    document can be omitted.
+
+As with project-level documentation, these files can be drafted with the
+assistance of AI agents. However, they must be reviewed and approved by
+the developer responsible for implementing the story.
+
+## Workflow
+
+AgileSpec follows an iterative workflow consisting of five main
+activities:
+
+**Project-Level Specification → User Story-Level Specification →
+  Implementation → Review and Verification → Consolidation**
+
+The first activity establishes the project's initial context. The
+remaining activities are repeated for each user story, allowing the
+system and its specifications to evolve incrementally.
+
+### 1. Project-Level Specification
+
+Development begins by creating the initial project-level documents in
+`AgileSpec/project/`. These documents establish the product backlog,
+technology choices, and initial architectural, database, and UI
+decisions.
+
+As discussed earlier, these specifications can be incomplete at this
+stage. They will evolve as development progresses.
+
+### 2. User Story-Level Specification
+
+For each selected user story, the developer creates the corresponding
+directory under `AgileSpec/stories/` and prepares its `spec.md`,
+`design.md`, and, when applicable, `ui.md` files.
+
+The goal is to provide enough detail for an AI coding agent to implement
+the story while avoiding unnecessary specifications. Before
+implementation begins, the developer reviews and approves these
+documents.
+
+### 3. Implementation
+
+Once the story-level specifications are approved, an AI coding agent
+implements the story using both the story-specific documents and the
+global project context.
+
+The developer can initiate implementation with a prompt such as:
+
+```text Implement story N using the approved specifications in
+AgileSpec/stories/storyN/:
+- spec.md
+- design.md
+- ui.md (if present)
+
+Read AgileSpec/project/ for project-wide context and constraints.
+
+Follow the approved design, preserve existing functionality, and avoid
+unrelated changes. If requirements conflict or important decisions are
+missing, ask for clarification before proceeding.
+
+Implement and run automated tests covering the Normal Flow and Edge
+Cases defined in spec.md.
+
+When finished, summarize:
+- The changes made
+- The tests executed and their results
+- Any limitations or unresolved issues
+- Instructions for manually validating the story
+
+Do not update project-level documentation or mark the story as complete
+yet. ```
+
+The agent is expected to implement the story, create or update relevant
+tests, and report its results. However, successful execution of
+automated tests does not automatically mean that the story has been
+accepted.
+
+### 4. Review and Verification
+
+After implementation, the developer reviews the changes and verifies
+that the story satisfies its acceptance criteria.
+
+Verification may involve inspecting the generated code, running
+automated tests, and manually interacting with the application.
+Particular attention should be given to the Normal Flow and Edge Cases
+documented in `spec.md`, as well as compliance with the approved design
+and UI specifications.
+
+If problems are found, the developer provides feedback to the AI agent,
+which revises the implementation. This cycle continues until the story
+is approved. If the implementation reveals missing or incorrect
+specifications, the corresponding story-level documents should also be
+revised.
+
+### 5. Consolidation
+
+Once the story has been implemented and approved, its relevant design
+decisions and changes must be incorporated into the project-level
+documentation.
+
+This activity, called **Consolidation**, ensures that the global
+specifications remain consistent with the implemented system. For
+example, new database tables should be reflected in `database.md`,
+architectural changes in `architecture.md`, and new navigation patterns
+or shared UI conventions in `ui.md`.
+
+Consolidation can be performed with the assistance of an AI agent using
+a prompt such as:
+
+```text Consolidate the completed implementation of story N into the
+project-level documentation.
+
+Read:
+- AgileSpec/stories/storyN/
+- AgileSpec/project/
+- The relevant implemented source code
+
+Update the affected project-level Markdown files:
+- tech-stack.md
+- architecture.md
+- database.md
+- ui.md
+
+Incorporate relevant decisions and changes, keeping the documentation
+concise, accurate, and consistent with the implemented code.
+
+Preserve the distinction between project-wide documentation and
+story-specific implementation details. Do not copy entire story
+specifications into project-level documents.
+
+Mark story N as complete in AgileSpec/project/backlog.md.
+
+Do not modify the source code or story-level specifications.
+
+Summarize the documentation changes for developer review. ```
+
+The developer reviews the resulting documentation changes before
+accepting them.
+
+Consolidation completes the development cycle for a story. The next
+story can then be selected from the backlog, using the updated
+project-level documentation as context.
 
 ## Example: PodLite
 
-PodLite is a small podcast player project built with Python, Streamlit, and SQLite.
-The first two stories let listeners subscribe using RSS URLs and browse episodes.
-Audio playback and other features remain in the backlog.
+PodLite is a small podcast player built with Python, Streamlit, and
+SQLite. It illustrates how AgileSpec can be applied to a simple
+application.
 
-### `docs/`
+The first two stories allow users to subscribe to podcasts using RSS
+URLs and browse their episodes. Audio playback and other features
+remain in the backlog.
 
-- [backlog.md](docs/backlog.md): podcast features in priority order, with stories
-  1 and 2 complete.
-- [tech-stack.md](docs/tech-stack.md): Python, Streamlit, SQLite, standard-library
-  feed processing, and pytest.
-- [architecture.md](docs/architecture.md): UI, service, feed, and storage modules;
-  separate podcast and episode views.
-- [database.md](docs/database.md): the `podcasts` table, its columns and constraints;
-  subscriptions persist in SQLite while episodes stay in session memory.
-- [ui.md](docs/ui.md): native Streamlit components, English labels, cover-and-text
-  cards, and simple navigation.
+### `AgileSpec/project/`
 
-### `work/`
+The project-level documentation consists of five files:
 
-[setup/tasks.md](work/setup/tasks.md) records environment preparation and its checks.
+- **`backlog.md`**: Lists podcast features in priority order, with
+    stories 1 and 2 marked as complete.
+- **`tech-stack.md`**: Specifies Python, Streamlit, SQLite,
+    standard-library feed processing, and pytest.
+- **`architecture.md`**: Describes the UI, service, feed, and storage
+    modules, including separate podcast and episode views.
+- **`database.md`**: Defines the `podcasts` table, its columns, and
+    constraints. Podcast subscriptions persist in SQLite, while episode
+    data remains in session memory.
+- **`ui.md`**: Establishes shared UI conventions, including native
+    Streamlit components, English labels, cover-and-text cards, and
+    simple navigation.
 
-#### `work/story1/` — Add a Podcast
+### `AgileSpec/stories/`
 
-- [spec.md](work/story1/spec.md): subscribe by RSS URL, persist subscriptions,
-  prevent duplicates, and handle failures or missing metadata.
-- [design.md](work/story1/design.md): URL validation, RSS parsing, and SQLite
-  storage of podcast metadata.
-- [ui.md](work/story1/ui.md): the subscription form and podcast cards with cover,
-  title, and description.
+Each implemented story has its own directory containing the
+specifications used to guide the coding agent.
+
+#### `story1/` — Add a Podcast
+
+The first story allows users to subscribe to podcasts by entering an RSS
+feed URL.
+
+- **`spec.md`**: Defines subscription by RSS URL, persistent storage,
+    duplicate prevention, and handling of invalid feeds or missing
+    metadata.
+- **`design.md`**: Specifies URL validation, RSS parsing, and SQLite
+    storage of podcast metadata.
+- **`ui.md`**: Describes the subscription form and podcast cards
+    displaying cover images, titles, and descriptions.
 
 ![Story 1: podcast subscriptions](docs/images/story1.jpg)
 
-#### `work/story2/` — Browse Episodes
+#### `story2/` — Browse Episodes
 
-- [spec.md](work/story2/spec.md): browse episodes newest first, reveal 10 at a time,
-  return to subscriptions, and handle missing data or feed failures.
-- [design.md](work/story2/design.md): session-based navigation, feed retrieval,
-  date normalization, and episode metadata kept in memory.
-- [ui.md](work/story2/ui.md): podcast and episode pages with **See Episodes**,
-  **Back to Podcasts**, and **Load more** buttons.
+The second story allows users to browse episodes from their subscribed
+podcasts.
+
+- **`spec.md`**: Defines episode browsing in reverse chronological
+    order, displaying 10 episodes at a time, returning to the podcast
+    list, and handling missing data or feed failures.
+- **`design.md`**: Specifies session-based navigation, feed retrieval,
+    date normalization, and in-memory storage of episode metadata.
+- **`ui.md`**: Describes the podcast and episode views, including
+    the **See Episodes**, **Back to Podcasts**, and **Load More**
+    buttons.
 
 ![Story 2: browsing podcast episodes](docs/images/story2.jpg)
+
+Together, these two stories illustrate the incremental nature of
+AgileSpec. Each story is specified, implemented, verified, and
+consolidated before development proceeds. As a result, both the
+application and its project-level documentation evolve incrementally,
+providing an up-to-date foundation for subsequent stories.
