@@ -19,9 +19,7 @@ emphasizes **lightweight, living specifications**.
 
 AgileSpec draws inspiration from agile methods such as Scrum and XP. It
 organizes specifications into two main levels: 
-
-- **Project-Level Specifications** 
-- **User Story-level Specifications**.
+ **Project-Level Specifications**  e **User Story-level Specifications**.
 
 ```mermaid
 mindmap
@@ -45,29 +43,48 @@ documentation, guiding development decisions and providing context for
 AI coding agents. They should remain accessible and up to date
 throughout development.
 
-At this level, the key documentation consists of five Markdown files
-stored in the `AgileSpec/project/` directory:
+At this level, we recommend four Markdown files stored in the
+`AgileSpec/project/` directory:
 
 - **`backlog.md`**: The product backlog, containing a prioritized list
     of user stories, typically written in the format: "As a [role], I
     want [feature] so that [benefit]."
 
-- **`tech-stack.md`**: A high-level description of the technologies used
-    in the project, including programming languages, frameworks,
-    libraries, and development tools.
-
 - **`architecture.md`**: A high-level description of the system's
     architecture, including its main modules, their responsibilities,
     and architectural constraints. For example, UI components must
     access the database through a service layer rather than directly.
+    This document should also describe the project's main technology
+    choices, including programming languages, frameworks, and
+    databases, preferably in a dedicated **Tech Stack** section.
 
-- **`database.md`**: The database schema, including tables, fields,
-    relationships, constraints, and key persistence decisions.
+- **`database.md`**: Describes the database schema, including tables,
+    their columns and data types, primary and foreign keys,
+    relationships between tables, and integrity constraints.
 
-- **`ui.md`**: The overall user interface structure, navigation, and
-    shared design conventions. For example, it may specify that the
-    application uses a sidebar for navigation, consistent button
-    labels, and a common layout for displaying items.
+- **`ui.md`**: Describes the overall user interface structure,
+    navigation, and shared design conventions. For example, it may
+    specify that the application uses a sidebar for navigation,
+    consistent button labels, and a common layout for displaying
+    items.
+
+```mermaid
+mindmap
+  root((Project-Level Specs))
+    backlog.md
+      User stories
+      Priorities
+    architecture.md
+      Modules
+      Constraints
+      Tech stack
+    database.md
+      Schema
+      Relationships
+    ui.md
+      Navigation
+      Design conventions
+```
 
 The backlog is a central artifact of agile development, capturing
 requirements as user stories that can be prioritized and implemented
@@ -82,10 +99,7 @@ design decisions are made before development starts.
 
 Instead, AgileSpec treats project documentation as a set of **living
 documents** that evolve alongside the software. They are progressively
-refined and extended as user stories are implemented. More
-specifically, after each story is completed and verified, the relevant
-project-level documents should be updated to reflect the implemented
-changes.
+refined and extended as user stories are implemented.
 
 AI agents can help create, maintain, and synchronize these documents
 with the codebase. However, developers remain responsible for reviewing
@@ -103,26 +117,27 @@ The developer then creates a directory for the story under
 `AgileSpec/stories/`, using the story's identifier as its name
 (e.g., `story1/`, `story2/`, and so on).
 
-Each story directory contains three Markdown files:
+Next, the developer prepares three Markdown files to guide the story's
+implementation:
 
-- **`spec.md`**: The story's functional requirements and acceptance
-    criteria, organized into **Normal Flow** and **Edge Cases**. The
-    former describes expected behavior under typical conditions, while
-    the latter covers exceptional situations, invalid inputs, and
-    boundary conditions.
+- **`spec.md`**: Defines the story's functional requirements and
+    acceptance criteria, organized into **Normal Case** and **Edge
+    Cases**. The former describes expected behavior under typical
+    conditions, while the latter covers exceptional situations, invalid
+    inputs, and boundary conditions.
 
-- **`design.md`**: A low-level design describing how the specific story
+- **`design.md`**: Provides a low-level design describing how the story
     will be implemented. It may identify the classes, functions,
     modules, algorithms, and data structures to be created or modified,
     as well as any required database changes. Unlike `architecture.md`,
     which describes the overall system structure, this document focuses
-    on implementation decisions for a single story.
+    on implementation decisions for a specific story.
 
-- **`ui.md`**: The user interface requirements for the story, including
-    screen layouts, UI components, navigation, input fields, buttons,
-    and labels. It may also describe user interactions, validation
-    messages, and visual states. For stories without UI changes, this
-    document can be omitted.
+- **`ui.md`**: Describes the story's user interface requirements,
+    including screen layouts, UI components, navigation, input fields,
+    buttons, and labels. It may also specify user interactions,
+    validation messages, and visual states. For stories without UI
+    changes, this document can be omitted.
 
 As with project-level documentation, these files can be drafted with the
 assistance of AI agents. However, they must be reviewed and approved by
@@ -143,12 +158,8 @@ system and its specifications to evolve incrementally.
 ### 1. Project-Level Specification
 
 Development begins by creating the initial project-level documents in
-`AgileSpec/project/`. These documents establish the product backlog,
-technology choices, and initial architectural, database, and UI
-decisions.
-
-As discussed earlier, these specifications can be incomplete at this
-stage. They will evolve as development progresses.
+`AgileSpec/project/`. These documents establish the product backlog and
+initial architectural, database, and UI decisions.
 
 ### 2. User Story-Level Specification
 
@@ -157,9 +168,9 @@ directory under `AgileSpec/stories/` and prepares its `spec.md`,
 `design.md`, and, when applicable, `ui.md` files.
 
 The goal is to provide enough detail for an AI coding agent to implement
-the story while avoiding unnecessary specifications. Before
+the story without introducing unnecessary documentation. Before
 implementation begins, the developer reviews and approves these
-documents.
+specifications.
 
 ### 3. Implementation
 
@@ -169,8 +180,7 @@ global project context.
 
 The developer can initiate implementation with a prompt such as:
 
-```text 
-Implement story N using the approved specifications in
+```text Implement story N using the approved specifications in
 AgileSpec/stories/storyN/:
 - spec.md
 - design.md
@@ -182,7 +192,7 @@ Follow the approved design, preserve existing functionality, and avoid
 unrelated changes. If requirements conflict or important decisions are
 missing, ask for clarification before proceeding.
 
-Implement and run automated tests covering the Normal Flow and Edge
+Implement and run automated tests covering the Normal Case and Edge
 Cases defined in spec.md.
 
 When finished, summarize:
@@ -192,13 +202,11 @@ When finished, summarize:
 - Instructions for manually validating the story
 
 Do not update project-level documentation or mark the story as complete
-yet.
-```
+yet. ```
 
-The agent is expected to implement the story, create or update relevant
-tests, and report its results. However, successful execution of
-automated tests does not automatically mean that the story has been
-accepted.
+The agent implements the story, creates or updates relevant tests, and
+reports the results. However, passing automated tests does not
+automatically mean that the story has been accepted.
 
 ### 4. Review and Verification
 
@@ -207,15 +215,15 @@ that the story satisfies its acceptance criteria.
 
 Verification may involve inspecting the generated code, running
 automated tests, and manually interacting with the application.
-Particular attention should be given to the Normal Flow and Edge Cases
+Particular attention should be given to the Normal Case and Edge Cases
 documented in `spec.md`, as well as compliance with the approved design
 and UI specifications.
 
 If problems are found, the developer provides feedback to the AI agent,
 which revises the implementation. This cycle continues until the story
-is approved. If the implementation reveals missing or incorrect
+is approved. If implementation reveals missing or incorrect
 specifications, the corresponding story-level documents should also be
-revised.
+updated.
 
 ### 5. Consolidation
 
@@ -232,8 +240,7 @@ or shared UI conventions in `ui.md`.
 Consolidation can be performed with the assistance of an AI agent using
 a prompt such as:
 
-```text
-Consolidate the completed implementation of story N into the
+```text Consolidate the completed implementation of story N into the
 project-level documentation.
 
 Read:
@@ -242,7 +249,6 @@ Read:
 - The relevant implemented source code
 
 Update the affected project-level Markdown files:
-- tech-stack.md
 - architecture.md
 - database.md
 - ui.md
@@ -258,11 +264,9 @@ Mark story N as complete in AgileSpec/project/backlog.md.
 
 Do not modify the source code or story-level specifications.
 
-Summarize the documentation changes for developer review. 
-```
+Summarize the documentation changes for developer review. ```
 
-The developer reviews the resulting documentation changes before
-accepting them.
+The developer reviews and approves the resulting documentation changes.
 
 Consolidation completes the development cycle for a story. The next
 story can then be selected from the backlog, using the updated
@@ -280,14 +284,14 @@ remain in the backlog.
 
 ### `AgileSpec/project/`
 
-The project-level documentation consists of five files:
+The project-level documentation consists of four files:
 
 - **`backlog.md`**: Lists podcast features in priority order, with
     stories 1 and 2 marked as complete.
-- **`tech-stack.md`**: Specifies Python, Streamlit, SQLite,
-    standard-library feed processing, and pytest.
 - **`architecture.md`**: Describes the UI, service, feed, and storage
-    modules, including separate podcast and episode views.
+    modules, including separate podcast and episode views. Its Tech
+    Stack section specifies Python, Streamlit, SQLite, standard-library
+    feed processing, and pytest.
 - **`database.md`**: Defines the `podcasts` table, its columns, and
     constraints. Podcast subscriptions persist in SQLite, while episode
     data remains in session memory.
