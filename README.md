@@ -1,20 +1,15 @@
-# AgileSpec — An Agile, Specification-Driven Workflow for AI-Native
-  Software Development
+# AgileSpec — An Agile, Specification-Driven Workflow for AI-Native Software Development
 
 ## Motivation
 
-Agile software engineering processes took shape when developers
-performed most development tasks themselves, from translating
-requirements into designs to writing and testing code. However, AI
-agents can now take on much of this work, changing how developers move
-from an idea to a working feature.
+Traditional agile methods emerged when developers performed most
+software development tasks themselves, from requirements and design to
+coding and testing. Today, AI agents can take on much of this work,
+significantly accelerating implementation.
 
-As implementation becomes faster, developers need new workflows to
-specify requirements, generate code with AI agents, and verify that the
-resulting software meets its specifications. In particular, traditional
-agile methods must adapt to a world where producing code requires less
-time and effort, and AI can contribute throughout the development
-process.
+This shift calls for new workflows that help developers specify
+requirements, guide AI coding agents, and verify that the resulting
+software meets its specifications.
 
 To address this need, we propose **AgileSpec**, a workflow for
 developing software with AI coding agents that
@@ -23,8 +18,21 @@ emphasizes **lightweight, living specifications**.
 ## AgileSpec
 
 AgileSpec draws inspiration from agile methods such as Scrum and XP. It
-organizes specifications into two main levels: **project-level
-specifications** and **user story-level specifications**.
+organizes specifications into two main levels: 
+
+- **Project-Level Specifications** 
+- **User Story-level Specifications**.
+
+```mermaid
+mindmap
+  root((AgileSpec))
+    Inspired by
+      Scrum
+      XP
+    Specification Levels
+      Project-Level
+      User Story-Level
+```
 
 We recommend storing these specifications in a directory named
 `AgileSpec/` at the root of the project.
@@ -161,7 +169,8 @@ global project context.
 
 The developer can initiate implementation with a prompt such as:
 
-```text Implement story N using the approved specifications in
+```text 
+Implement story N using the approved specifications in
 AgileSpec/stories/storyN/:
 - spec.md
 - design.md
@@ -183,7 +192,8 @@ When finished, summarize:
 - Instructions for manually validating the story
 
 Do not update project-level documentation or mark the story as complete
-yet. ```
+yet.
+```
 
 The agent is expected to implement the story, create or update relevant
 tests, and report its results. However, successful execution of
@@ -222,7 +232,8 @@ or shared UI conventions in `ui.md`.
 Consolidation can be performed with the assistance of an AI agent using
 a prompt such as:
 
-```text Consolidate the completed implementation of story N into the
+```text
+Consolidate the completed implementation of story N into the
 project-level documentation.
 
 Read:
@@ -247,7 +258,8 @@ Mark story N as complete in AgileSpec/project/backlog.md.
 
 Do not modify the source code or story-level specifications.
 
-Summarize the documentation changes for developer review. ```
+Summarize the documentation changes for developer review. 
+```
 
 The developer reviews the resulting documentation changes before
 accepting them.
