@@ -120,16 +120,22 @@ and approving their content, ensuring that the documentation accurately
 reflects the system and its intended evolution.
 
 ```mermaid
-sequenceDiagram
-    participant A as AI Agents
-    participant D as AgileSpec Docs
-    participant H as Developers
+flowchart LR
+    A["AI Agents"]
+    H["Developers"]
 
-    A->>D: Create
-    A->>D: Maintain
-    H->>D: Create
-    H->>D: Review
-    H->>D: Approve
+    subgraph S["AgileSpec Documentation"]
+        direction TB
+        C(["Create"])
+        M(["Maintain"])
+        R(["Review"])
+        P(["Approve"])
+    end
+
+    A --- C
+    A --- M
+    H --- R
+    H --- P
 ```
 
 ### User Story-Level Specifications
@@ -166,22 +172,20 @@ story's implementation:
     optional when the story does not involve database changes.
 
 ```mermaid
-mindmap
-  root((User Story Specs))
-    spec.md
-      Normal Case
-      Edge Cases
-    design.md
-      Classes and Functions
-      Algorithms and Data Structures
-    views.md
-      Optional UI Changes
-      Screens and Layouts
-      Navigation and Interactions
-    tables.md
-      Optional Database Changes
-      Tables and Columns
-      Relationships and Constraints
+
+flowchart LR
+    S["User Story Specs"]
+
+    S --> A["spec.md"]
+    S --> B["design.md"]
+    S --> C["views.md"]
+    S --> D["tables.md"]
+
+    classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
+    classDef doc fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
+
+    class S root
+    class A,B,C,D doc
 ```
 
 As with project-level documentation, these files can be drafted with the
