@@ -314,10 +314,35 @@ the correspondence between the two levels:
     and conventions.
 - **`tables.md` to `database.md`**: Incorporate database schema changes.
 
-Only consolidate changes relevant to the system as a whole. Preserve
-the distinction between story-specific details and project-wide
-documentation rather than copying entire story-level documents.
-Optional files that are absent require no corresponding update.
+```mermaid
+flowchart LR
+    subgraph S["User Story-Level"]
+        direction TB
+        S1["spec.md"]
+        S2["design.md"]
+        S3["views.md"]
+        S4["tables.md"]
+    end
+
+    subgraph P["Project-Level"]
+        direction TB
+        P1["backlog.md"]
+        P2["architecture.md"]
+        P3["ui.md"]
+        P4["database.md"]
+    end
+
+    S1 --> P1
+    S2 --> P2
+    S3 --> P3
+    S4 --> P4
+
+    classDef story fill:#dbeafe,stroke:#2563eb,color:#1e40af
+    classDef project fill:#dcfce7,stroke:#16a34a,color:#166534
+
+    class S1,S2,S3,S4 story
+    class P1,P2,P3,P4 project
+```
 
 Consolidation can be performed with the assistance of an AI agent using
 a prompt such as:
