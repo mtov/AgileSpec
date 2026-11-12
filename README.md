@@ -181,6 +181,21 @@ The first activity establishes the project's initial context. The
 remaining activities are repeated for each user story, allowing the
 system and its specifications to evolve incrementally.
 
+```
+flowchart TD
+    A["Project-Level Specification"]
+    B["User Story-Level Specification"]
+    C["Implementation"]
+    D["Review and Verification"]
+    E["Consolidation"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E -->|Update| A
+```
+
 ### 1. Project-Level Specification
 
 Development begins by creating the initial project-level documents in
