@@ -4,7 +4,7 @@ As a listener, I want to browse a podcast's episodes so that I can choose what t
 
 ## Acceptance Criteria
 
-### Normal Flow
+### Normal Case
 
 - Open a subscribed podcast's episodes on a separate page and return without changing subscriptions.
 - Show each episode's cover, title, publication date, and plain-text description.

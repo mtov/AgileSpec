@@ -4,7 +4,7 @@ As a listener, I want to add a podcast by its RSS URL so that I can access its e
 
 ## Acceptance Criteria
 
-### Normal Flow
+### Normal Case
 
 - Enter an HTTP or HTTPS feed URL and submit it.
 - For a valid podcast RSS feed, add the podcast and show its cover, title, and description.

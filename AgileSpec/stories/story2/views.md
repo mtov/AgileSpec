@@ -1,4 +1,4 @@
-# Story 2 — UI
+# Story 2 — Views
 
 ## Podcasts
 
