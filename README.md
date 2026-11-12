@@ -24,13 +24,16 @@ documents describe the system as a whole, while story-level documents
 capture requirements and decisions specific to an individual story.
 
 ```mermaid
-mindmap
-  root((AgileSpec))
-    Specification Levels
-      Project-Level
-        System-wide context
-      User Story-Level
-        Story-specific decisions
+flowchart LR
+    A["AgileSpec"]
+    A --> P["Project-Level"]
+    A --> S["User Story-Level"]
+
+    classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
+    classDef level fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
+
+    class A root
+    class P,S level
 ```
 
 We recommend storing these specifications in a directory named
@@ -85,21 +88,20 @@ At this level, we recommend four Markdown files stored in the
     items.
 
 ```mermaid
-mindmap
-  root((Project-Level Specs))
-    backlog.md
-      User stories
-      Priorities
-    architecture.md
-      Modules
-      Constraints
-      Tech stack
-    database.md
-      Schema
-      Relationships
-    ui.md
-      Navigation
-      Design conventions
+
+flowchart LR
+    P["Project-Level Specs"]
+
+    P --> B["backlog.md"]
+    P --> A["architecture.md"]
+    P --> D["database.md"]
+    P --> U["ui.md"]
+
+    classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
+    classDef doc fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
+
+    class P root
+    class B,A,D,U doc
 ```
 
 Although these documents provide project-wide guidance, **they do not
@@ -118,14 +120,16 @@ and approving their content, ensuring that the documentation accurately
 reflects the system and its intended evolution.
 
 ```mermaid
-mindmap
-  root((AgileSpec Documents))
-    AI Agents
-      Create
-      Maintain
-    Developers
-      Review
-      Approve
+sequenceDiagram
+    participant A as AI Agents
+    participant D as AgileSpec Docs
+    participant H as Developers
+
+    A->>D: Create
+    A->>D: Maintain
+    H->>D: Create
+    H->>D: Review
+    H->>D: Approve
 ```
 
 ### User Story-Level Specifications
