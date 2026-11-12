@@ -106,6 +106,15 @@ with the codebase. However, developers remain responsible for reviewing
 and approving their content, ensuring that the documentation accurately
 reflects the system and its intended evolution.
 
+mindmap
+  root((AgilSpec Docs))
+    AI Agents
+      Create
+      Maintain
+    Developers
+      Review
+      Approve
+
 ### User Story-Level Specifications
 
 As in traditional agile methods, AgileSpec organizes development around
@@ -138,6 +147,23 @@ implementation:
     buttons, and labels. It may also specify user interactions,
     validation messages, and visual states. For stories without UI
     changes, this document can be omitted.
+
+
+```mermaid
+mindmap
+  root((User Story Specs))
+    spec.md
+      Normal Case
+      Edge Cases
+    design.md
+      Classes and Functions
+      Algorithms
+      Database Changes
+    ui.md
+      Layouts
+      Components
+      Interactions
+````
 
 As with project-level documentation, these files can be drafted with the
 assistance of AI agents. However, they must be reviewed and approved by
