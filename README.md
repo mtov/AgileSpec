@@ -181,7 +181,7 @@ The first activity establishes the project's initial context. The
 remaining activities are repeated for each user story, allowing the
 system and its specifications to evolve incrementally.
 
-```
+```mermaid
 flowchart TD
     A["Project-Level Specification"]
     B["User Story-Level Specification"]
@@ -221,7 +221,8 @@ global project context.
 
 The developer can initiate implementation with a prompt such as:
 
-```text Implement story N using the approved specifications in
+```text 
+Implement story N using the approved specifications in
 AgileSpec/stories/storyN/:
 - spec.md
 - design.md
@@ -243,7 +244,8 @@ When finished, summarize:
 - Instructions for manually validating the story
 
 Do not update project-level documentation or mark the story as complete
-yet. ```
+yet. 
+```
 
 The agent implements the story, creates or updates relevant tests, and
 reports the results. However, passing automated tests does not
@@ -281,7 +283,8 @@ or shared UI conventions in `ui.md`.
 Consolidation can be performed with the assistance of an AI agent using
 a prompt such as:
 
-```text Consolidate the completed implementation of story N into the
+```text 
+Consolidate the completed implementation of story N into the
 project-level documentation.
 
 Read:
@@ -305,7 +308,8 @@ Mark story N as complete in AgileSpec/project/backlog.md.
 
 Do not modify the source code or story-level specifications.
 
-Summarize the documentation changes for developer review. ```
+Summarize the documentation changes for developer review. 
+```
 
 The developer reviews and approves the resulting documentation changes.
 
