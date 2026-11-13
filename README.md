@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="agilespec-logo.png" alt="AgileSpec logo" width="640">
+</p>
+
 # AgileSpec — An Agile Workflow for AI-Native Development
 
 ## Motivation
