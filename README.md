@@ -4,6 +4,16 @@
 
 # An Agile Workflow for AI-Native Development
 
+## Table of Contents
+
+- [Motivation](#motivation)
+- [Specifications](#specifications)
+- [Project Specs](#project-specs)
+- [User Story Specs](#user-story-specs)
+- [Workflow](#workflow)
+- [Frequently Asked Questions](#frequently-asked-questions)
+- [Example: PodLite](#example-podlite)
+
 ## Motivation
 
 Agile methods emerged when developers performed most software
@@ -20,7 +30,7 @@ To address this need, we propose **AgileSpec**, a workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
 
-## Specification Organization
+## Specifications
 
 AgileSpec organizes specifications into two main levels:
 
@@ -205,11 +215,12 @@ required, such as fixing a bug or adapting to changes in business rules.
 AgileSpec follows an iterative workflow consisting of five main
 activities:
 
-1. Inception
-2. Story Specification
-3. Story Implementation
-4. Story Review and Verification
-5. Consolidation
+- Inception
+- Story-Level Activities
+-- Specification
+-- Implementation 
+-- Review and Verification
+- Consolidation
 
 The first activity establishes the project's initial context. The
 remaining activities are repeated for each user story, allowing the
@@ -237,7 +248,7 @@ scope and initial technical direction. During this phase, developers
 create project-level specifications in `AgileSpec/project/`, defining
 key architectural, database, and UI decisions.
 
-### Story Specification
+### Specification
 
 For each selected user story, the developer creates the corresponding
 directory under `AgileSpec/stories/` and prepares `acceptance.md` and
@@ -247,7 +258,7 @@ directory under `AgileSpec/stories/` and prepares `acceptance.md` and
 The goal is to provide enough detail for an AI coding agent to implement
 the story without introducing unnecessary documentation.
 
-### Story Implementation
+### Implementation
 
 Once the story-level specifications are approved, an AI coding agent
 implements the story using both the story-specific documents and the
@@ -283,7 +294,7 @@ Do not update project-level documentation or mark the story as complete
 yet.
 ```
 
-### Story Review and Verification
+### Review and Verification
 
 After implementation, the developer reviews the changes and verifies
 that the story satisfies its acceptance criteria.
