@@ -13,21 +13,28 @@ software meets its specifications.
 
 To address this need, we propose **AgileSpec**, a workflow for
 developing software with AI coding agents that
-emphasizes **lightweight, living specifications**.
+emphasizes lightweight, living specifications.
 
 ## AgileSpec
 
 AgileSpec draws inspiration from agile methods such as Scrum and XP. It
-organizes specifications into two main levels: **Project-Level
-Specifications** and **User Story-Level Specifications**. Project-level
-documents describe the system as a whole, while story-level documents
-capture requirements and decisions specific to an individual story.
+organizes specifications into two main levels: 
+
+- **Project Specs** describe the system as a whole.
+They guide developers and AI agents in maintaining the system's
+conceptual integrity, ensuring that development remains aligned
+with its requirements and architectural decisions.
+
+- **User Story Specs** capture requirements and
+decisions specific to individual stories. They guide AI agents
+in implementing each story while ensuring consistency with the
+project's global specifications.
 
 ```mermaid
 flowchart LR
     A["AgileSpec"]
-    A --> P["Project-Level"]
-    A --> S["User Story-Level"]
+    A --> P["Project Specs"]
+    A --> S["User Story Specs"]
 
     classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
     classDef level fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
@@ -48,13 +55,37 @@ AgileSpec/
     database.md
   stories/
     storyN/
-      spec.md
+      acceptance.md
       design.md
       views.md
       tables.md
 ```
 
-### Project-Level Specifications
+AI agents can help create, maintain, and synchronize these documents
+with the codebase. However, developers remain responsible for reviewing
+and approving their content, ensuring that the documentation accurately
+reflects the system and its intended evolution.
+
+```mermaid
+flowchart LR
+    A["AI Agents"]
+    H["Developers"]
+
+    subgraph S["AgileSpecs"]
+        direction TB
+        C(["Create"])
+        M(["Maintain"])
+        R(["Review"])
+        P(["Approve"])
+    end
+
+    A --- C
+    A --- M
+    H --- R
+    H --- P
+```
+
+### Project Specs
 
 AgileSpec starts with a set of documents that provide a shared
 understanding of the project. These documents serve as global project
@@ -75,7 +106,7 @@ At this level, we recommend four Markdown files stored in the
     access the database through a service layer rather than directly.
     This document should also describe the project's main technology
     choices, including programming languages, frameworks, and
-    databases, preferably in a dedicated Tech Stack section.
+    databases, preferably in a dedicated section.
 
 - **`database.md`**: Describes the database schema, including tables,
     their columns and data types, primary and foreign keys,
@@ -90,7 +121,7 @@ At this level, we recommend four Markdown files stored in the
 ```mermaid
 
 flowchart LR
-    P["Project-Level Specs"]
+    P["Project Specs"]
 
     P --> B["backlog.md"]
     P --> A["architecture.md"]
@@ -114,31 +145,7 @@ Instead, AgileSpec treats project documentation as a set of **living
 documents** that evolve alongside the software. They are progressively
 refined and extended as user stories are implemented.
 
-AI agents can help create, maintain, and synchronize these documents
-with the codebase. However, developers remain responsible for reviewing
-and approving their content, ensuring that the documentation accurately
-reflects the system and its intended evolution.
-
-```mermaid
-flowchart LR
-    A["AI Agents"]
-    H["Developers"]
-
-    subgraph S["AgileSpec Documentation"]
-        direction TB
-        C(["Create"])
-        M(["Maintain"])
-        R(["Review"])
-        P(["Approve"])
-    end
-
-    A --- C
-    A --- M
-    H --- R
-    H --- P
-```
-
-### User Story-Level Specifications
+### User Story Specs
 
 As in traditional agile methods, AgileSpec organizes development around
 individual user stories. A Product Owner or Product Manager selects a
@@ -152,7 +159,7 @@ The developer then creates a directory for the story under
 Next, the developer prepares up to four Markdown files to guide the
 story's implementation:
 
-- **`spec.md`**: Defines the story's functional requirements and
+- **`acceptance.md`**: Defines the story's 
     acceptance criteria, organized into **Normal Case** and **Edge
     Cases**. The former describes expected behavior under typical
     conditions, while the latter covers exceptional situations, invalid
@@ -160,8 +167,7 @@ story's implementation:
 
 - **`design.md`**: Describes story-specific implementation decisions,
     including classes, functions, modules, algorithms, and data
-    structures. It may reference `tables.md`, but database schema
-    changes belong in that file.
+    structures. 
 
 - **`views.md`**: Describes story-specific screens, layouts, UI
     components, navigation, and interactions. This file is optional
@@ -172,11 +178,10 @@ story's implementation:
     optional when the story does not involve database changes.
 
 ```mermaid
-
 flowchart LR
     S["User Story Specs"]
 
-    S --> A["spec.md"]
+    S --> A["acceptance.md"]
     S --> B["design.md"]
     S --> C["views.md"]
     S --> D["tables.md"]
@@ -192,14 +197,14 @@ As with project-level documentation, these files can be drafted with the
 assistance of AI agents. However, they must be reviewed and approved by
 the developer responsible for implementing the story.
 
-## Workflow
+## AgilSpec Workflow
 
 AgileSpec follows an iterative workflow consisting of five main activities:
 
-1. Project-Level Specification
-2. User Story-Level Specification
-3. Implementation
-4. Review and Verification
+1. Inception
+2. Story Specification
+3. Story Implementation
+4. Story Review and Verification
 5. Consolidation
 
 The first activity establishes the project's initial context. The
@@ -208,38 +213,38 @@ system and its specifications to evolve incrementally.
 
 ```mermaid
 flowchart TD
-    A["Project-Level Specification"]
-    B["User Story-Level Specification"]
-    C["Implementation"]
-    D["Review and Verification"]
+    A["Inception"]
+    B["Story Specification"]
+    C["Story Implementation"]
+    D["Story Review and Verification"]
     E["Consolidation"]
 
     A --> B
     B --> C
     C --> D
     D --> E
-    E -->|Update| A
+    E --> B
 ```
 
-### 1. Project-Level Specification
+### 1. Inception
 
-Development begins by creating the initial project-level documents in
-`AgileSpec/project/`. These documents establish the product backlog and
-initial architectural, database, and UI decisions.
+AgileSpec begins with an inception phase that establishes the
+project's scope and initial technical direction. During this phase,
+developers create project-level specifications in `AgileSpec/project/`,
+defining the product backlog and key architectural, database, and
+UI decisions.
 
-### 2. User Story-Level Specification
+### 2. Story Specification
 
 For each selected user story, the developer creates the corresponding
-directory under `AgileSpec/stories/` and prepares `spec.md` and
+directory under `AgileSpec/stories/` and prepares `acceptance.md` and
 `design.md`. The developer also creates `views.md` for UI changes and
 `tables.md` for database changes.
 
 The goal is to provide enough detail for an AI coding agent to implement
-the story without introducing unnecessary documentation. Before
-implementation begins, the developer reviews and approves these
-specifications.
+the story without introducing unnecessary documentation. 
 
-### 3. Implementation
+### 3. Story Implementation
 
 Once the story-level specifications are approved, an AI coding agent
 implements the story using both the story-specific documents and the
@@ -250,7 +255,7 @@ The developer can initiate implementation with a prompt such as:
 ```text
 Implement story N using the approved specifications in
 AgileSpec/stories/storyN/:
-- spec.md
+- acceptance.md
 - design.md
 - views.md (if present)
 - tables.md (if present)
@@ -263,7 +268,7 @@ requirements conflict or important decisions are missing, ask for
 clarification before proceeding.
 
 Implement and run automated tests covering the Normal Case and Edge
-Cases defined in spec.md.
+Cases defined in acceptance.md.
 
 When finished, summarize:
 - The changes made
@@ -275,11 +280,7 @@ Do not update project-level documentation or mark the story as complete
 yet.
 ```
 
-The agent implements the story, creates or updates relevant tests, and
-reports the results. However, passing automated tests does not
-automatically mean that the story has been accepted.
-
-### 4. Review and Verification
+### 4. Story Review and Verification
 
 After implementation, the developer reviews the changes and verifies
 that the story satisfies its acceptance criteria.
@@ -287,7 +288,7 @@ that the story satisfies its acceptance criteria.
 Verification may involve inspecting the generated code, running
 automated tests, and manually interacting with the application.
 Particular attention should be given to the Normal Case and Edge Cases
-documented in `spec.md`, as well as compliance with the approved design
+documented in `acceptance.md`, as well as compliance with the approved design
 and, where present, `views.md` and `tables.md`.
 
 If problems are found, the developer provides feedback to the AI agent,
@@ -295,6 +296,14 @@ which revises the implementation. This cycle continues until the story
 is approved. If implementation reveals missing or incorrect
 specifications, the corresponding story-level documents should also be
 updated.
+
+```mermaid
+flowchart TD
+    A["Review and Verification"] --> B{"Approved?"}
+    B -->|Yes| C["Consolidation"]
+    B -->|No| D["Revise Specs / Reimplement"]
+    D --> A
+```
 
 ### 5. Consolidation
 
@@ -306,7 +315,7 @@ This activity, called **Consolidation**, ensures that the global
 specifications remain consistent with the implemented system, using
 the correspondence between the two levels:
 
-- **`spec.md` to `backlog.md`**: Update the story's status and, when
+- **`acceptance.md` to `backlog.md`**: Update the story's status and, when
     necessary, its summary.
 - **`design.md` to `architecture.md`**: Incorporate relevant
     architectural decisions.
@@ -316,15 +325,15 @@ the correspondence between the two levels:
 
 ```mermaid
 flowchart LR
-    subgraph S["User Story-Level"]
+    subgraph S["User Story Specs"]
         direction TB
-        S1["spec.md"]
+        S1["acceptance.md"]
         S2["design.md"]
         S3["views.md"]
         S4["tables.md"]
     end
 
-    subgraph P["Project-Level"]
+    subgraph P["Project Specs"]
         direction TB
         P1["backlog.md"]
         P2["architecture.md"]
@@ -357,7 +366,7 @@ Read:
 - The relevant implemented source code
 
 Use the following correspondence, skipping absent optional files:
-- spec.md to backlog.md: update status and, if needed, the story summary
+- acceptance.md to backlog.md: update status and, if needed, the story summary
 - design.md to architecture.md: incorporate architectural decisions
 - views.md to ui.md: incorporate global UI structure and conventions
 - tables.md to database.md: incorporate schema changes
@@ -382,6 +391,7 @@ The developer reviews and approves the resulting documentation changes.
 Consolidation completes the development cycle for a story. The next
 story can then be selected from the backlog, using the updated
 project-level documentation as context.
+
 
 ## Example: PodLite
 
