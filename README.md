@@ -2,7 +2,7 @@
   <img src="agilespec-logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# AgileSpec — An Agile Workflow for AI-Native Development
+# An Agile Workflow for AI-Native Development
 
 ## Motivation
 
@@ -20,7 +20,7 @@ To address this need, we propose **AgileSpec**, a workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
 
-## AgileSpec
+## Specification Organization
 
 AgileSpec organizes specifications into two main levels:
 
@@ -76,18 +76,21 @@ flowchart LR
     subgraph S["AgileSpecs"]
         direction TB
         C(["Create"])
-        M(["Maintain"])
+        U(["Update"])
         R(["Review"])
         P(["Approve"])
+        RR(["Read"])
     end
 
-    A --- M
     H --- C
     H --- R
     H --- P
+    A --- RR
+    A --- U
+    
 ```
 
-### Project Specs
+## Project Specs
 
 AgileSpec starts with a set of documents that provide a shared
 understanding of the project. These documents serve as global project
@@ -141,7 +144,7 @@ Instead, AgileSpec treats project documentation as a set of **living
 documents** that evolve alongside the software. They are progressively
 refined and extended as user stories are implemented.
 
-### User Story Specs
+## User Story Specs
 
 As in traditional agile methods, AgileSpec organizes development around
 individual user stories. A Product Owner or Product Manager selects a
@@ -192,7 +195,12 @@ As with project-level documentation, these files can be drafted with the
 assistance of AI agents. However, they must be reviewed and approved by
 the developer responsible for implementing the story.
 
-## AgilSpec Workflow
+Even after a user story has been implemented, its directory and associated
+files should remain in the project repository. They serve as documentation
+for the story and can be particularly useful when future maintenance is
+required, such as fixing a bug or adapting to changes in business rules.
+
+## Workflow
 
 AgileSpec follows an iterative workflow consisting of five main
 activities:
@@ -222,14 +230,14 @@ flowchart TD
     E --> B
 ```
 
-### 1. Inception
+### Inception
 
 AgileSpec begins with an inception phase that establishes the project's
 scope and initial technical direction. During this phase, developers
 create project-level specifications in `AgileSpec/project/`, defining
 key architectural, database, and UI decisions.
 
-### 2. Story Specification
+### Story Specification
 
 For each selected user story, the developer creates the corresponding
 directory under `AgileSpec/stories/` and prepares `acceptance.md` and
@@ -239,7 +247,7 @@ directory under `AgileSpec/stories/` and prepares `acceptance.md` and
 The goal is to provide enough detail for an AI coding agent to implement
 the story without introducing unnecessary documentation.
 
-### 3. Story Implementation
+### Story Implementation
 
 Once the story-level specifications are approved, an AI coding agent
 implements the story using both the story-specific documents and the
@@ -275,7 +283,7 @@ Do not update project-level documentation or mark the story as complete
 yet.
 ```
 
-### 4. Story Review and Verification
+### Story Review and Verification
 
 After implementation, the developer reviews the changes and verifies
 that the story satisfies its acceptance criteria.
@@ -300,7 +308,7 @@ flowchart TD
     D --> A
 ```
 
-### 5. Consolidation
+### Consolidation
 
 Once the story has been implemented and approved, its relevant design
 decisions and changes must be incorporated into the project-level
