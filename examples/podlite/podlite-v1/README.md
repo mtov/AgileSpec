@@ -38,18 +38,22 @@ implementation pending validation:
 
 ## Screenshots
 
+### Normal Case
+
 <p align="center">
-  <img src="screenshot1-v1.png" alt="PodLite v1 screenshot 1"
+  <img src="screenshot1-v1.png" alt="Successful podcast subscription"
+       width="650">
+</p>
+
+### Edge Cases
+
+<p align="center">
+  <img src="screenshot2-v1.png" alt="Duplicate subscription error"
        width="650">
 </p>
 
 <p align="center">
-  <img src="screenshot2-v1.png" alt="PodLite v1 screenshot 2"
-       width="650">
-</p>
-
-<p align="center">
-  <img src="screenshot3-v1.png" alt="PodLite v1 screenshot 3"
+  <img src="screenshot3-v1.png" alt="RSS feed retrieval error"
        width="650">
 </p>
 
