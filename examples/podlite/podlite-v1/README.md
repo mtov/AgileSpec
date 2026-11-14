@@ -36,10 +36,21 @@ implementation pending validation:
 
   Defines the `subscriptions` table, its columns, and constraints.
 
-## Screenshot
+## Screenshots
 
 <p align="center">
-  <img src="screenshot-v1.png" alt="PodLite v1" width="650">
+  <img src="screenshot1-v1.png" alt="PodLite v1 screenshot 1"
+       width="650">
+</p>
+
+<p align="center">
+  <img src="screenshot2-v1.png" alt="PodLite v1 screenshot 2"
+       width="650">
+</p>
+
+<p align="center">
+  <img src="screenshot3-v1.png" alt="PodLite v1 screenshot 3"
+       width="650">
 </p>
 
 ## Run
