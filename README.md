@@ -56,23 +56,6 @@ flowchart LR
     class P,S level
 ```
 
-We recommend storing these specifications in a directory named
-`AgileSpec/` at the root of the project.
-
-```text
-AgileSpec/
-  project/
-    architecture.md
-    ui.md
-    database.md
-  stories/
-    storyN/
-      acceptance.md
-      design.md
-      views.md
-      tables.md
-```
-
 AI agents can help maintain, and synchronize these documents with the
 codebase. However, developers remain responsible for reviewing and
 approving their content, ensuring that the documentation accurately
@@ -108,8 +91,7 @@ documentation, guiding development decisions and providing context for
 AI coding agents. They should remain accessible and up to date
 throughout development.
 
-At this level, we recommend three Markdown files stored in the
-`AgileSpec/project/` directory:
+At this level, we recommend three Markdown files:
 
 - **`architecture.md`**: A high-level description of the system's
   architecture, including its main modules, their responsibilities, and
@@ -129,7 +111,6 @@ At this level, we recommend three Markdown files stored in the
   labels, and a common layout for displaying items.
 
 ```mermaid
-
 flowchart LR
     P["Project Specs"]
 
@@ -160,11 +141,12 @@ As in traditional agile methods, AgileSpec organizes development around
 individual user stories. A Product Owner or Product Manager selects a
 story from the backlog and assigns it to a developer for implementation.
 
-The developer then creates a directory for the story under
-`AgileSpec/stories/`, using the story's identifier as its name (e.g.,
-`story1/`, `story2/`, and so on).
+```mermaid
+flowchart LR
+    A["Backlog"] --> B["Selected Story"] --> C["Developer"]
+````
 
-Next, the developer prepares up to four Markdown files to guide the
+Next, the developer prepares four Markdown files to guide the
 story's implementation:
 
 - **`acceptance.md`**: Defines the story's acceptance criteria,
@@ -174,8 +156,8 @@ story's implementation:
   conditions.
 
 - **`design.md`**: Describes story-specific implementation decisions,
-  including classes, functions, modules, algorithms, and data
-  structures.
+  including classes, functions, modules, API endpoints, algorithms,
+  and data structures.
 
 - **`views.md`**: Describes story-specific screens, layouts, UI
   components, navigation, and interactions. This file is optional when
@@ -184,6 +166,7 @@ story's implementation:
 - **`tables.md`**: Describes story-specific database changes, including
   tables, columns, relationships, and constraints. This file is optional
   when the story does not involve database changes.
+
 
 ```mermaid
 flowchart LR
@@ -210,6 +193,25 @@ files should remain in the project repository. They serve as documentation
 for the story and can be particularly useful when future maintenance is
 required, such as fixing a bug or adapting to changes in business rules.
 
+## Folder Structure
+
+We recommend storing the proposed specifications in a directory named
+`AgileSpec/` at the root of the project.
+
+```text
+AgileSpec/
+  project/
+    architecture.md
+    ui.md
+    database.md
+  stories/
+    storyN/
+      acceptance.md
+      design.md
+      views.md
+      tables.md
+```
+
 ## Workflow
 
 AgileSpec follows an iterative workflow consisting of five main
@@ -217,21 +219,24 @@ activities:
 
 - Inception
 - Story-Level Activities
--- Specification
--- Implementation 
--- Review and Verification
+  - Specification
+  - Implementation 
+  - Review and Verification
 - Consolidation
 
 The first activity establishes the project's initial context. The
-remaining activities are repeated for each user story, allowing the
-system and its specifications to evolve incrementally.
+next three activities are repeated for each user story, allowing
+the system and its specifications to evolve incrementally. The last
+activity consolidates the decisions made during story implementation
+into the project's global specifications, keeping them consistent
+with the evolving implementation.
 
 ```mermaid
 flowchart TD
     A["Inception"]
-    B["Story Specification"]
-    C["Story Implementation"]
-    D["Story Review and Verification"]
+    B["Specification"]
+    C["Implementation"]
+    D["Review and Verification"]
     E["Consolidation"]
 
     A --> B
@@ -245,24 +250,21 @@ flowchart TD
 
 AgileSpec begins with an inception phase that establishes the project's
 scope and initial technical direction. During this phase, developers
-create project-level specifications in `AgileSpec/project/`, defining
-key architectural, database, and UI decisions.
+create the project specs, defining key architectural, database, and
+UI decisions.
 
 ### Specification
 
-For each selected user story, the developer creates the corresponding
-directory under `AgileSpec/stories/` and prepares `acceptance.md` and
-`design.md`. The developer also creates `views.md` for UI changes and
-`tables.md` for database changes.
+For each selected user story, the developer prepares its specifications
+in four files: `acceptance.md`, `design.md`, `views.md`, and `tables.md`.
 
 The goal is to provide enough detail for an AI coding agent to implement
 the story without introducing unnecessary documentation.
 
 ### Implementation
 
-Once the story-level specifications are approved, an AI coding agent
-implements the story using both the story-specific documents and the
-global project context.
+Once the specs are approved, an AI coding agent implements the story using
+both the story-specific documents and the global project context.
 
 The developer can initiate implementation with a prompt such as:
 
@@ -290,8 +292,7 @@ When finished, summarize:
 - Any limitations or unresolved issues
 - Instructions for manually validating the story
 
-Do not update project-level documentation or mark the story as complete
-yet.
+Do not update project-level documentation.
 ```
 
 ### Review and Verification
@@ -308,7 +309,7 @@ design and, where present, `views.md` and `tables.md`.
 If problems are found, the developer provides feedback to the AI agent,
 which revises the implementation. This cycle continues until the story
 is approved. If implementation reveals missing or incorrect
-specifications, the corresponding story-level documents should also be
+specifications, the corresponding story specs should also be
 updated.
 
 ```mermaid
@@ -322,8 +323,7 @@ flowchart TD
 ### Consolidation
 
 Once the story has been implemented and approved, its relevant design
-decisions and changes must be incorporated into the project-level
-documentation.
+decisions and changes must be incorporated into the project specs.
 
 This activity, called **Consolidation**, ensures that the global
 specifications remain consistent with the implemented system, using the
@@ -413,7 +413,7 @@ artifacts (e.g., product backlog)?**
 
 Similarly, AgileSpec does not prescribe specific roles or a complete set
 of agile artifacts. Teams can retain their existing roles and practices.
-Some artifacts, such as the product backlog, are already part of
+Some artifacts, such as the product backlog, are already used by
 AgileSpec.
 
 **3. Can I add specifications beyond those proposed by AgileSpec?**
@@ -422,7 +422,7 @@ Absolutely. In keeping with agile principles, AgileSpec is flexible by
 design. Teams can extend, adapt, or simplify its specifications and
 workflow to suit their project's needs.
 
-## Example: PodLite
+## Examples : PodLite
 
 PodLite is a small podcast player built with Python, Streamlit, and
 SQLite. It illustrates how AgileSpec can be applied to a simple
