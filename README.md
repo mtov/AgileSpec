@@ -14,6 +14,7 @@
 - [Workflow](#workflow)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Example: PodLite](#example-podlite)
+- [License](#license)
 
 ## Motivation
 
@@ -205,20 +206,30 @@ We recommend storing the proposed specifications in a directory named
 `AgileSpec/` at the root of the project.
 
 ```text
-AgileSpec/
-  project/
-    backlog.md
-    definition-of-done.md
-    architecture.md
-    ui.md
-    database.md
-  stories/
-    storyN/
-      acceptance.md
-      design.md
-      views.md
-      tables.md
+my-project/
+  AgileSpec/
+    project/
+      backlog.md
+      definition-of-done.md
+      architecture.md
+      ui.md
+      database.md
+    stories/
+      storyN/
+        acceptance.md
+        design.md
+        views.md
+        tables.md
+  src/
+  tests/
+  other-folders/
 ```
+
+Here, `src/` contains application code, `tests/` contains automated tests,
+`README.md` explains setup and usage, and `LICENSE` states the project's
+license. This layout is illustrative; source and test directories may
+follow the conventions of the chosen technology.
+
 Even after a user story has been implemented, its directory and associated
 files should remain in the project repository. They serve as documentation
 for the story and can be particularly useful when future maintenance is
@@ -500,3 +511,7 @@ and its setup instructions.
 
 - [PodLite v0](examples/podlite/podlite-v0/README.md): inception.
 - [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS subscriptions).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
