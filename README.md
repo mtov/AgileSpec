@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="agilespec-logo.png" alt="AgileSpec logo" width="640">
+  <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
 # An Agile Workflow for AI-Native Development
@@ -10,6 +10,7 @@
 - [Specifications](#specifications)
 - [Project Specs](#project-specs)
 - [User Story Specs](#user-story-specs)
+- [Folder Structure](#folder-structure)
 - [Workflow](#workflow)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Example: PodLite](#example-podlite)
@@ -422,100 +423,7 @@ Absolutely. In keeping with agile principles, AgileSpec is flexible by
 design. Teams can extend, adapt, or simplify its specifications and
 workflow to suit their project's needs.
 
-## Examples : PodLite
+## Example: PodLite
 
-PodLite is a small podcast player built with Python, Streamlit, and
-SQLite. It illustrates how AgileSpec can be applied to a simple
-application.
-
-The first two stories allow users to subscribe to podcasts using RSS
-URLs and browse their episodes. Audio playback and other features remain
-in the backlog.
-
-The application, tests, specifications, and screenshots live in
-[examples/podlite/](examples/podlite/). The paths in the following
-headings are relative to that directory.
-
-To run the example from the repository root:
-
-```bash
-cd examples/podlite
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-dev.txt
-.venv/bin/python -m streamlit run app.py
-```
-
-Run tests from the same directory with `.venv/bin/python -m pytest`.
-
-
-### `AgileSpec/project/`
-
-The project-level documentation consists of four files:
-
-- [backlog.md](examples/podlite/AgileSpec/project/backlog.md): Lists
-  podcast features in priority order, with stories 1 and 2 marked as
-  complete.
-- [architecture.md](examples/podlite/AgileSpec/project/architecture.md):
-  Describes the UI, service, feed, and storage modules and their
-  responsibilities. Its Tech Stack section records Python, Streamlit,
-  SQLite, standard-library feed processing, and pytest.
-- [database.md](examples/podlite/AgileSpec/project/database.md):
-  Documents the `podcasts` table and its constraints. Subscriptions
-  persist in SQLite, while episode data remains in session memory.
-- [ui.md](examples/podlite/AgileSpec/project/ui.md): Establishes global
-  UI structure and conventions, including separate podcast and episode
-  views, English labels, and cover-and-text cards.
-
-### `AgileSpec/stories/`
-
-Each implemented story has its own directory containing the
-specifications used to guide the coding agent.
-
-#### `story1/` — Add a Podcast
-
-The first story allows users to subscribe to podcasts by entering an RSS
-feed URL.
-
-- [spec.md](examples/podlite/AgileSpec/stories/story1/spec.md): Defines
-  subscription by RSS URL, persistent storage, duplicate prevention, and
-  handling of invalid feeds or missing metadata.
-- [design.md](examples/podlite/AgileSpec/stories/story1/design.md):
-  Specifies URL validation, RSS parsing, and subscription storage
-  operations.
-- [views.md](examples/podlite/AgileSpec/stories/story1/views.md):
-  Describes the subscription form and cards displaying covers, titles,
-  and descriptions.
-- [tables.md](examples/podlite/AgileSpec/stories/story1/tables.md):
-  Specifies the `podcasts` table, its columns and constraints, and
-  compatible schema updates.
-
-![Story 1: podcast
-subscriptions](examples/podlite/AgileSpec/project/images/story1.jpg)
-
-#### `story2/` — Browse Episodes
-
-The second story allows users to browse episodes from their subscribed
-podcasts.
-
-- [spec.md](examples/podlite/AgileSpec/stories/story2/spec.md): Defines
-  episode browsing newest first, revealing 10 episodes at a time,
-  returning to subscriptions, and handling missing data or feed
-  failures.
-- [design.md](examples/podlite/AgileSpec/stories/story2/design.md):
-  Specifies session-based navigation, feed retrieval, date
-  normalization, and in-memory storage of episode metadata.
-- [views.md](examples/podlite/AgileSpec/stories/story2/views.md):
-  Describes the podcast and episode views, including **See Episodes**,
-  **Back to Podcasts**, and **Load more** buttons.
-
-Story 2 does not need `tables.md`: it keeps episodes in session memory
-and introduces no database changes.
-
-![Story 2: browsing podcast
-episodes](examples/podlite/AgileSpec/project/images/story2.jpg)
-
-Together, these two stories illustrate the incremental nature of
-AgileSpec. Each story is specified, implemented, verified, and
-consolidated before development proceeds. As a result, both the
-application and its project-level documentation evolve incrementally,
-providing an up-to-date foundation for subsequent stories.
+See [PodLite](examples/podlite/README.md) for the podcast-player example
+and its setup instructions.
