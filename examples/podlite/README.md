@@ -1,25 +1,20 @@
 # PodLite
 
-PodLite will demonstrate AgileSpec through a podcast player using Python,
-Streamlit, and SQLite. Development will start with RSS subscriptions and
-episode browsing, followed by audio playback.
+PodLite demonstrates AgileSpec through a small podcast player using
+Python, Streamlit, and SQLite. Each version captures a development step.
 
-This directory will contain its code, tests, and specifications.
+Start with [podlite-v0](podlite-v0/README.md), the inception version.
 
-## Setup
+## Setup and Run
 
-From the repository root:
+From the repository root, enter the version you want to study and create
+its Python environment. For v0:
 
 ```bash
-cd examples/podlite
+cd examples/podlite/podlite-v0
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-After the application and tests are implemented:
-
-```bash
-python -m pip install -r requirements-dev.txt
-python -m streamlit run app.py
-python -m pytest
-```
+Version v0 contains specifications only; there is no application to run
+yet. Later versions will include application run instructions.
