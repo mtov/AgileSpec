@@ -432,10 +432,10 @@ Consolidation can be performed with the assistance of an AI agent using
 a prompt such as:
 
 ```text
-Consolidate the implemented and validated story N into the
-project-level documentation.
+Consolidate the implemented and validated story N in [project directory]
+into its project-level documentation.
 
-Read:
+Read, relative to that directory:
 - AgileSpec/stories/storyN/
 - AgileSpec/project/
 - The relevant implemented source code
@@ -454,6 +454,8 @@ story-specific implementation details. Do not copy entire story
 specifications into project-level documents.
 
 Do not modify the source code or story-level specifications.
+If the specifications and code disagree, report the discrepancy before
+consolidating.
 
 Summarize the documentation changes and any unmet Definition of Done
 criteria for developer review. Leave the story unchecked in backlog.md
@@ -461,8 +463,16 @@ until the developer approves consolidation and all completion criteria
 are met.
 ```
 
-The developer reviews the documentation changes and checks
-`definition-of-done.md`. Once consolidation is approved and all criteria
+For convenience, this prompt is saved in the repository's
+[`prompts/consolidation.md`](prompts/consolidation.md) file.
+You can use it as follows:
+
+```text
+Follow prompts/consolidation.md to consolidate story [n] in
+[project directory].
+```
+
+Once consolidation is approved and all criteria
 are met, mark the story complete in `backlog.md`.
 
 Consolidation completes the development cycle for a story. The next
@@ -511,6 +521,8 @@ and its setup instructions.
 
 - [PodLite v0](examples/podlite/podlite-v0/README.md): inception.
 - [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS subscriptions).
+- [PodLite v1 Consolidated](examples/podlite/podlite-v1-consolidated/README.md):
+  copy of v1, awaiting consolidation.
 
 ## License
 
