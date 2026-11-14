@@ -1,5 +1,7 @@
 # PodLite v1
 
+[PodLite](../README.md) | [AgileSpec](../../../README.md)
+
 As a listener, I want to subscribe using an RSS URL and keep the podcast
 in my list.
 

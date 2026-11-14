@@ -1,5 +1,7 @@
 # PodLite v0
 
+[PodLite](../README.md) | [AgileSpec](../../../README.md)
+
 This version captures the project after inception, before any user story
 has been implemented.
 

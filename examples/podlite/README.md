@@ -3,7 +3,10 @@
 PodLite demonstrates AgileSpec through a small podcast player using
 Python, Streamlit, and SQLite. Each version captures a development step.
 
-Start with [podlite-v0](podlite-v0/README.md), the inception version.
+## Versions
+
+- [podlite-v0](podlite-v0/README.md): inception and initial project specs.
+- [podlite-v1](podlite-v1/README.md): RSS subscriptions and local storage.
 
 ## Setup and Run
 
@@ -17,4 +20,5 @@ source .venv/bin/activate
 ```
 
 Version v0 contains specifications only; there is no application to run
-yet. Later versions will include application run instructions.
+yet. To run the application, follow the
+[v1 instructions](podlite-v1/README.md#run).
