@@ -32,6 +32,9 @@ Changes relative to `podlite-v1`: `-` removed, `+` added.
 
 ### architecture.md
 
+Replaced generic layers with the implemented modules. Each module now
+has a brief description of its responsibility.
+
 ```diff
 --- podlite-v1/architecture.md
 +++ podlite-v1-consolidated/architecture.md
@@ -47,6 +50,9 @@ Changes relative to `podlite-v1`: `-` removed, `+` added.
 
 ### ui.md
 
+Added the home screen structure and metadata fallbacks. Podcast cards
+show the cover, title, and plain-text description.
+
 ```diff
 --- podlite-v1/ui.md
 +++ podlite-v1-consolidated/ui.md
@@ -60,6 +66,9 @@ Changes relative to `podlite-v1`: `-` removed, `+` added.
 ```
 
 ### database.md
+
+Documented the database location and the `subscriptions` schema. Missing
+covers and descriptions are stored as NULL.
 
 ```diff
 --- podlite-v1/database.md
