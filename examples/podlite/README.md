@@ -1,7 +1,8 @@
 # PodLite
 
 PodLite demonstrates AgileSpec through a small podcast player using
-Python, Streamlit, and SQLite. Each version captures a development step.
+Python, Streamlit, and SQLite. Each version has its own project specs
+and backlog, capturing a development step.
 
 ## Versions
 

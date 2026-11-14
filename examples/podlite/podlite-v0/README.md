@@ -7,6 +7,10 @@ has been implemented.
 
 ## Project Specs
 
+- [Backlog](AgileSpec/project/backlog.md)
+
+  Lists the initial user stories in priority order, all planned.
+
 - [Architecture](AgileSpec/project/architecture.md)
 
   Defines Python, Streamlit, SQLite, standard-library RSS handling,

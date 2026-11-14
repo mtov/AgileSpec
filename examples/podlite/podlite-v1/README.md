@@ -7,8 +7,10 @@ in my list.
 
 ## Project Specs
 
-Copied from v0:
+Inherited from v0, with the backlog updated to reflect story 1's
+implementation pending validation:
 
+- [backlog.md](AgileSpec/project/backlog.md)
 - [architecture.md](AgileSpec/project/architecture.md)
 - [ui.md](AgileSpec/project/ui.md)
 - [database.md](AgileSpec/project/database.md)

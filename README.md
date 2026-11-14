@@ -2,7 +2,7 @@
   <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# An Agile Workflow for AI-Native Development
+# An Agile Workflow for AI-Assisted Software Development
 
 ## Table of Contents
 
@@ -92,7 +92,11 @@ documentation, guiding development decisions and providing context for
 AI coding agents. They should remain accessible and up to date
 throughout development.
 
-At this level, we recommend three Markdown files:
+At this level, we recommend four Markdown files:
+
+- **`backlog.md`**: Lists user stories in priority order, with a brief
+  description and status for each. This gives AI coding agents a global
+  view of the system's features and main requirements.
 
 - **`architecture.md`**: A high-level description of the system's
   architecture, including its main modules, their responsibilities, and
@@ -115,6 +119,7 @@ At this level, we recommend three Markdown files:
 flowchart LR
     P["Project Specs"]
 
+    P --> B["backlog.md"]
     P --> A["architecture.md"]
     P --> D["database.md"]
     P --> U["ui.md"]
@@ -140,12 +145,12 @@ refined and extended as user stories are implemented.
 
 As in traditional agile methods, AgileSpec organizes development around
 individual user stories. A Product Owner or Product Manager selects a
-story from the backlog and assigns it to a developer for implementation.
+story from `backlog.md` and assigns it to a developer for implementation.
 
 ```mermaid
 flowchart LR
-    A["Backlog"] --> B["Selected Story"] --> C["Agile Specs"]
-````
+    A["backlog.md"] --> B["Selected Story"] --> C["User Story Specs"]
+```
 
 Next, the developer prepares four Markdown files to guide the
 story's implementation:
@@ -194,6 +199,7 @@ files should remain in the project repository. They serve as documentation
 for the story and can be particularly useful when future maintenance is
 required, such as fixing a bug or adapting to changes in business rules.
 
+
 ## Folder Structure
 
 We recommend storing the proposed specifications in a directory named
@@ -202,6 +208,7 @@ We recommend storing the proposed specifications in a directory named
 ```text
 AgileSpec/
   project/
+    backlog.md
     architecture.md
     ui.md
     database.md
@@ -251,13 +258,14 @@ flowchart TD
 
 AgileSpec begins with an inception phase that establishes the project's
 scope and initial technical direction. During this phase, developers
-create the project specs, defining key architectural, database, and
-UI decisions.
+create an initial `backlog.md` with prioritized user stories and define
+key architectural, database, and UI decisions in the other project specs.
 
 ### Specification
 
-For each selected user story, the developer prepares its specifications
-in four files: `acceptance.md`, `design.md`, `views.md`, and `tables.md`.
+The developer selects a story from `backlog.md` and prepares
+`acceptance.md` and `design.md`, adding `views.md` and `tables.md` when
+UI or database changes are involved.
 
 The goal is to provide enough detail for an AI coding agent to implement
 the story without introducing unnecessary documentation.
@@ -277,7 +285,8 @@ AgileSpec/stories/storyN/:
 - views.md (if present)
 - tables.md (if present)
 
-Read AgileSpec/project/ for project-wide context and constraints.
+Read AgileSpec/project/ for project-wide context and constraints,
+including the selected story in backlog.md.
 
 Follow the approved design, views, and table changes where applicable.
 Preserve existing functionality and avoid unrelated changes. If
@@ -332,13 +341,15 @@ flowchart TD
 
 ### Consolidation
 
-Once the story has been implemented and approved, its relevant design
-decisions and changes must be incorporated into the project specs.
+Once the story has been implemented and approved, update its status in
+`backlog.md` and incorporate relevant decisions into the project specs.
 
 This activity, called **Consolidation**, ensures that the global
 specifications remain consistent with the implemented system, using the
 correspondence between the two levels:
 
+- **`acceptance.md` to `backlog.md`**: Mark the validated story complete
+  and adjust its summary if needed. Keep detailed criteria in the story.
 - **`design.md` to `architecture.md`**: Incorporate relevant
   architectural decisions.
 - **`views.md` to `ui.md`**: Incorporate relevant global UI structure
@@ -349,6 +360,7 @@ correspondence between the two levels:
 flowchart LR
     subgraph S["User Story Specs"]
         direction TB
+        S0["acceptance.md"]
         S1["design.md"]
         S2["views.md"]
         S3["tables.md"]
@@ -356,11 +368,13 @@ flowchart LR
 
     subgraph P["Project Specs"]
         direction TB
+        P0["backlog.md"]
         P1["architecture.md"]
         P2["ui.md"]
         P3["database.md"]
     end
 
+    S0 --> P0
     S1 --> P1
     S2 --> P2
     S3 --> P3
@@ -368,15 +382,15 @@ flowchart LR
     classDef story fill:#dbeafe,stroke:#2563eb,color:#1e40af
     classDef project fill:#dcfce7,stroke:#16a34a,color:#166534
 
-    class S1,S2,S3 story
-    class P1,P2,P3 project
+    class S0,S1,S2,S3 story
+    class P0,P1,P2,P3 project
 ```
 
 Consolidation can be performed with the assistance of an AI agent using
 a prompt such as:
 
 ```text
-Consolidate the completed implementation of story N into the
+Consolidate the implemented and validated story N into the
 project-level documentation.
 
 Read:
@@ -385,6 +399,7 @@ Read:
 - The relevant implemented source code
 
 Use the following correspondence, skipping absent optional files:
+- acceptance.md to backlog.md: mark complete; adjust summary if needed
 - design.md to architecture.md: incorporate architectural decisions
 - views.md to ui.md: incorporate global UI structure and conventions
 - tables.md to database.md: incorporate schema changes
@@ -404,7 +419,7 @@ Summarize the documentation changes for developer review.
 The developer reviews and approves the resulting documentation changes.
 
 Consolidation completes the development cycle for a story. The next
-story can then be selected from the backlog, using the updated
+story can then be selected from `backlog.md`, using the updated
 project-level documentation as context.
 
 
@@ -421,16 +436,16 @@ free to continue using these practices alongside AgileSpec.
 **2. What about roles (e.g., Product Owner and Scrum Master) and
 artifacts (e.g., product backlog)?**
 
-Similarly, AgileSpec does not prescribe specific roles or a complete set
-of agile artifacts. Teams can retain their existing roles and practices.
-Some artifacts, such as the product backlog, are already used by
-AgileSpec.
+AgileSpec does not prescribe specific roles or a complete set of agile
+artifacts. It recommends `backlog.md` for story summaries, priorities,
+and status. Teams can retain their existing roles and practices.
 
 **3. Can I add specifications beyond those proposed by AgileSpec?**
 
 Absolutely. In keeping with agile principles, AgileSpec is flexible by
 design. Teams can extend, adapt, or simplify its specifications and
 workflow to suit their project's needs.
+
 
 ## Example: PodLite
 
