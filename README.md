@@ -522,7 +522,7 @@ and its setup instructions.
 - [PodLite v0](examples/podlite/podlite-v0/README.md): inception.
 - [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS subscriptions).
 - [PodLite v1 Consolidated](examples/podlite/podlite-v1-consolidated/README.md):
-  copy of v1, awaiting consolidation.
+  consolidation awaiting review.
 
 ## License
 

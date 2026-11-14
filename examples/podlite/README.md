@@ -8,8 +8,8 @@ and backlog, capturing a development step.
 
 - [podlite-v0](podlite-v0/README.md): inception and initial project specs.
 - [podlite-v1](podlite-v1/README.md): RSS subscriptions and local storage.
-- [podlite-v1-consolidated](podlite-v1-consolidated/README.md): copy of v1,
-  awaiting consolidation.
+- [podlite-v1-consolidated](podlite-v1-consolidated/README.md): consolidation
+  awaiting review.
 
 ## Setup and Run
 

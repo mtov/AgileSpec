@@ -13,8 +13,9 @@ browsing episodes, and playing audio, without login.
 
 ## Structure
 
-- UI: renders screens and handles user input.
-- Services: handle application logic and RSS feeds.
-- Persistence: reads and writes local data.
+- `app.py`: Streamlit interface.
+- `podlite/service.py`: application logic.
+- `podlite/feeds.py`: RSS and podcast metadata.
+- `podlite/database.py`: SQLite persistence.
 
 The UI accesses persistence through services.
