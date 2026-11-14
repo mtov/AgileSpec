@@ -26,3 +26,7 @@ has been implemented.
 
   Defines local SQLite storage with unique RSS URLs and persistent
   subscriptions.
+
+- [Definition of Done](AgileSpec/project/definition-of-done.md)
+
+  Defines shared completion criteria, including approved consolidation.

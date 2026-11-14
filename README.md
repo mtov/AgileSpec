@@ -92,7 +92,7 @@ documentation, guiding development decisions and providing context for
 AI coding agents. They should remain accessible and up to date
 throughout development.
 
-At this level, we recommend four Markdown files:
+At this level, we recommend five Markdown files:
 
 - **`backlog.md`**: Lists user stories in priority order, with a brief
   description and status for each. This gives AI coding agents a global
@@ -115,6 +115,10 @@ At this level, we recommend four Markdown files:
   that the application uses a sidebar for navigation, consistent button
   labels, and a common layout for displaying items.
 
+- **`definition-of-done.md`**: Defines shared completion criteria for all
+  stories, such as passing tests, human validation, and consolidated
+  project specs.
+
 ```mermaid
 flowchart LR
     P["Project Specs"]
@@ -123,12 +127,13 @@ flowchart LR
     P --> A["architecture.md"]
     P --> D["database.md"]
     P --> U["ui.md"]
+    P --> F["definition-of-done.md"]
 
     classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
     classDef doc fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
 
     class P root
-    class B,A,D,U doc
+    class B,A,D,U,F doc
 ```
 
 Although these documents provide project-wide guidance, **they do not
@@ -212,6 +217,7 @@ AgileSpec/
     architecture.md
     ui.md
     database.md
+    definition-of-done.md
   stories/
     storyN/
       acceptance.md
@@ -260,6 +266,8 @@ AgileSpec begins with an inception phase that establishes the project's
 scope and initial technical direction. During this phase, developers
 create an initial `backlog.md` with prioritized user stories and define
 key architectural, database, and UI decisions in the other project specs.
+They also create a short `definition-of-done.md` to establish shared
+completion criteria.
 
 ### Specification
 
@@ -286,7 +294,8 @@ AgileSpec/stories/storyN/:
 - tables.md (if present)
 
 Read AgileSpec/project/ for project-wide context and constraints,
-including the selected story in backlog.md.
+including the selected story in backlog.md and the shared criteria in
+definition-of-done.md.
 
 Follow the approved design, views, and table changes where applicable.
 Preserve existing functionality and avoid unrelated changes. If
@@ -301,8 +310,9 @@ When finished, summarize:
 - The tests executed and their results
 - Any limitations or unresolved issues
 - Instructions for manually validating the story
+- Any Definition of Done criteria still pending
 
-Do not update project-level documentation.
+Do not update project-level documentation or mark the story complete.
 ```
 
 For convenience, this prompt is saved in the repository's
@@ -317,7 +327,9 @@ Follow prompts/implementation.md to implement story [n] in
 ### Review and Verification
 
 After implementation, the developer reviews the changes and verifies
-that the story satisfies its acceptance criteria.
+that the story satisfies its acceptance criteria. Use
+`definition-of-done.md` to check shared requirements such as passing tests
+and human validation; consolidation is checked in the next activity.
 
 Verification may involve inspecting the generated code, running
 automated tests, and manually interacting with the application.
@@ -341,20 +353,24 @@ flowchart TD
 
 ### Consolidation
 
-Once the story has been implemented and approved, update its status in
-`backlog.md` and incorporate relevant decisions into the project specs.
+Once the story has been implemented and approved, incorporate relevant
+decisions into the project specs. Mark it complete in `backlog.md` only
+after consolidation is approved and the Definition of Done is met.
 
 This activity, called **Consolidation**, ensures that the global
 specifications remain consistent with the implemented system, using the
 correspondence between the two levels:
 
-- **`acceptance.md` to `backlog.md`**: Mark the validated story complete
-  and adjust its summary if needed. Keep detailed criteria in the story.
+- **`acceptance.md` to `backlog.md`**: Adjust the summary if needed and
+  mark complete after consolidation. Keep detailed criteria in the story.
 - **`design.md` to `architecture.md`**: Incorporate relevant
   architectural decisions.
 - **`views.md` to `ui.md`**: Incorporate relevant global UI structure
   and conventions.
 - **`tables.md` to `database.md`**: Incorporate database schema changes.
+
+`definition-of-done.md` provides shared completion criteria; it has no
+story-level counterpart and is not rewritten for each story.
 
 ```mermaid
 flowchart LR
@@ -399,7 +415,7 @@ Read:
 - The relevant implemented source code
 
 Use the following correspondence, skipping absent optional files:
-- acceptance.md to backlog.md: mark complete; adjust summary if needed
+- acceptance.md to backlog.md: adjust the story summary if needed
 - design.md to architecture.md: incorporate architectural decisions
 - views.md to ui.md: incorporate global UI structure and conventions
 - tables.md to database.md: incorporate schema changes
@@ -413,10 +429,15 @@ specifications into project-level documents.
 
 Do not modify the source code or story-level specifications.
 
-Summarize the documentation changes for developer review.
+Summarize the documentation changes and any unmet Definition of Done
+criteria for developer review. Leave the story unchecked in backlog.md
+until the developer approves consolidation and all completion criteria
+are met.
 ```
 
-The developer reviews and approves the resulting documentation changes.
+The developer reviews the documentation changes and checks
+`definition-of-done.md`. Once consolidation is approved and all criteria
+are met, mark the story complete in `backlog.md`.
 
 Consolidation completes the development cycle for a story. The next
 story can then be selected from `backlog.md`, using the updated

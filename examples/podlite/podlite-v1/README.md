@@ -14,6 +14,7 @@ implementation pending validation:
 - [architecture.md](AgileSpec/project/architecture.md)
 - [ui.md](AgileSpec/project/ui.md)
 - [database.md](AgileSpec/project/database.md)
+- [definition-of-done.md](AgileSpec/project/definition-of-done.md)
 
 ## User Story Specs
 
