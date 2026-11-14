@@ -296,6 +296,15 @@ When finished, summarize:
 Do not update project-level documentation.
 ```
 
+For convenience, this prompt is saved in the repository's
+[`prompts/implementation.md`](prompts/implementation.md) file.
+You can use it as follows:
+
+```text
+Follow prompts/implementation.md to implement story [n] in
+[project name].
+```
+
 ### Review and Verification
 
 After implementation, the developer reviews the changes and verifies
