@@ -98,6 +98,10 @@ At this level, we recommend five Markdown files:
   description and status for each. This gives AI coding agents a global
   view of the system's features and main requirements.
 
+- **`definition-of-done.md`**: Defines shared completion criteria for all
+  stories, such as passing tests, human validation, and consolidated
+  project specs.
+
 - **`architecture.md`**: A high-level description of the system's
   architecture, including its main modules, their responsibilities, and
   architectural constraints. For example, UI components must access the
@@ -115,19 +119,15 @@ At this level, we recommend five Markdown files:
   that the application uses a sidebar for navigation, consistent button
   labels, and a common layout for displaying items.
 
-- **`definition-of-done.md`**: Defines shared completion criteria for all
-  stories, such as passing tests, human validation, and consolidated
-  project specs.
-
 ```mermaid
 flowchart LR
     P["Project Specs"]
 
     P --> B["backlog.md"]
+    P --> F["definition-of-done.md"]
     P --> A["architecture.md"]
     P --> D["database.md"]
     P --> U["ui.md"]
-    P --> F["definition-of-done.md"]
 
     classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
     classDef doc fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
@@ -214,10 +214,10 @@ We recommend storing the proposed specifications in a directory named
 AgileSpec/
   project/
     backlog.md
+    definition-of-done.md
     architecture.md
     ui.md
     database.md
-    definition-of-done.md
   stories/
     storyN/
       acceptance.md
@@ -467,6 +467,16 @@ Absolutely. In keeping with agile principles, AgileSpec is flexible by
 design. Teams can extend, adapt, or simplify its specifications and
 workflow to suit their project's needs.
 
+
+**4. Why doesn't AgileSpec require a task list or an agent execution
+plan?**
+
+AgileSpec assumes that coding agents can organize their own work within
+an approved specification. Developers define the expected behavior and
+constraints, including architecture, stored data, and interface layout.
+Agents choose the steps needed to implement and test each story, while
+`definition-of-done.md` sets shared completion criteria, such as passing
+tests, human validation, and approved consolidation.
 
 ## Example: PodLite
 
