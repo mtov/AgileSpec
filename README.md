@@ -144,7 +144,7 @@ story from the backlog and assigns it to a developer for implementation.
 
 ```mermaid
 flowchart LR
-    A["Backlog"] --> B["Selected Story"] --> C["Developer"]
+    A["Backlog"] --> B["Selected Story"] --> C["Agile Specs"]
 ````
 
 Next, the developer prepares four Markdown files to guide the

@@ -22,7 +22,7 @@ in my list.
 ## Screenshot
 
 <p align="center">
-  <img src="screenshot-v1.png" alt="PodLite v1" width="720">
+  <img src="screenshot-v1.png" alt="PodLite v1" width="650">
 </p>
 
 ## Run
