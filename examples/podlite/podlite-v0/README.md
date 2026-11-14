@@ -5,13 +5,20 @@
 This version captures the project after inception, before any user story
 has been implemented.
 
-## Project Specifications
+## Project Specs
 
-- [Architecture](AgileSpec/project/architecture.md): technologies and
-  application structure.
-- [UI](AgileSpec/project/ui.md): shared interface conventions.
-- [Database](AgileSpec/project/database.md): initial persistence
-  decisions.
+- [Architecture](AgileSpec/project/architecture.md)
 
-See the [PodLite README](../README.md#setup-and-run) to set up the
-Python environment. There is no application code yet.
+  Defines Python, Streamlit, SQLite, standard-library RSS handling,
+  and pytest as the technology stack. Separates UI, services, and
+  persistence, with database access handled through services.
+
+- [UI](AgileSpec/project/ui.md)
+
+  Defines a single-column Streamlit interface with English labels,
+  consistent controls, and clear feedback.
+
+- [Database](AgileSpec/project/database.md)
+
+  Defines local SQLite storage with unique RSS URLs and persistent
+  subscriptions.

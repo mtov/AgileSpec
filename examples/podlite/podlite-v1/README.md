@@ -5,19 +5,33 @@
 As a listener, I want to subscribe using an RSS URL and keep the podcast
 in my list.
 
-## Specifications
+## Project Specs
 
-- [Project Specs](AgileSpec/project/): copied from v0.
-  - [architecture.md](AgileSpec/project/architecture.md)
-  - [ui.md](AgileSpec/project/ui.md)
-  - [database.md](AgileSpec/project/database.md)
-- User Story Specs:
-  - [acceptance.md](AgileSpec/stories/story1/acceptance.md): expected
-    behavior.
-  - [design.md](AgileSpec/stories/story1/design.md): implementation
-    decisions.
-  - [views.md](AgileSpec/stories/story1/views.md): interface.
-  - [tables.md](AgileSpec/stories/story1/tables.md): database changes.
+Copied from v0:
+
+- [architecture.md](AgileSpec/project/architecture.md)
+- [ui.md](AgileSpec/project/ui.md)
+- [database.md](AgileSpec/project/database.md)
+
+## User Story Specs
+
+- [acceptance.md](AgileSpec/stories/story1/acceptance.md)
+
+  Defines subscribing by RSS URL, persistent subscriptions, and error
+  handling through Normal Case and Edge Cases.
+
+- [design.md](AgileSpec/stories/story1/design.md)
+
+  Defines the modules for UI, services, feeds, and storage, with key
+  decisions for fetching RSS and saving podcast metadata.
+
+- [views.md](AgileSpec/stories/story1/views.md)
+
+  Defines the subscription form, podcast list, and user feedback.
+
+- [tables.md](AgileSpec/stories/story1/tables.md)
+
+  Defines the `subscriptions` table, its columns, and constraints.
 
 ## Screenshot
 

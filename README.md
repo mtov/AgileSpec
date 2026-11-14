@@ -436,3 +436,6 @@ workflow to suit their project's needs.
 
 See [PodLite](examples/podlite/README.md) for the podcast-player example
 and its setup instructions.
+
+- [PodLite v0](examples/podlite/podlite-v0/README.md): inception.
+- [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS subscriptions).
