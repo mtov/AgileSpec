@@ -42,7 +42,7 @@ AgileSpec organizes specifications into two main levels:
 
 - **User Story Specs** capture requirements and decisions specific to
   individual stories. They guide AI agents in implementing each story
-  while ensuring consistency with the project's global specifications.
+  while ensuring consistency with the project specs.
 
 ```mermaid
 flowchart LR
@@ -86,13 +86,13 @@ flowchart LR
 
 ## Project Specs
 
-AgileSpec starts with a set of documents that provide a shared
-understanding of the project. These documents serve as global project
-documentation, guiding development decisions and providing context for
-AI coding agents. They should remain accessible and up to date
-throughout development.
+Using AgileSpec begins with creating a set of documents that provide a
+shared understanding of the project. These documents serve as global
+project documentation, guiding development decisions and providing
+context for AI coding agents. They should remain accessible and up to
+date throughout development.
 
-At this level, we recommend five Markdown files:
+At the Project Specs level, there are five main Markdown documents:
 
 - **`backlog.md`**: Lists user stories in priority order, with a brief
   description and status for each. This gives AI coding agents a global
@@ -115,9 +115,9 @@ At this level, we recommend five Markdown files:
   between tables, and integrity constraints.
 
 - **`ui.md`**: Describes the overall user interface structure,
-  navigation, and shared design conventions. For example, it may specify
-  that the application uses a sidebar for navigation, consistent button
-  labels, and a common layout for displaying items.
+  navigation, and shared design conventions, including a design system
+  when applicable. For example, it may define colors, typography,
+  reusable components, and common layouts.
 
 ```mermaid
 flowchart LR
@@ -195,15 +195,9 @@ flowchart LR
     class A,B,C,D doc
 ```
 
-As with project-level documentation, these files can be drafted with the
+As with project specs, these files can be drafted with the
 assistance of AI agents. However, they must be reviewed and approved by
 the developer responsible for implementing the story.
-
-Even after a user story has been implemented, its directory and associated
-files should remain in the project repository. They serve as documentation
-for the story and can be particularly useful when future maintenance is
-required, such as fixing a bug or adapting to changes in business rules.
-
 
 ## Folder Structure
 
@@ -225,6 +219,10 @@ AgileSpec/
       views.md
       tables.md
 ```
+Even after a user story has been implemented, its directory and associated
+files should remain in the project repository. They serve as documentation
+for the story and can be particularly useful when future maintenance is
+required, such as fixing a bug or adapting to changes in business rules.
 
 ## Workflow
 
@@ -281,7 +279,7 @@ the story without introducing unnecessary documentation.
 ### Implementation
 
 Once the specs are approved, an AI coding agent implements the story using
-both the story-specific documents and the global project context.
+both the project and story specs.
 
 The developer can initiate implementation with a prompt such as:
 
@@ -353,9 +351,24 @@ flowchart TD
 
 ### Consolidation
 
-Once the story has been implemented and approved, incorporate relevant
-decisions into the project specs. Mark it complete in `backlog.md` only
-after consolidation is approved and the Definition of Done is met.
+Project specs evolve incrementally as stories are developed. The initial
+project specs guide the first story. Consolidation then incorporates
+relevant implementation decisions into these documents. Each subsequent
+story uses the updated specs as its starting point, keeping shared
+context aligned with the evolving system.
+
+```mermaid
+flowchart LR
+    A["Initial Project Specs"] --> B["Story 1"]
+    B --> C["Consolidation"]
+    C --> D["Story 2"]
+    D --> E["Consolidation"]
+    E --> F["..."]
+```
+
+After a story is implemented and validated, incorporate its relevant
+decisions into the project specs. Mark the story complete in `backlog.md`
+only after consolidation is approved and the `Definition of Done` is met.
 
 This activity, called **Consolidation**, ensures that the global
 specifications remain consistent with the implemented system, using the
@@ -369,8 +382,10 @@ correspondence between the two levels:
   and conventions.
 - **`tables.md` to `database.md`**: Incorporate database schema changes.
 
-`definition-of-done.md` provides shared completion criteria; it has no
-story-level counterpart and is not rewritten for each story.
+Use `definition-of-done.md` to verify that these updates, together with
+the implementation and its validation, meet the project's completion
+criteria. This shared checklist is reused across stories and guides the
+final approval of consolidation.
 
 ```mermaid
 flowchart LR
@@ -441,7 +456,7 @@ are met, mark the story complete in `backlog.md`.
 
 Consolidation completes the development cycle for a story. The next
 story can then be selected from `backlog.md`, using the updated
-project-level documentation as context.
+project specs as context.
 
 
 ## Frequently Asked Questions
