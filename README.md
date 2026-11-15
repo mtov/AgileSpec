@@ -12,6 +12,7 @@
 - [User Story Specs](#user-story-specs)
 - [Folder Structure](#folder-structure)
 - [Workflow](#workflow)
+- [Summary and Key Principles](#summary-and-key-principles)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Example: PodLite](#example-podlite)
 - [License](#license)
@@ -334,13 +335,22 @@ When finished, summarize:
 Do not update project-level documentation or mark the story complete.
 ```
 
-For convenience, this prompt is saved in the repository's
-[`prompts/implementation.md`](prompts/implementation.md) file.
-You can use it as follows:
+#### Automation
+
+The implementation prompt is available in
+[`prompts/implementation.md`](prompts/implementation.md). To use it:
 
 ```text
 Follow prompts/implementation.md to implement story [n] in
-[project name].
+[project directory].
+```
+
+You can also use the corresponding
+[skill](.agents/skills/agilespec-implementation/SKILL.md), which reads the
+same prompt to keep the instructions in one place. In Codex:
+
+```text
+$agilespec-implementation Implement story [n] in [project directory].
 ```
 
 ### Review and Verification
@@ -477,13 +487,22 @@ until the developer approves consolidation and all completion criteria
 are met.
 ```
 
-For convenience, this prompt is saved in the repository's
-[`prompts/consolidation.md`](prompts/consolidation.md) file.
-You can use it as follows:
+#### Automation
+
+The consolidation prompt is available in
+[`prompts/consolidation.md`](prompts/consolidation.md). To use it:
 
 ```text
 Follow prompts/consolidation.md to consolidate story [n] in
 [project directory].
+```
+
+You can also use the corresponding
+[skill](.agents/skills/agilespec-consolidation/SKILL.md), which reads the
+same prompt to keep the instructions in one place. In Codex:
+
+```text
+$agilespec-consolidation Consolidate story [n] in [project directory].
 ```
 
 Once consolidation is approved and all criteria
