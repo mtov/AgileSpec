@@ -2,7 +2,7 @@
   <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# An Agile Workflow for AI-Assisted Software Development
+# An Agile Workflow for AI-Assisted Software Delivery
 
 ## Table of Contents
 
@@ -99,7 +99,8 @@ At the Project Specs level, there are five main Markdown documents:
   description and status for each. This gives AI coding agents a global
   view of the system's features and main requirements.
 
-- **`definition-of-done.md`**: Defines shared completion criteria for all
+- **`definition-of-done.md`**: Defines shared completion criteria for
+  all
   stories, such as passing tests, human validation, and consolidated
   project specs.
 
@@ -151,7 +152,8 @@ refined and extended as user stories are implemented.
 
 As in traditional agile methods, AgileSpec organizes development around
 individual user stories. A Product Owner or Product Manager selects a
-story from `backlog.md` and assigns it to a developer for implementation.
+story from `backlog.md` and assigns it to a developer for
+implementation.
 
 ```mermaid
 flowchart LR
@@ -225,15 +227,21 @@ my-project/
   other-folders/
 ```
 
-Here, `src/` contains application code, `tests/` contains automated tests,
+Here, `src/` contains application code, `tests/` contains automated
+tests,
 `README.md` explains setup and usage, and `LICENSE` states the project's
 license. This layout is illustrative; source and test directories may
 follow the conventions of the chosen technology.
 
-Even after a user story has been implemented, its directory and associated
-files should remain in the project repository. They serve as documentation
-for the story and can be particularly useful when future maintenance is
-required, such as fixing a bug or adapting to changes in business rules.
+Even after a user story has been implemented, its directory and
+associated
+files should remain in the project repository. They serve as
+documentation
+for the story, support **traceability between requirements, design
+decisions, and implementation**, and can be particularly useful during
+future maintenance,
+such as fixing bugs or adapting to changes in business rules.
+
 
 ## Workflow
 
@@ -274,7 +282,8 @@ flowchart TD
 AgileSpec begins with an inception phase that establishes the project's
 scope and initial technical direction. During this phase, developers
 create an initial `backlog.md` with prioritized user stories and define
-key architectural, database, and UI decisions in the other project specs.
+key architectural, database, and UI decisions in the other project
+specs.
 They also create a short `definition-of-done.md` to establish shared
 completion criteria.
 
@@ -289,7 +298,8 @@ the story without introducing unnecessary documentation.
 
 ### Implementation
 
-Once the specs are approved, an AI coding agent implements the story using
+Once the specs are approved, an AI coding agent implements the story
+using
 both the project and story specs.
 
 The developer can initiate implementation with a prompt such as:
@@ -337,7 +347,8 @@ Follow prompts/implementation.md to implement story [n] in
 
 After implementation, the developer reviews the changes and verifies
 that the story satisfies its acceptance criteria. Use
-`definition-of-done.md` to check shared requirements such as passing tests
+`definition-of-done.md` to check shared requirements such as passing
+tests
 and human validation; consolidation is checked in the next activity.
 
 Verification may involve inspecting the generated code, running
@@ -378,15 +389,18 @@ flowchart LR
 ```
 
 After a story is implemented and validated, incorporate its relevant
-decisions into the project specs. Mark the story complete in `backlog.md`
-only after consolidation is approved and the `Definition of Done` is met.
+decisions into the project specs. Mark the story complete in
+`backlog.md`
+only after consolidation is approved and the `Definition of Done` is
+met.
 
 This activity, called **Consolidation**, ensures that the global
 specifications remain consistent with the implemented system, using the
 correspondence between the two levels:
 
 - **`acceptance.md` to `backlog.md`**: Adjust the summary if needed and
-  mark complete after consolidation. Keep detailed criteria in the story.
+  mark complete after consolidation. Keep detailed criteria in the
+  story.
 - **`design.md` to `architecture.md`**: Incorporate relevant
   architectural decisions.
 - **`views.md` to `ui.md`**: Incorporate relevant global UI structure
@@ -480,6 +494,33 @@ story can then be selected from `backlog.md`, using the updated
 project specs as context.
 
 
+## Summary and Key Principles
+
+AgileSpec is guided by the following principles and characteristics:
+
+1. Software Delivery: Assumes that product discovery has already
+   produced a backlog of user stories ready for implementation.
+
+2. Agile Principles: Supports iterative and incremental design and
+   implementation, avoiding Big Design Up Front (BDUF).
+
+3. Agile Events: Remains compatible with events such as sprint planning,
+   daily stand-ups, reviews, and retrospectives.
+
+4. Agile Roles: Accommodates roles such as Product Owners, Product
+   Managers, and Scrum Masters.
+
+5. Traceability: Preserves the specifications behind AI-generated code,
+   facilitating future maintenance and evolution.
+
+6. Conceptual Integrity: Uses project-level specifications to maintain
+   consistency in architecture, user interfaces, and database design.
+
+7. Coding Agent Autonomy: Allows agents to plan and implement solutions
+   autonomously while adhering to project-level and story-level
+   specifications.
+
+
 ## Frequently Asked Questions
 
 **1. Does AgileSpec define events such as sprints, reviews, and
@@ -520,7 +561,8 @@ See [PodLite](examples/podlite/README.md) for the podcast-player example
 and its setup instructions.
 
 - [PodLite v0](examples/podlite/podlite-v0/README.md): inception.
-- [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS subscriptions).
+- [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS
+  subscriptions).
 - [PodLite v1 Consolidated](examples/podlite/podlite-v1-consolidated/README.md):
   consolidation awaiting review.
 
