@@ -486,6 +486,12 @@ criteria for developer review. Leave the story unchecked in backlog.md
 until the developer approves consolidation and all completion criteria
 are met.
 ```
+Once consolidation is approved and all criteria
+are met, mark the story complete in `backlog.md`.
+
+Consolidation completes the development cycle for a story. The next
+story can then be selected from `backlog.md`, using the updated
+project specs as context.
 
 #### Automation
 
@@ -504,14 +510,6 @@ same prompt to keep the instructions in one place. In Codex:
 ```text
 $agilespec-consolidation Consolidate story [n] in [project directory].
 ```
-
-Once consolidation is approved and all criteria
-are met, mark the story complete in `backlog.md`.
-
-Consolidation completes the development cycle for a story. The next
-story can then be selected from `backlog.md`, using the updated
-project specs as context.
-
 
 ## Summary and Key Principles
 
