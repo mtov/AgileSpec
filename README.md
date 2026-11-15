@@ -520,6 +520,21 @@ AgileSpec is guided by the following principles and characteristics:
    autonomously while adhering to project-level and story-level
    specifications.
 
+```mermaid
+flowchart TB
+    A["AgileSpec"]
+    A --> B["Agile Foundation"]
+    A --> C["Specification-Driven"]
+    A --> D["Agent-Oriented"]
+
+    B --> E["Iterative Delivery"]
+    B --> F["Agile Events & Roles"]
+
+    C --> G["Traceability"]
+    C --> H["Conceptual Integrity"]
+
+    D --> I["Agent Autonomy"]
+```
 
 ## Frequently Asked Questions
 
