@@ -101,8 +101,7 @@ At the Project Specs level, there are five main Markdown documents:
   view of the system's features and main requirements.
 
 - **`definition-of-done.md`**: Defines shared completion criteria for
-  all
-  stories, such as passing tests, human validation, and consolidated
+  all stories, such as passing tests, human validation, and consolidated
   project specs.
 
 - **`architecture.md`**: A high-level description of the system's
@@ -205,8 +204,10 @@ the developer responsible for implementing the story.
 
 ## Folder Structure
 
-We recommend storing the proposed specifications in a directory named
-`AgileSpec/` at the root of the project.
+AgileSpec specifications should be stored alongside the source
+code, in an `AgileSpec/` directory at the root of the project.
+This makes them easier for agents to access and allows them to
+be versioned together with the code.
 
 ```text
 my-project/
@@ -228,20 +229,12 @@ my-project/
   other-folders/
 ```
 
-Here, `src/` contains application code, `tests/` contains automated
-tests,
-`README.md` explains setup and usage, and `LICENSE` states the project's
-license. This layout is illustrative; source and test directories may
-follow the conventions of the chosen technology.
-
 Even after a user story has been implemented, its directory and
-associated
-files should remain in the project repository. They serve as
-documentation
-for the story, support **traceability between requirements, design
-decisions, and implementation**, and can be particularly useful during
-future maintenance,
-such as fixing bugs or adapting to changes in business rules.
+associated files should remain in the project repository. They serve as
+documentation for the story, support **traceability between requirements,
+design decisions, and implementation**, and can be particularly useful
+during future maintenance, such as fixing bugs or adapting to changes
+in business rules.
 
 
 ## Workflow
@@ -358,8 +351,7 @@ $agilespec-implementation Implement story [n] in [project directory].
 After implementation, the developer reviews the changes and verifies
 that the story satisfies its acceptance criteria. Use
 `definition-of-done.md` to check shared requirements such as passing
-tests
-and human validation; consolidation is checked in the next activity.
+tests and human validation; consolidation is checked in the next activity.
 
 Verification may involve inspecting the generated code, running
 automated tests, and manually interacting with the application.
@@ -400,9 +392,8 @@ flowchart LR
 
 After a story is implemented and validated, incorporate its relevant
 decisions into the project specs. Mark the story complete in
-`backlog.md`
-only after consolidation is approved and the `Definition of Done` is
-met.
+`backlog.md` only after consolidation is approved and the
+`Definition of Done` is met.
 
 This activity, called **Consolidation**, ensures that the global
 specifications remain consistent with the implemented system, using the
@@ -586,6 +577,24 @@ constraints, including architecture, stored data, and interface layout.
 Agents choose the steps needed to implement and test each story, while
 `definition-of-done.md` sets shared completion criteria, such as passing
 tests, human validation, and approved consolidation.
+
+**5. What is the difference between project specs and agent configuration
+files, such as `AGENTS.md`?**
+
+Agent configuration files provide instructions that are included in the context
+of each prompt sent to an LLM. They should therefore contain information
+that the LLM should always be aware of.
+
+In contrast, project specs contain more detailed information about the system
+and do not need to be included in every prompt. For example, suppose you
+are asking an agent to change the position or color of an element on a web
+page. In this case, information about the system's architecture or database
+schema is unlikely to be relevant.
+
+Thus, agent configuration files provide general instructions that apply
+throughout development, while project specs provide information that
+agents can consult as needed.
+
 
 ## Example: PodLite
 
