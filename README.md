@@ -4,6 +4,9 @@
 
 # An Agile Workflow for AI-Assisted Software Delivery
 
+[Frequently Asked Questions](faq.md) |
+[PodLite Example](examples/podlite/README.md)
+
 ## Table of Contents
 
 - [Motivation](#motivation)
@@ -13,7 +16,6 @@
 - [Folder Structure](#folder-structure)
 - [Workflow](#workflow)
 - [Summary and Key Principles](#summary-and-key-principles)
-- [Frequently Asked Questions](faq.md)
 - [Example: PodLite](#example-podlite)
 - [License](#license)
 
@@ -543,10 +545,6 @@ flowchart TB
 
     D --> I["Agent Autonomy"]
 ```
-
-## Frequently Asked Questions
-
-See the [FAQ](faq.md) for additional explanations about AgileSpec.
 
 ## Example: PodLite
 

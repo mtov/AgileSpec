@@ -1,4 +1,10 @@
-# Frequently Asked Questions
+<p align="center">
+  <img src="logo.png" alt="AgileSpec logo" width="640">
+</p>
+
+# An Agile Workflow for AI-Assisted Software Delivery
+
+## Frequently Asked Questions
 
 [Back to README](README.md)
 
