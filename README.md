@@ -24,6 +24,8 @@ Feedback and suggestions are welcome.
 
 ## Motivation
 
+*Lightweight specifications over code nobody understands*
+
 Agile methods emerged when developers performed most software
 development tasks themselves, from requirements and design to coding and
 testing. Today, AI agents can take on much of this work, significantly

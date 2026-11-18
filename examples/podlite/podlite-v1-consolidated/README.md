@@ -32,8 +32,9 @@ Changes relative to `podlite-v1`: `-` removed, `+` added.
 
 ### architecture.md
 
-Replaced generic layers with the implemented modules. Each module now
-has a brief description of its responsibility.
+Identified the modules responsible for the interface, application logic,
+RSS feeds, and persistence. This connects the architectural structure to
+the source code and clarifies where each responsibility is implemented.
 
 ```diff
 --- podlite-v1/architecture.md
@@ -67,8 +68,8 @@ show the cover, title, and plain-text description.
 
 ### database.md
 
-Documented the database location and the `subscriptions` schema. Missing
-covers and descriptions are stored as NULL.
+Documented the database location and the structure of the
+`subscriptions` table. Missing covers and descriptions are stored as NULL.
 
 ```diff
 --- podlite-v1/database.md
