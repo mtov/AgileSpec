@@ -1,5 +1,5 @@
-> **Initial version:** AgileSpec is an evolving proposal.
-> Feedback and suggestions are welcome.
+**Initial version:** AgileSpec is an evolving proposal.
+Feedback and suggestions are welcome.
 
 <p align="center">
   <img src="logo.png" alt="AgileSpec logo" width="640">
