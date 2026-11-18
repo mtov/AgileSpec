@@ -531,6 +531,11 @@ flowchart TB
 See [PodLite](examples/podlite/README.md) for the podcast-player example
 and its setup instructions.
 
+<p align="center">
+  <img src="examples/podlite/podlite-v1/screenshot1-v1.png"
+       alt="PodLite: successful podcast subscription" width="480">
+</p>
+
 - [PodLite v0](examples/podlite/podlite-v0/README.md): inception.
 - [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS
   subscriptions).

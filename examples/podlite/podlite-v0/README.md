@@ -19,13 +19,12 @@ has been implemented.
 
 - [UI](AgileSpec/project/ui.md)
 
-  Defines a single-column Streamlit interface with English labels,
-  consistent controls, and clear feedback.
+  Defines a single-column Streamlit interface with English labels
+  and consistent controls.
 
 - [Database](AgileSpec/project/database.md)
 
-  Defines local SQLite storage with unique RSS URLs and persistent
-  subscriptions.
+  Defines local SQLite storage, parameterized queries, and transactions.
 
 - [Definition of Done](AgileSpec/project/definition-of-done.md)
 

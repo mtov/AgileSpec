@@ -11,7 +11,7 @@ in my list.
 ## Project Specs
 
 Architecture, UI, and database documentation reflect the implementation.
-The backlog and shared Definition of Done await final completion approval:
+Story 1 remains unchecked until consolidation is approved:
 
 - [backlog.md](AgileSpec/project/backlog.md)
 - [architecture.md](AgileSpec/project/architecture.md)
@@ -56,7 +56,7 @@ show the cover, title, and plain-text description.
 ```diff
 --- podlite-v1/ui.md
 +++ podlite-v1-consolidated/ui.md
-@@ -6,0 +7,6 @@
+@@ -5,0 +6,6 @@
 +- Use fallbacks for missing covers and descriptions.
 +
 +## Home
@@ -73,7 +73,7 @@ covers and descriptions are stored as NULL.
 ```diff
 --- podlite-v1/database.md
 +++ podlite-v1-consolidated/database.md
-@@ -6,0 +7,13 @@
+@@ -5,0 +6,13 @@
 +- Store data in `data/podlite.db`, created on first use.
 +
 +## Subscriptions

@@ -15,7 +15,7 @@ in my list.
 - Trim URL whitespace; reject empty, invalid, or duplicate URLs.
 - Accept only HTTP or HTTPS URLs with a host.
 - Show an error for unavailable or invalid RSS feeds, missing titles,
-  or database failures. Do not report success or save invalid feeds.
+  or database failures. Do not save invalid feeds.
 - Missing or unavailable cover: show a default image.
 - Empty description: show "No description available".
 - Empty list: invite the listener to add a podcast.

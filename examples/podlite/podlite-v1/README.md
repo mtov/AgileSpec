@@ -7,8 +7,7 @@ in my list.
 
 ## Project Specs
 
-Inherited from v0, with the backlog updated to reflect story 1's
-implementation pending validation:
+Inherited from v0; this snapshot precedes consolidation:
 
 - [backlog.md](AgileSpec/project/backlog.md)
 - [architecture.md](AgileSpec/project/architecture.md)

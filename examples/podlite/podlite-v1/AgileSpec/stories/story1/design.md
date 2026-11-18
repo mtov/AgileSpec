@@ -5,7 +5,8 @@
 - `app.py`: Streamlit form, subscription list, and feedback.
 - `podlite/service.py`: validate URLs and coordinate feeds and storage.
 - `podlite/feeds.py`: fetch RSS and extract podcast metadata.
-- `podlite/database.py`: create, save, and list subscriptions.
+- `podlite/database.py`: initialize the database, save, and list
+  subscriptions.
 
 ## Decisions
 
@@ -17,4 +18,4 @@
 - Save metadata in `data/podlite.db`; create it on first use.
 - List saved subscriptions in insertion order without refetching feeds.
 
-Test with pytest, temporary databases, and mocked feed requests.
+Test using temporary databases and mocked feed requests.
