@@ -9,20 +9,20 @@
 [Back to README](README.md)
 
 ```mermaid
-mindmap
-  root((AgileSpec FAQ))
-    Agile Practices
-      Existing events and roles
-      Compatible with Scrum and Kanban
-    Specifications
-      Flexible and extensible
-      Project and Story levels
-    Agent Autonomy
-      No mandatory execution plan
-      Shared Definition of Done
-    Agent Configuration
-      AGENTS.md: General instructions
-      Project specs: On-demand context
+flowchart TB
+    A["AgileSpec FAQ"]
+    A --> B["Agile Practices"]
+    A --> C["Specifications"]
+    A --> D["Agent Autonomy"]
+    A --> E["Agent Configuration"]
+
+    B --> B1["Existing events and roles remain"]
+    C --> C1["Flexible and extensible"]
+    C1 --> C2["Two specification levels"]
+    D --> D1["No mandatory execution plan"]
+    D --> D2["Shared Definition of Done"]
+    E --> E1["AGENTS.md: Always-on instructions"]
+    E --> E2["Project specs: Consult as needed"]
 ```
 
 **1. Does AgileSpec define events such as sprints, reviews, and
