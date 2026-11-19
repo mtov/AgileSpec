@@ -362,7 +362,7 @@ flowchart TD
     A["Review and Verification"] --> B{"Approved?"}
     B -->|Yes| C["Consolidation"]
     B -->|No| D["Revise Specs / Reimplement"]
-    D --> A
+    D --> B
 ```
 
 ### Consolidation
