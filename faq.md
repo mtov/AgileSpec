@@ -29,6 +29,11 @@ Absolutely. In keeping with agile principles, AgileSpec is flexible by
 design. Teams can extend, adapt, or simplify its specifications and
 workflow to suit their project's needs.
 
+The core concept of AgileSpec are the two levels of specification:
+project-level and user story-level. Project-level specifications
+guide the specification and implementation of individual user
+stories, while user story-level specifications are used to consolidate
+and evolve the project-level specifications.
 
 **4. Why doesn't AgileSpec require a task list or an agent execution
 plan?**

@@ -1,5 +1,5 @@
-**Initial version:** AgileSpec is an evolving proposal.
-Feedback and suggestions are welcome.
+**Note:** AgileSpec is currently a preliminary proposal and is
+subject to further refinement and evolution.
 
 <p align="center">
   <img src="logo.png" alt="AgileSpec logo" width="640">
@@ -20,11 +20,12 @@ Feedback and suggestions are welcome.
 - [Workflow](#workflow)
 - [Summary and Key Principles](#summary-and-key-principles)
 - [Example: PodLite](#example-podlite)
+- [Frequently Asked Questions](#frequently-asked-questions)
 - [License](#license)
 
 ## Motivation
 
-*Lightweight specifications over code nobody understands*
+*Lightweight specifications over code nobody understands.*
 
 Agile methods emerged when developers performed most software
 development tasks themselves, from requirements and design to coding and
@@ -543,6 +544,10 @@ and its setup instructions.
   subscriptions).
 - [PodLite v1 Consolidated](examples/podlite/podlite-v1-consolidated/README.md):
   consolidation awaiting review.
+
+## Frequently Asked Questions
+
+See the [FAQ](faq.md) for answers to common questions about AgileSpec.
 
 ## License
 
