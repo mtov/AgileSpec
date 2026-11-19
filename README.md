@@ -72,7 +72,7 @@ keeps both levels aligned as the system evolves.
 ```mermaid
 flowchart TB
     P["Project Specs"] -->|"Guide"| S["User Story Specs"]
-    S -->|"Refine and Evolve"| P
+    S -->|"Consolidate"| P
 ```
 
 AI agents can help maintain, and synchronize these documents with the
@@ -88,17 +88,16 @@ flowchart LR
     subgraph S["AgileSpecs"]
         direction TB
         C(["Create"])
-        U(["Update"])
         R(["Review"])
         P(["Approve"])
         RR(["Read"])
+        U(["Update"])
     end
     H --- C
     H --- R
     H --- P
     A --- RR
     A --- U
-
 ```
 
 ## Project Specs
@@ -491,6 +490,7 @@ $agilespec-consolidation Consolidate story [n] in [project directory].
 In summary, AgileSpec follows a **spec-anchored approach**: specifications
 are created before implementation, retained alongside the code, and
 continuously evolved to support software maintenance and evolution.
+
 Its distinguishing feature is the **Specification Alignment Loop**, which
 ensures that project specs guide individual stories while story-level
 decisions continuously refine and evolve project specs.
@@ -558,7 +558,7 @@ and its setup instructions.
   story 1 consolidated and approved.
 - [PodLite v2](examples/podlite/podlite-v2/README.md): Story 2
   (episode browsing), consolidated and approved.
-  
+
 ## Frequently Asked Questions
 
 See the [FAQ](faq.md) for answers to common questions about AgileSpec.
