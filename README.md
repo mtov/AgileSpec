@@ -82,22 +82,8 @@ reflects the system and its intended evolution.
 
 ```mermaid
 flowchart LR
-    A["AI Agents"]
-    H["Developers"]
-
-    subgraph S["AgileSpecs"]
-        direction TB
-        C(["Create"])
-        R(["Review"])
-        P(["Approve"])
-        RR(["Read"])
-        U(["Update"])
-    end
-    H --- C
-    H --- R
-    H --- P
-    A --- RR
-    A --- U
+    H["Developers"] --> R["Review & Approve Specs"]
+    A["AI Agents"] --> C["Read & Update Specs"]
 ```
 
 ## Project Specs
