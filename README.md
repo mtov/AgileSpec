@@ -9,7 +9,6 @@ subject to further refinement and evolution.
 
 [Frequently Asked Questions](faq.md) |
 [PodLite Example](examples/podlite/README.md)
-
 ## Table of Contents
 
 - [Motivation](#motivation)
@@ -22,7 +21,6 @@ subject to further refinement and evolution.
 - [Example: PodLite](#example-podlite)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [License](#license)
-
 ## Motivation
 
 *Lightweight specifications over opaque implementations.*
@@ -31,7 +29,6 @@ Agile methods emerged when developers performed most software
 development tasks themselves, from requirements and design to coding and
 testing. Today, AI agents can take on much of this work, significantly
 accelerating implementation.
-
 This shift calls for new workflows that help developers define
 lightweight specifications, guide AI coding agents during
 implementation, and verify that the resulting software meets its
@@ -40,7 +37,6 @@ requirements while remaining consistent with project-wide decisions.
 To address this need, we propose **AgileSpec**, a workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
-
 ## Specifications
 
 AgileSpec organizes specifications into two main levels:
@@ -67,6 +63,18 @@ flowchart LR
     class P,S level
 ```
 
+The two specification levels are connected through a **Specification
+Alignment Loop**: project specs guide the creation and implementation of
+user story specs, while decisions made during story implementation are
+consolidated back into the project specs. This continuous feedback loop
+keeps both levels aligned as the system evolves.
+
+```mermaid
+flowchart TB
+    P["Project Specs"] -->|"Guide"| S["User Story Specs"]
+    S -->|"Refine and Evolve"| P
+```
+
 AI agents can help maintain, and synchronize these documents with the
 codebase. However, developers remain responsible for reviewing and
 approving their content, ensuring that the documentation accurately
@@ -85,7 +93,6 @@ flowchart LR
         P(["Approve"])
         RR(["Read"])
     end
-
     H --- C
     H --- R
     H --- P
@@ -103,7 +110,6 @@ context for AI coding agents. They should remain accessible and up to
 date throughout development.
 
 At the Project Specs level, there are five main Markdown documents:
-
 - **`backlog.md`**: Lists user stories in priority order, with a brief
   description and status for each. This gives AI coding agents a global
   view of the system's features and main requirements.
@@ -111,7 +117,6 @@ At the Project Specs level, there are five main Markdown documents:
 - **`definition-of-done.md`**: Defines shared completion criteria for
   all stories, such as passing tests, human validation, and consolidated
   project specs.
-
 - **`architecture.md`**: A high-level description of the system's
   architecture, including its main modules, their responsibilities, and
   architectural constraints. For example, services must access the database
@@ -119,7 +124,6 @@ At the Project Specs level, there are five main Markdown documents:
   should also describe the project's main technology choices, including
   programming languages, frameworks, and databases, preferably in a
   dedicated section.
-
 - **`database.md`**: Describes the database schema, including tables,
   their columns and data types, primary and foreign keys, relationships
   between tables, and integrity constraints.
@@ -131,7 +135,6 @@ At the Project Specs level, there are five main Markdown documents:
 ```mermaid
 flowchart LR
     P["Project Specs"]
-
     P --> B["backlog.md"]
     P --> F["definition-of-done.md"]
     P --> A["architecture.md"]
@@ -150,7 +153,6 @@ need to be complete before implementation begins**. Requiring detailed
 specifications upfront would contradict agile principles and risk
 introducing Big Design Up Front (BDUF), an approach in which detailed
 design decisions are made before development starts.
-
 Instead, AgileSpec treats project documentation as a set of **living
 documents** that evolve alongside the software. They are progressively
 refined and extended as user stories are implemented.
@@ -192,7 +194,6 @@ implemented, libraries to be used, and interactions with external services.
 ```mermaid
 flowchart LR
     S["User Story Specs"]
-
     S --> A["acceptance.md"]
     S --> B["design.md"]
     S --> C["views.md"]
@@ -242,7 +243,6 @@ documentation for the story, support **traceability between requirements,
 design decisions, and the source code**, and can be particularly useful
 during future maintenance, such as fixing bugs or adapting to changes
 in business rules.
-
 
 ## Workflow
 
@@ -491,8 +491,9 @@ $agilespec-consolidation Consolidate story [n] in [project directory].
 In summary, AgileSpec follows a **spec-anchored approach**: specifications
 are created before implementation, retained alongside the code, and
 continuously evolved to support software maintenance and evolution.
-Its distinguishing feature is the bidirectional relationship
-between project-level and user story-level specifications.
+Its distinguishing feature is the **Specification Alignment Loop**, which
+ensures that project specs guide individual stories while story-level
+decisions continuously refine and evolve project specs.
 
 AgileSpec is also guided by the following principles and characteristics:
 
@@ -557,7 +558,7 @@ and its setup instructions.
   story 1 consolidated and approved.
 - [PodLite v2](examples/podlite/podlite-v2/README.md): Story 2
   (episode browsing), consolidated and approved.
-
+  
 ## Frequently Asked Questions
 
 See the [FAQ](faq.md) for answers to common questions about AgileSpec.
