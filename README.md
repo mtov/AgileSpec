@@ -25,7 +25,7 @@ subject to further refinement and evolution.
 
 ## Motivation
 
-*Lightweight specifications over code nobody understands.*
+*Lightweight specifications over opaque implementations.*
 
 Agile methods emerged when developers performed most software
 development tasks themselves, from requirements and design to coding and
@@ -488,7 +488,13 @@ $agilespec-consolidation Consolidate story [n] in [project directory].
 
 ## Summary and Key Principles
 
-AgileSpec is guided by the following principles and characteristics:
+In summary, AgileSpec follows a **spec-anchored approach**: specifications
+are created before implementation, retained alongside the code, and
+continuously evolved to support software maintenance and evolution.
+Its distinguishing feature is the bidirectional relationship
+between project-level and user story-level specifications.
+
+AgileSpec is also guided by the following principles and characteristics:
 
 1. **Focus on Software Delivery**: Assumes that product discovery has
 already produced a backlog of user stories ready for implementation.
@@ -513,6 +519,10 @@ and database design.
 solutions autonomously while adhering to project-level and story-level
 specifications.
 
+8. **Tool Independence**: Does not depend on specific tools, IDEs, or AI
+coding agents, allowing teams to use their preferred development
+environments.
+
 ```mermaid
 flowchart TB
     A["AgileSpec"]
@@ -527,6 +537,7 @@ flowchart TB
     C --> H["Conceptual Integrity"]
 
     D --> I["Agent Autonomy"]
+    D --> J["Tool Independence"]
 ```
 
 ## Example: PodLite
