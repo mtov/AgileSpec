@@ -8,8 +8,10 @@ and backlog, capturing a development step.
 
 - [podlite-v0](podlite-v0/README.md): inception and initial project specs.
 - [podlite-v1](podlite-v1/README.md): RSS subscriptions and local storage.
-- [podlite-v1-consolidated](podlite-v1-consolidated/README.md): consolidation
-  awaiting review.
+- [podlite-v1-consolidated](podlite-v1-consolidated/README.md): story 1
+  consolidated and approved.
+- [podlite-v2](podlite-v2/README.md): episode browsing, consolidated
+  and approved.
 
 ## Setup and Run
 
@@ -24,4 +26,4 @@ source .venv/bin/activate
 
 Version v0 contains specifications only; there is no application to run
 yet. To run the application, follow the
-[v1 instructions](podlite-v1/README.md#run).
+[v2 instructions](podlite-v2/README.md#run).

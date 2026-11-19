@@ -2,7 +2,7 @@
   <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# An Agile-Inspired Workflow for AI-Assisted Software Development
+# An Agile Workflow for AI-Assisted Software Development
 
 ## Frequently Asked Questions
 

@@ -2,7 +2,7 @@
 
 Stories are listed in priority order.
 
-1. [ ] As a listener, I want to subscribe
+1. [x] As a listener, I want to subscribe
    using an RSS URL and keep the podcast in my list.
 
 2. [ ] As a listener, I want to see a podcast's episodes so that I

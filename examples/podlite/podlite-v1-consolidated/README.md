@@ -3,7 +3,7 @@
 [PodLite](../README.md) | [AgileSpec](../../../README.md)
 
 Project specs updated from the approved story 1 implementation.
-Consolidation awaits review; the story remains unchecked in the backlog.
+Consolidation approved; story 1 is complete in the backlog.
 
 As a listener, I want to subscribe using an RSS URL and keep the podcast
 in my list.
@@ -11,7 +11,7 @@ in my list.
 ## Project Specs
 
 Architecture, UI, and database documentation reflect the implementation.
-Story 1 remains unchecked until consolidation is approved:
+Story 1 is complete; the remaining stories are planned:
 
 - [backlog.md](AgileSpec/project/backlog.md)
 - [architecture.md](AgileSpec/project/architecture.md)

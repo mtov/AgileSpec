@@ -5,7 +5,7 @@ subject to further refinement and evolution.
   <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# An Agile-Inspired Workflow for AI-Assisted Software Development
+# An Agile Workflow for AI-Assisted Software Development
 
 [Frequently Asked Questions](faq.md) |
 [PodLite Example](examples/podlite/README.md)
@@ -543,7 +543,9 @@ and its setup instructions.
 - [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS
   subscriptions).
 - [PodLite v1 Consolidated](examples/podlite/podlite-v1-consolidated/README.md):
-  consolidation awaiting review.
+  story 1 consolidated and approved.
+- [PodLite v2](examples/podlite/podlite-v2/README.md): Story 2
+  (episode browsing), consolidated and approved.
 
 ## Frequently Asked Questions
 
