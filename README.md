@@ -5,7 +5,7 @@ subject to further refinement and evolution.
   <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# An Agile-Inspired Workflow for AI-Assisted Software Delivery
+# An Agile-Inspired Workflow for AI-Assisted Software Development
 
 [Frequently Asked Questions](faq.md) |
 [PodLite Example](examples/podlite/README.md)

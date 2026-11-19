@@ -2,11 +2,28 @@
   <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# An Agile-Inspired Workflow for AI-Assisted Software Delivery
+# An Agile-Inspired Workflow for AI-Assisted Software Development
 
 ## Frequently Asked Questions
 
 [Back to README](README.md)
+
+```mermaid
+mindmap
+  root((AgileSpec FAQ))
+    Agile Practices
+      Existing events and roles
+      Compatible with Scrum and Kanban
+    Specifications
+      Flexible and extensible
+      Project and Story levels
+    Agent Autonomy
+      No mandatory execution plan
+      Shared Definition of Done
+    Agent Configuration
+      AGENTS.md: General instructions
+      Project specs: On-demand context
+```
 
 **1. Does AgileSpec define events such as sprints, reviews, and
 retrospectives?**
@@ -34,6 +51,15 @@ project-level and user story-level. Project-level specifications
 guide the specification and implementation of individual user
 stories, while user story-level specifications are used to consolidate
 and evolve the project-level specifications.
+
+```mermaid
+flowchart LR
+    B["User Story-Level Specs"]
+    A["Project-Level Specs"]
+
+    B -->|Evolve| A
+    A -->|Guide| B
+```
 
 **4. Why doesn't AgileSpec require a task list or an agent execution
 plan?**
