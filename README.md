@@ -13,7 +13,7 @@ to further refinement and evolution.
 ## Table of Contents
 
 - [Motivation](#motivation)
-- [Who Is AgileSpec For?](#who-is-agilespec-for)
+- [Who Should Use AgileSpec?](#who-should-use-agilespec)
 - [Specifications](#specifications)
 - [Project Specs](#project-specs)
 - [User Story Specs](#user-story-specs)
