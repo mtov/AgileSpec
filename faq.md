@@ -8,23 +8,6 @@
 
 [Back to README](README.md)
 
-```mermaid
-flowchart TB
-    A["AgileSpec FAQ"]
-    A --> B["Agile Practices"]
-    A --> C["Specifications"]
-    A --> D["Agent Autonomy"]
-    A --> E["Agent Configuration"]
-
-    B --> B1["Existing events and roles remain"]
-    C --> C1["Flexible and extensible"]
-    C1 --> C2["Two specification levels"]
-    D --> D1["No mandatory execution plan"]
-    D --> D2["Shared Definition of Done"]
-    E --> E1["AGENTS.md: Always-on instructions"]
-    E --> E2["Project specs: Consult as needed"]
-```
-
 **1. Does AgileSpec define events such as sprints, reviews, and
 retrospectives?**
 
@@ -87,3 +70,10 @@ database schema is unlikely to be relevant.
 Thus, agent configuration files provide general instructions that apply
 throughout development, while project specs provide information that
 agents can consult as needed.
+
+**6. How long should user story specifications be retained?**
+
+User story specs can be valuable for future maintenance activities
+involving the corresponding features. However, as a system evolves 
+over several years, their relevance may gradually diminish. When 
+they no longer provide significant value, they can be archived.
