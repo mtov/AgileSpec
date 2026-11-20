@@ -23,7 +23,7 @@ subject to further refinement and evolution.
 - [License](#license)
 ## Motivation
 
-*Lightweight specifications over opaque implementations.*
+*Lightweight specifications over vibe coding.*
 
 Agile methods emerged when developers performed most software
 development tasks themselves, from requirements and design to coding and
@@ -362,7 +362,7 @@ flowchart TD
     A["Review and Verification"] --> B{"Approved?"}
     B -->|Yes| C["Consolidation"]
     B -->|No| D["Revise Specs / Reimplement"]
-    D --> B
+    D --> A
 ```
 
 ### Consolidation
@@ -473,7 +473,7 @@ $agilespec-consolidation Consolidate story [n] in [project directory].
 
 ## Summary and Key Principles
 
-In summary, AgileSpec follows a **spec-anchored approach**: specifications
+AgileSpec follows a **spec-anchored approach**: specifications
 are created before implementation, retained alongside the code, and
 continuously evolved to support software maintenance and evolution.
 
