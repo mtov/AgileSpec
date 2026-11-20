@@ -13,6 +13,7 @@ to further refinement and evolution.
 ## Table of Contents
 
 - [Motivation](#motivation)
+- [Who Is AgileSpec For?](#who-is-agilespec-for)
 - [Specifications](#specifications)
 - [Project Specs](#project-specs)
 - [User Story Specs](#user-story-specs)
@@ -40,11 +41,13 @@ To address this need, we propose **AgileSpec**, a workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
 
-**When should you use AgileSpec?** When you, your team, or your 
-organization want to adopt an AI-first approach to software development
-without sacrificing a minimum level of specification and traceability, 
-while keeping comprehension debt under control and ensuring that the
-resulting software remains understandable, maintainable, and easy to evolve.
+## Who Should Use AgileSpec?
+
+Teams and organizations that want to adopt an AI-first approach to
+software development while preserving lightweight specifications and
+traceability, keeping comprehension debt under control, and ensuring
+that the software remains understandable, maintainable, and easy to
+evolve.
 
 ## Specifications
 
