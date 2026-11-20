@@ -40,6 +40,12 @@ To address this need, we propose **AgileSpec**, a workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
 
+**When should you use AgileSpec?** When you, your team, or your 
+organization want to adopt an AI-first approach to software development
+without sacrificing a minimum level of specification and traceability, 
+while keeping comprehension debt under control and ensuring that the
+resulting software remains understandable, maintainable, and easy to evolve.
+
 ## Specifications
 
 AgileSpec organizes specifications into two main levels:
