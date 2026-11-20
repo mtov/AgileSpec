@@ -1,23 +1,29 @@
 # Implementation
 
-Implement the requested story in the selected project directory.
+Implement story N using the approved specifications in
+AgileSpec/stories/storyN/:
+- acceptance.md
+- design.md
+- views.md (if present)
+- tables.md (if present)
 
-Read, relative to that directory:
-- `AgileSpec/project/` for global context.
-- `AgileSpec/stories/storyN/` for the story specifications.
+Read AgileSpec/project/ for project-wide context and constraints,
+including the selected story in backlog.md and the shared criteria in
+definition-of-done.md.
 
-Follow `acceptance.md`, `design.md`, and, when present, `views.md` and
-`tables.md`. Preserve existing functionality and avoid unrelated
-changes.
-Ask for clarification if specifications conflict or important decisions
-are missing.
+Follow the approved design, views, and table changes where applicable.
+Preserve existing functionality and avoid unrelated changes. If
+requirements conflict or important decisions are missing, ask for
+clarification before proceeding.
 
-Implement and run automated tests covering Normal Case and Edge Cases.
+Implement and run automated tests covering the Normal Case and Edge
+Cases defined in acceptance.md.
 
-Report:
-- Changes made.
-- Test results and any limitations.
-- Steps for manual validation.
+When finished, summarize:
+- The changes made
+- The tests executed and their results
+- Any limitations or unresolved issues
+- Instructions for manually validating the story
+- Any Definition of Done criteria still pending
 
-Wait for my validation before marking the story complete or updating
-project-level specifications.
+Do not update project-level documentation or mark the story complete.

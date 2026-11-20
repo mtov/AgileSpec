@@ -1,5 +1,5 @@
-**Note:** AgileSpec is currently a preliminary proposal and is
-subject to further refinement and evolution.
+**Note:** AgileSpec is currently a preliminary proposal and is subject
+to further refinement and evolution.
 
 <p align="center">
   <img src="logo.png" alt="AgileSpec logo" width="640">
@@ -9,6 +9,7 @@ subject to further refinement and evolution.
 
 [Frequently Asked Questions](faq.md) |
 [PodLite Example](examples/podlite/README.md)
+
 ## Table of Contents
 
 - [Motivation](#motivation)
@@ -21,6 +22,7 @@ subject to further refinement and evolution.
 - [Example: PodLite](#example-podlite)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [License](#license)
+
 ## Motivation
 
 *Lightweight specifications over vibe coding.*
@@ -28,15 +30,16 @@ subject to further refinement and evolution.
 Agile methods emerged when developers performed most software
 development tasks themselves, from requirements and design to coding and
 testing. Today, AI agents can take on much of this work, significantly
-accelerating implementation.
-This shift calls for new workflows that help developers define
-lightweight specifications, guide AI coding agents during
-implementation, and verify that the resulting software meets its
-requirements while remaining consistent with project-wide decisions.
+accelerating implementation. This shift calls for new workflows that
+help developers define lightweight specifications, guide AI coding
+agents during implementation, and verify that the resulting software
+meets its requirements while remaining consistent with project-wide
+decisions.
 
 To address this need, we propose **AgileSpec**, a workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
+
 ## Specifications
 
 AgileSpec organizes specifications into two main levels:
@@ -50,19 +53,6 @@ AgileSpec organizes specifications into two main levels:
   individual stories. They guide AI agents in implementing each story
   while ensuring consistency with the project specs.
 
-```mermaid
-flowchart LR
-    A["AgileSpec"]
-    A --> P["Project Specs"]
-    A --> S["User Story Specs"]
-
-    classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
-    classDef level fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
-
-    class A root
-    class P,S level
-```
-
 The two specification levels are connected through a **Specification
 Alignment Loop**: project specs guide the creation and implementation of
 user story specs, while decisions made during story implementation are
@@ -75,7 +65,7 @@ flowchart TB
     S -->|"Consolidate"| P
 ```
 
-AI agents can help maintain, and synchronize these documents with the
+AI agents can help maintain and synchronize these documents with the
 codebase. However, developers remain responsible for reviewing and
 approving their content, ensuring that the documentation accurately
 reflects the system and its intended evolution.
@@ -95,6 +85,7 @@ context for AI coding agents. They should remain accessible and up to
 date throughout development.
 
 At the Project Specs level, there are five main Markdown documents:
+
 - **`backlog.md`**: Lists user stories in priority order, with a brief
   description and status for each. This gives AI coding agents a global
   view of the system's features and main requirements.
@@ -102,20 +93,22 @@ At the Project Specs level, there are five main Markdown documents:
 - **`definition-of-done.md`**: Defines shared completion criteria for
   all stories, such as passing tests, human validation, and consolidated
   project specs.
+
 - **`architecture.md`**: A high-level description of the system's
   architecture, including its main modules, their responsibilities, and
-  architectural constraints. For example, services must access the database
-  through repositories rather than directly. This document
+  architectural constraints. For example, services must access the
+  database through repositories rather than directly. This document
   should also describe the project's main technology choices, including
   programming languages, frameworks, and databases, preferably in a
   dedicated section.
+
 - **`database.md`**: Describes the database schema, including tables,
   their columns and data types, primary and foreign keys, relationships
   between tables, and integrity constraints.
 
 - **`ui.md`**: Describes the overall user interface structure,
-  navigation, and shared design conventions. For example, it may
-  define colors, typography, reusable components, and common layouts.
+  navigation, and shared design conventions. For example, it may define
+  colors, typography, reusable components, and common layouts.
 
 ```mermaid
 flowchart LR
@@ -137,25 +130,20 @@ Although these documents provide project-wide guidance, **they do not
 need to be complete before implementation begins**. Requiring detailed
 specifications upfront would contradict agile principles and risk
 introducing Big Design Up Front (BDUF), an approach in which detailed
-design decisions are made before development starts.
-Instead, AgileSpec treats project documentation as a set of **living
-documents** that evolve alongside the software. They are progressively
-refined and extended as user stories are implemented.
+design decisions are made before development starts. Instead, AgileSpec
+treats project documentation as a set of **living documents** that
+evolve alongside the software. They are progressively refined and
+extended as user stories are implemented.
 
 ## User Story Specs
 
 As in traditional agile methods, AgileSpec organizes development around
-individual user stories. A Product Owner or Product Manager selects a
-story from `backlog.md` and assigns it to a developer for
+individual user stories. The team selects a story from `backlog.md` for
 implementation.
 
-```mermaid
-flowchart LR
-    A["backlog.md"] --> B["Selected Story"] --> C["User Story Specs"]
-```
-
-Next, the developer prepares four Markdown files, collectively referred
-to as user story specifications, to guide the story's implementation:
+The developer prepares `acceptance.md` and `design.md`, adding
+`views.md` and `tables.md` when needed. These user story specifications
+guide the story's implementation:
 
 - **`acceptance.md`**: Defines the story's acceptance criteria,
   organized into **Normal Case** and **Edge Cases**. The former
@@ -164,8 +152,9 @@ to as user story specifications, to guide the story's implementation:
   conditions.
 
 - **`design.md`**: Describes story-specific implementation decisions,
-such as classes and functions to be created, API endpoints to be
-implemented, libraries to be used, and interactions with external services.
+  such as classes and functions to be created, API endpoints to be
+  implemented, libraries to be used, and interactions with external
+  services.
 
 - **`views.md`**: Describes story-specific screens, layouts, UI
   components, navigation, and interactions. This file is optional when
@@ -175,14 +164,13 @@ implemented, libraries to be used, and interactions with external services.
   tables, columns, relationships, and constraints. This file is optional
   when the story does not involve database changes.
 
-
 ```mermaid
 flowchart LR
     S["User Story Specs"]
     S --> A["acceptance.md"]
     S --> B["design.md"]
-    S --> C["views.md"]
-    S --> D["tables.md"]
+    S --> C["views.md (optional)"]
+    S --> D["tables.md (optional)"]
 
     classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
     classDef doc fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
@@ -191,16 +179,16 @@ flowchart LR
     class A,B,C,D doc
 ```
 
-As with project specs, these files can be drafted with the
-assistance of AI agents. However, they must be reviewed and approved by
-the developer responsible for implementing the story.
+As with project specs, these files can be drafted with the assistance of
+AI agents. However, they must be reviewed and approved by the developer
+responsible for implementing the story.
 
 ## Folder Structure
 
-AgileSpec specifications should be stored alongside the source
-code, in an `AgileSpec/` directory at the root of the project.
-This makes them easier for agents to access and allows them to
-be versioned together with the code.
+AgileSpec specifications should be stored alongside the source code, in
+an `AgileSpec/` directory at the root of the project. This makes them
+easier for agents to access and allows them to be versioned together
+with the code.
 
 ```text
 my-project/
@@ -215,8 +203,8 @@ my-project/
       storyN/
         acceptance.md
         design.md
-        views.md
-        tables.md
+        views.md (optional)
+        tables.md (optional)
   src/
   tests/
   other-folders/
@@ -224,10 +212,10 @@ my-project/
 
 Even after a user story has been implemented, its directory and
 associated files should remain in the project repository. They serve as
-documentation for the story, support **traceability between requirements,
-design decisions, and the source code**, and can be particularly useful
-during future maintenance, such as fixing bugs or adapting to changes
-in business rules.
+documentation for the story, support **traceability between
+requirements, design decisions, and the source code**, and can be
+particularly useful during future maintenance, such as fixing bugs or
+adapting to changes in business rules.
 
 ## Workflow
 
@@ -241,12 +229,12 @@ activities:
   - Review and Verification
 - Consolidation
 
-The first activity establishes the project's initial context. The
-next three activities are repeated for each user story, allowing
-the system and its specifications to evolve incrementally. The last
-activity consolidates the decisions made during story implementation
-into the project's global specifications, keeping them consistent
-with the evolving implementation.
+The first activity establishes the project's initial context. The next
+three activities are repeated for each user story, allowing the system
+and its specifications to evolve incrementally. The last activity
+consolidates the decisions made during story implementation into the
+project's global specifications, keeping them consistent with the
+evolving implementation.
 
 ```mermaid
 flowchart TD
@@ -281,8 +269,9 @@ UI or database changes are involved.
 The goal is to provide enough detail for an AI coding agent to implement
 the story without introducing unnecessary documentation.
 
-For concrete examples of user story specifications, see how AgileSpec is used to implement a simple podcast player,
-called [PodLite](examples/podlite/README.md)
+For concrete examples of user story specifications, see how AgileSpec is
+used to implement a simple podcast player called
+[PodLite](examples/podlite/README.md).
 
 ### Implementation
 
@@ -332,8 +321,8 @@ Follow prompts/implementation.md to implement story [n] in
 ```
 
 You can also use the corresponding
-[skill](.agents/skills/agilespec-implementation/SKILL.md), which reads the
-same prompt to keep the instructions in one place. In Codex:
+[skill](.agents/skills/agilespec-implementation/SKILL.md), which reads
+the same prompt to keep the instructions in one place. In Codex:
 
 ```text
 $agilespec-implementation Implement story [n] in [project directory].
@@ -341,9 +330,9 @@ $agilespec-implementation Implement story [n] in [project directory].
 
 ### Review and Verification
 
-After implementation, the developer reviews the changes and verifies
-that the story meets the acceptance criteria defined in
-`definition-of-done.md`, including passing tests and human validation.
+After implementation, the developer reviews the changes against the
+acceptance criteria in `acceptance.md` and the applicable Definition of
+Done criteria. Consolidation remains pending until the next activity.
 
 Verification may involve inspecting the generated code, running
 automated tests, and manually interacting with the application.
@@ -354,8 +343,7 @@ design and, where present, `views.md` and `tables.md`.
 If problems are found, the developer provides feedback to the AI agent,
 which revises the implementation. This cycle continues until the story
 is approved. If implementation reveals missing or incorrect
-specifications, the corresponding story specs should also be
-updated.
+specifications, the corresponding story specs should also be updated.
 
 ```mermaid
 flowchart TD
@@ -367,7 +355,10 @@ flowchart TD
 
 ### Consolidation
 
-Project specs evolve incrementally as stories are developed. After each story, **Consolidation** incorporates relevant decisions into the project specs, ensuring that subsequent stories build on an up-to-date description of the system.
+Project specs evolve incrementally as stories are developed. After each
+story, **Consolidation** incorporates relevant decisions into the
+project specs, ensuring that subsequent stories build on an up-to-date
+description of the system.
 
 ```mermaid
 flowchart LR
@@ -376,12 +367,16 @@ flowchart LR
     C --> A
 ```
 
- Consolidation updates project specs based on their corresponding user story specs:
+Consolidation updates project specs based on their corresponding user
+story specs:
 
-- **`acceptance.md` → `backlog.md`**: Update the story summary if needed and
-  mark it as complete after approval.
-- **`design.md` → `architecture.md`**: Incorporate relevant architectural decisions.
-- **`views.md` → `ui.md`**: Incorporate relevant UI structure and conventions.
+- **`acceptance.md` → `backlog.md`**: Update the story summary if
+  needed. Mark it complete only after consolidation is approved and the
+  Definition of Done is met.
+- **`design.md` → `architecture.md`**: Incorporate relevant
+  architectural decisions.
+- **`views.md` → `ui.md`**: Incorporate relevant UI structure and
+  conventions.
 - **`tables.md` → `database.md`**: Incorporate database schema changes.
 
 ```mermaid
@@ -390,8 +385,8 @@ flowchart LR
         direction TB
         S0["acceptance.md"]
         S1["design.md"]
-        S2["views.md"]
-        S3["tables.md"]
+        S2["views.md (optional)"]
+        S3["tables.md (optional)"]
     end
 
     subgraph P["Project Specs"]
@@ -450,8 +445,8 @@ are met.
 ```
 
 Consolidation completes the development cycle for a story. The next
-story can then be selected from `backlog.md`, using the updated
-project specs as context.
+story can then be selected from `backlog.md`, using the updated project
+specs as context.
 
 #### Automation
 
@@ -464,8 +459,8 @@ Follow prompts/consolidation.md to consolidate story [n] in
 ```
 
 You can also use the corresponding
-[skill](.agents/skills/agilespec-consolidation/SKILL.md), which reads the
-same prompt to keep the instructions in one place. In Codex:
+[skill](.agents/skills/agilespec-consolidation/SKILL.md), which reads
+the same prompt to keep the instructions in one place. In Codex:
 
 ```text
 $agilespec-consolidation Consolidate story [n] in [project directory].
@@ -473,42 +468,44 @@ $agilespec-consolidation Consolidate story [n] in [project directory].
 
 ## Summary and Key Principles
 
-AgileSpec follows a **spec-anchored approach**: specifications
-are created before implementation, retained alongside the code, and
+AgileSpec follows a **spec-anchored approach**: specifications are
+created before implementation, retained alongside the code, and
 continuously evolved to support software maintenance and evolution.
 
-Its distinguishing feature is the **Specification Alignment Loop**, which
-ensures that project specs guide individual stories while story-level
-decisions continuously refine and evolve project specs.
+Its distinguishing feature is the **Specification Alignment Loop**,
+which ensures that project specs guide individual stories while
+story-level decisions continuously refine and evolve project specs.
 
-AgileSpec is also guided by the following principles and characteristics:
+AgileSpec is also guided by the following principles and
+characteristics:
 
 1. **Focus on Software Delivery**: Assumes that product discovery has
-already produced a backlog of user stories ready for implementation.
+   already produced a backlog of user stories ready for implementation.
 
 2. **Adherence to Agile Principles**: Supports iterative and incremental
-design and implementation, avoiding Big Design Up Front (BDUF).
+   design and implementation, avoiding Big Design Up Front (BDUF).
 
 3. **Compatibility with Agile Events**: Remains compatible with events
-such as sprint planning, daily stand-ups, reviews, and retrospectives.
+   such as sprint planning, daily stand-ups, reviews, and retrospectives.
 
 4. **Compatibility with Agile Roles**: Accommodates roles such as
-Product Owners, Product Managers, and Scrum Masters.
+   Product Owners, Product Managers, and Scrum Masters.
 
-5. **Specification-to-Code Traceability**: Preserves the specifications
-behind AI-generated code, facilitating future maintenance and evolution.
+5. **Specification-to-Code Traceability**: Preserves and versions the
+   specifications alongside AI-generated code, supporting traceability,
+   maintenance, and evolution.
 
 6. **Preservation of Conceptual Integrity**: Uses project-level
-specifications to maintain consistency in architecture, user interfaces,
-and database design.
+   specifications to maintain consistency in architecture, user
+   interfaces, and database design.
 
 7. **Autonomy of AI Coding Agents**: Allows agents to plan and implement
-solutions autonomously while adhering to project-level and story-level
-specifications.
+   solutions autonomously while adhering to project-level and
+   story-level specifications.
 
 8. **Tool Independence**: Does not depend on specific tools, IDEs, or AI
-coding agents, allowing teams to use their preferred development
-environments.
+   coding agents, allowing teams to use their preferred development
+   environments.
 
 ```mermaid
 flowchart TB
@@ -541,9 +538,9 @@ and its setup instructions.
 - [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS
   subscriptions).
 - [PodLite v1 Consolidated](examples/podlite/podlite-v1-consolidated/README.md):
-  story 1 consolidated and approved.
-- [PodLite v2](examples/podlite/podlite-v2/README.md): Story 2
-  (episode browsing), consolidated and approved.
+  Story 1 consolidated and approved.
+- [PodLite v2](examples/podlite/podlite-v2/README.md): Story 2 (episode
+  browsing), consolidated and approved.
 
 ## Frequently Asked Questions
 
