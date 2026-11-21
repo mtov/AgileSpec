@@ -8,72 +8,80 @@
 
 [Back to README](README.md)
 
-**1. Does AgileSpec define events such as sprints, reviews, and
-retrospectives?**
+### 1. Does AgileSpec define events such as sprints, reviews, and
+retrospectives?
 
-AgileSpec focuses on lightweight specifications and a workflow for agile
-development with AI coding agents. Events such as sprints, reviews, and
-retrospectives remain relevant but fall outside its scope. Teams are
-free to continue using these practices alongside AgileSpec.
+AgileSpec focuses on lightweight specifications and a workflow
+for agile development with AI coding agents. Therefore, agile
+practices such as sprints, reviews, and retrospectives remain relevant
+but fall outside its scope. Of course, teams can continue using these
+practices alongside AgileSpec.
 
-**2. What about roles (e.g., Product Owner and Scrum Master) and
-artifacts (e.g., product backlog)?**
+### 2. What about roles (e.g., Product Owner and Scrum Master) and
+artifacts (e.g., product backlog)?
 
-AgileSpec does not prescribe specific roles or a complete set of agile
-artifacts. It recommends `backlog.md` for story summaries, priorities,
-and status. Teams can retain their existing roles and practices.
+AgileSpec does not prescribe specific roles or a complete set of
+agile artifacts. However, it recommends using `backlog.md` to 
+track user stories, their priorities, and their status. 
+Teams can continue using their existing roles and practices.
 
-**3. Can I add specifications beyond those proposed by AgileSpec?**
+### 3. Can I add specifications beyond those proposed by AgileSpec?
 
 Absolutely. In keeping with agile principles, AgileSpec is flexible by
 design. Teams can extend, adapt, or simplify its specifications and
 workflow to suit their project's needs.
 
-The core concept of AgileSpec are the two levels of specification:
-project-level and user story-level. Project-level specifications
-guide the specification and implementation of individual user
-stories, while user story-level specifications are used to consolidate
-and evolve the project-level specifications.
+### 4. Why doesn't AgileSpec require a task list or an agent execution
+plan?
 
-```mermaid
-flowchart LR
-    B["User Story-Level Specs"]
-    A["Project-Level Specs"]
-
-    B -->|Evolve| A
-    A -->|Guide| B
-```
-
-**4. Why doesn't AgileSpec require a task list or an agent execution
-plan?**
-
-AgileSpec assumes that coding agents can organize their own work within
-an approved specification. Developers define the expected behavior and
-constraints, including architecture, stored data, and interface layout.
-Agents choose the steps needed to implement and test each story, while
-`definition-of-done.md` sets shared completion criteria, such as passing
+AgileSpec assumes that coding agents can organize their own work to
+implement a given specification. Developers define the expected behavior
+and constraints, including architecture, database, and interface layout.
+After that, agents choose the steps needed to implement and test each story,
+while `definition-of-done.md` sets shared completion criteria, such as passing
 tests, human validation, and approved consolidation.
 
-**5. What is the difference between project specs and agent configuration
-files, such as `AGENTS.md`?**
+### 5. What is the difference between project specs and agent configuration
+files, such as `AGENTS.md`?
 
 Agent configuration files provide instructions that are included in the context
 of each prompt sent to an LLM. They should therefore contain information
 that the LLM should always be aware of.
 
-In contrast, project specs contain more detailed information about the system
+In contrast, project specs contain detailed information about the system
 under development and do not need to be included in every prompt.
 For example, suppose you are asking an agent to change the position of an
 element on a web page. In this case, information about architecture or
 database schema is unlikely to be relevant.
 
-Thus, agent configuration files provide general instructions that apply
-throughout development, while project specs provide information that
-agents can consult as needed.
-
-**6. How long should user story specifications be retained?**
+### 6. How long should user story specifications be retained?
 
 User story specs can be valuable for future maintenance activities
 involving the corresponding features. However, as a system evolves 
-over several years, their relevance may gradually diminish. When 
-they no longer provide significant value, they can be archived.
+over several years, their relevance may gradually diminish. When they
+no longer provide significant value or become obsolete due to substantial
+changes to a feature, they can be archived.
+
+### 7. How does AgileSpec handle non-functional requirements?
+
+Non-functional requirements (NFRs) are often cross-cutting concerns,
+so AgileSpec does not prescribe a dedicated document for them. 
+Instead, they can be specified in different artifacts, depending on
+their scope and nature:
+
+- **User stories:** A story may address security requirements,
+such as implementing a secure user login feature with authentication
+and authorization.
+
+- **`architecture.md` or `design.md`:** These documents can specify
+design decisions related to NFRs, such as using a particular authentication
+protocol or service, or adopting a caching mechanism to improve
+system performance.
+
+- **`acceptance.md`:** Acceptance criteria can include measurable 
+quality requirements, such as requiring product searches in an 
+e-commerce system to complete within one second.
+
+- **Definition of Done:** Teams can include quality requirements
+that must be met before a story is considered complete, such as
+requiring all new code to pass automated security checks.

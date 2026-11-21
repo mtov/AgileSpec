@@ -46,8 +46,7 @@ living specifications.
 Teams and organizations that want to adopt an AI-first approach to
 software development while preserving lightweight specifications and
 traceability, keeping comprehension debt under control, and ensuring
-that the software remains understandable, maintainable, and easy to
-evolve.
+that the software remains understandable and maintainable.
 
 ## Specifications
 
