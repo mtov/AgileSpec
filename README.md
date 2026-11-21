@@ -26,7 +26,7 @@ to further refinement and evolution.
 
 ## Motivation
 
-*Lightweight specifications over vibe coding.*
+*Agile specifications over vibe coding.*
 
 Agile methods emerged when developers performed most software
 development tasks themselves, from requirements and design to coding and
@@ -133,7 +133,7 @@ flowchart LR
     class B,A,D,U,F doc
 ```
 
-**Why these documents are important.** Together, these documents
+**Why project specs are important.** Together, these documents
 provide shared guidelines for AI agents, helping ensure that new
 implementations follow established architectural decisions, preserve the
 consistency and quality of the data model, and maintain a standardized
@@ -142,8 +142,8 @@ helping ensure that all deliverables meet minimum quality standards.
 Together, they help preserve the system's **conceptual integrity** and
 prevent its gradual degradation as the software evolves.
 
-**Avoiding Big Design Up Front (BDUF).** Although these documents
-provide project-wide guidance, they do not need to be complete
+**Avoiding Big Design Up Front (BDUF).** Although project specs
+provide global guidance, they do not need to be complete
 before implementation begins. Requiring detailed specifications
 upfront would contradict agile principles and lead to Big Design
 Up Front (BDUF), an approach in which detailed design decisions
