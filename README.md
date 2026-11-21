@@ -37,7 +37,7 @@ agents during implementation, and verify that the resulting software
 meets its requirements while remaining consistent with project-wide
 decisions.
 
-To address this need, we propose **AgileSpec**, a workflow for
+To address this need, we propose **AgileSpec**, an agile workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
 
@@ -382,8 +382,10 @@ description of the system.
 
 During consolidation, the developer reviews the user story specs and
 identifies which decisions will be useful when implementing future
-stories. These decisions become part of the project specs, while details
-that matter only to the current story remain in its own specifications.
+stories. These decisions can be simplified, summarized, and combined
+to keep the project specs concise and focused on the system as a whole.
+Details that matter only to the current story remain in its own
+specifications.
 
 ```mermaid
 flowchart LR
@@ -467,10 +469,9 @@ Do not modify the source code or story-level specifications.
 If the specifications and code disagree, report the discrepancy before
 consolidating.
 
-Summarize the documentation changes and any unmet Definition of Done
-criteria for developer review. Leave the story unchecked in backlog.md
-until the developer approves consolidation and all completion criteria
-are met.
+Summarize the changes and any pending completion criteria for review.
+Leave the story unchecked in backlog.md until the developer approves
+consolidation and all completion criteria are met.
 ```
 
 The consolidation prompt is available in

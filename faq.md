@@ -8,8 +8,7 @@
 
 [Back to README](README.md)
 
-### 1. Does AgileSpec define events such as sprints, reviews, and
-retrospectives?
+### 1. Does AgileSpec define events such as sprints, reviews, and retrospectives?
 
 AgileSpec focuses on lightweight specifications and a workflow
 for agile development with AI coding agents. Therefore, agile
@@ -17,8 +16,7 @@ practices such as sprints, reviews, and retrospectives remain relevant
 but fall outside its scope. Of course, teams can continue using these
 practices alongside AgileSpec.
 
-### 2. What about roles (e.g., Product Owner and Scrum Master) and
-artifacts (e.g., product backlog)?
+### 2. What about roles (e.g., Product Owner and Scrum Master) and artifacts (e.g., product backlog)?
 
 AgileSpec does not prescribe specific roles or a complete set of
 agile artifacts. However, it recommends using `backlog.md` to 

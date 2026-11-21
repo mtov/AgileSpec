@@ -25,7 +25,6 @@ Do not modify the source code or story-level specifications.
 If the specifications and code disagree, report the discrepancy before
 consolidating.
 
-Summarize the documentation changes and any unmet Definition of Done
-criteria for developer review. Leave the story unchecked in backlog.md
-until the developer approves consolidation and all completion criteria
-are met.
+Summarize the changes and any pending completion criteria for review.
+Leave the story unchecked in backlog.md until the developer approves
+consolidation and all completion criteria are met.
