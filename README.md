@@ -28,14 +28,14 @@ to further refinement and evolution.
 
 *Agile specifications over vibe coding.*
 
-Agile methods emerged when developers performed most software
-development tasks themselves, from requirements and design to coding and
-testing. Today, AI agents can take on much of this work, significantly
-accelerating implementation. This shift calls for new workflows that
-help developers define lightweight specifications, guide AI coding
-agents during implementation, and verify that the resulting software
-meets its requirements while remaining consistent with project-wide
-decisions.
+Agile methods, such as Scrum and XP, emerged when developers performed
+most software development tasks themselves, from requirements and design
+to coding and testing. Today, AI agents can take on much of this work,
+significantly accelerating implementation. This shift calls for new
+workflows that help developers define lightweight specifications, guide
+AI coding agents during implementation, and verify that the resulting
+software meets its requirements while remaining consistent with
+project-wide decisions.
 
 To address this need, we propose **AgileSpec**, an agile workflow for
 developing software with AI coding agents that emphasizes lightweight,
@@ -111,11 +111,14 @@ At the Project Specs level, there are five main Markdown documents:
 
 - **`database.md`**: Describes the database schema, including tables,
   their columns and data types, primary and foreign keys, relationships
-  between tables, and integrity constraints.
+  between tables, and integrity constraints. This document is optional
+  for systems that do not use a database.
 
 - **`ui.md`**: Describes the overall user interface structure,
   navigation, and shared design conventions. For example, it may define
   colors, typography, reusable components, and common layouts.
+  This document is optional for systems that do not have a user interface
+  (e.g., backend services or command-line tools).
 
 ```mermaid
 flowchart LR
@@ -123,8 +126,8 @@ flowchart LR
     P --> B["backlog.md"]
     P --> F["definition-of-done.md"]
     P --> A["architecture.md"]
-    P --> D["database.md"]
-    P --> U["ui.md"]
+    P --> D["database.md (optional)"]
+    P --> U["ui.md (optional)"]
 
     classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
     classDef doc fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
