@@ -295,9 +295,6 @@ Ask for clarification if requirements or important decisions are unclear.
 
 Do not implement the story. Submit the specifications for my review.
 ```
-
-#### Automation
-
 The specification prompt is available in
 [`prompts/specification.md`](prompts/specification.md). To use it:
 
@@ -342,8 +339,6 @@ When finished, summarize:
 
 Do not update project-level documentation or mark the story complete.
 ```
-
-#### Automation
 
 The implementation prompt is available in
 [`prompts/implementation.md`](prompts/implementation.md). To use it:
@@ -439,6 +434,10 @@ flowchart LR
     class P0,P1,P2,P3 project
 ```
 
+Consolidation completes the development cycle for a story. The next
+story can then be selected from `backlog.md`, using the updated project
+specs as context.
+
 Consolidation can be performed with the assistance of an AI agent using
 a prompt such as:
 
@@ -474,12 +473,6 @@ until the developer approves consolidation and all completion criteria
 are met.
 ```
 
-Consolidation completes the development cycle for a story. The next
-story can then be selected from `backlog.md`, using the updated project
-specs as context.
-
-#### Automation
-
 The consolidation prompt is available in
 [`prompts/consolidation.md`](prompts/consolidation.md). To use it:
 
@@ -490,7 +483,8 @@ Follow prompts/consolidation.md to consolidate story [n] in
 
 ## Summary and Key Principles
 
-AgileSpec follows a **spec-anchored approach**: specifications are
+AgileSpec follows a
+[spec-anchored approach](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html): specifications are
 created before implementation, retained alongside the code, and
 continuously evolved to support software maintenance and evolution.
 
