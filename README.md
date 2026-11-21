@@ -18,7 +18,7 @@ to further refinement and evolution.
 - [Project Specs](#project-specs)
 - [User Story Specs](#user-story-specs)
 - [Folder Structure](#folder-structure)
-- [Workflow](#workflow)
+- [AgileSpec Workflow](#agilespec-workflow)
 - [Summary and Key Principles](#summary-and-key-principles)
 - [Example: PodLite](#example-podlite)
 - [Frequently Asked Questions](#frequently-asked-questions)
@@ -240,7 +240,7 @@ requirements, design decisions, and the source code**, and can be
 particularly useful during future maintenance, such as fixing bugs or
 adapting to changes in business rules.
 
-## Workflow
+## AgileSpec Workflow
 
 AgileSpec follows an iterative workflow consisting of five main
 activities:
@@ -260,6 +260,9 @@ project's global specifications, keeping them consistent with the
 evolving implementation.
 
 ```mermaid
+---
+title: AgileSpec Workflow
+---
 flowchart TD
     A["Inception"]
     B["Specification"]
@@ -381,6 +384,9 @@ is approved. If implementation reveals missing or incorrect
 specifications, the corresponding story specs should also be updated.
 
 ```mermaid
+---
+title: Review and Verification Workflow
+---
 flowchart TD
     A["Review and Verification"] --> B{"Approved?"}
     B -->|Yes| C["Consolidation"]
@@ -403,6 +409,9 @@ Details that matter only to the current story remain in its own
 specifications.
 
 ```mermaid
+---
+title: Consolidation Workflow
+---
 flowchart LR
     A["Project Specs"] --> B["Next Story"]
     B --> C["Consolidation"]
