@@ -277,10 +277,6 @@ UI or database changes are involved.
 The goal is to provide enough detail for an AI coding agent to implement
 the story without introducing unnecessary documentation.
 
-For concrete examples of user story specifications, see how AgileSpec is
-used to implement a simple podcast player called
-[PodLite](examples/podlite/README.md).
-
 The developer can prepare the specifications with a prompt such as:
 
 ```text
@@ -388,6 +384,11 @@ Project specs evolve incrementally as stories are developed. After each
 story, **Consolidation** incorporates relevant decisions into the
 project specs, ensuring that subsequent stories build on an up-to-date
 description of the system.
+
+During consolidation, the developer reviews the user story specs and
+identifies which decisions will be useful when implementing future
+stories. These decisions become part of the project specs, while details
+that matter only to the current story remain in its own specifications.
 
 ```mermaid
 flowchart LR
