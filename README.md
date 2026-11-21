@@ -549,6 +549,8 @@ and its setup instructions.
   Story 1 consolidated and approved.
 - [PodLite v2](examples/podlite/podlite-v2/README.md): Story 2 (episode
   browsing), consolidated and approved.
+- [PodLite v3](examples/podlite/podlite-v3/README.md): Story 3 (audio
+  playback), consolidated and approved.
 
 ## Frequently Asked Questions
 
