@@ -68,6 +68,9 @@ consolidated back into the project specs. This continuous feedback loop
 keeps both levels aligned as the system evolves.
 
 ```mermaid
+---
+title: Specification Alignment Loop
+---
 flowchart TB
     P["Project Specs"] -->|"Guide"| S["User Story Specs"]
     S -->|"Consolidate"| P
