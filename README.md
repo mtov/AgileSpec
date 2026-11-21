@@ -81,7 +81,7 @@ reflects the system and its intended evolution.
 ```mermaid
 flowchart LR
     H["Developers"] --> R["Review & Approve Specs"]
-    A["AI Agents"] --> C["Read & Update Specs"]
+    A["AI Agents"] --> C["Guided by Specs"]
 ```
 
 ## Project Specs
@@ -95,8 +95,7 @@ date throughout development.
 At the Project Specs level, there are five main Markdown documents:
 
 - **`backlog.md`**: Lists user stories in priority order, with a brief
-  description and status for each. This gives AI coding agents a global
-  view of the system's features and main requirements.
+  description and status for each.
 
 - **`definition-of-done.md`**: Defines shared completion criteria for
   all stories, such as passing tests, human validation, and consolidated
@@ -134,14 +133,24 @@ flowchart LR
     class B,A,D,U,F doc
 ```
 
-Although these documents provide project-wide guidance, **they do not
-need to be complete before implementation begins**. Requiring detailed
-specifications upfront would contradict agile principles and risk
-introducing Big Design Up Front (BDUF), an approach in which detailed
-design decisions are made before development starts. Instead, AgileSpec
-treats project documentation as a set of **living documents** that
-evolve alongside the software. They are progressively refined and
-extended as user stories are implemented.
+**Why these documents are important.** Together, these documents
+provide shared guidelines for AI agents, helping ensure that new
+implementations follow established architectural decisions, preserve the
+consistency and quality of the data model, and maintain a standardized
+and usable interface. They also establish common completion criteria,
+helping ensure that all deliverables meet minimum quality standards.
+Together, they help preserve the system's **conceptual integrity** and
+prevent its gradual degradation as the software evolves.
+
+**Avoiding Big Design Up Front (BDUF).** Although these documents
+provide project-wide guidance, they do not need to be complete
+before implementation begins. Requiring detailed specifications
+upfront would contradict agile principles and lead to Big Design
+Up Front (BDUF), an approach in which detailed design decisions
+are made before development starts. Instead, AgileSpec treats project
+documentation as a set of **living documents** that evolve alongside
+the software. They are progressively refined and consolidated as user
+stories are implemented.
 
 ## User Story Specs
 
