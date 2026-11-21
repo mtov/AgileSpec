@@ -328,14 +328,6 @@ Follow prompts/implementation.md to implement story [n] in
 [project directory].
 ```
 
-You can also use the corresponding
-[skill](.agents/skills/agilespec-implementation/SKILL.md), which reads
-the same prompt to keep the instructions in one place. In Codex:
-
-```text
-$agilespec-implementation Implement story [n] in [project directory].
-```
-
 ### Review and Verification
 
 After implementation, the developer reviews the changes against the
@@ -464,14 +456,6 @@ The consolidation prompt is available in
 ```text
 Follow prompts/consolidation.md to consolidate story [n] in
 [project directory].
-```
-
-You can also use the corresponding
-[skill](.agents/skills/agilespec-consolidation/SKILL.md), which reads
-the same prompt to keep the instructions in one place. In Codex:
-
-```text
-$agilespec-consolidation Consolidate story [n] in [project directory].
 ```
 
 ## Summary and Key Principles
