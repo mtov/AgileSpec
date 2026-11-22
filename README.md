@@ -19,6 +19,7 @@ to further refinement and evolution.
 - [User Story Specs](#user-story-specs)
 - [Folder Structure](#folder-structure)
 - [AgileSpec Workflow](#agilespec-workflow)
+- [Tool Independence](#tool-independence)
 - [Summary and Key Principles](#summary-and-key-principles)
 - [Example: PodLite](#example-podlite)
 - [Frequently Asked Questions](#frequently-asked-questions)
@@ -513,6 +514,18 @@ The consolidation prompt is available in
 Follow prompts/consolidation.md to consolidate story [n] in
 [project directory].
 ```
+
+## Tool Independence
+
+AgileSpec is tool-independent by design. It does not require
+specific IDEs, development tools, or AI coding agents. Teams are
+free to choose the technologies and environments that best suit
+their needs.
+
+This flexibility also allows AgileSpec to evolve alongside the
+rapidly changing AI development ecosystem. Teams can adopt new
+coding agents or switch between tools without changing the core
+workflow or specification structure.
 
 ## Summary and Key Principles
 

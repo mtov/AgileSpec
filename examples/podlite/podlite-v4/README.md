@@ -30,6 +30,20 @@ subscriptions table.
        width="480">
 </p>
 
+## Run
+
+From the repository root:
+
+```bash
+cd examples/podlite/podlite-v4
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+python -m streamlit run app.py --server.port 8504
+```
+
+Run tests with `python -m pytest` from the same directory.
+
 ## Consolidation
 
 Consolidation was simple: `ui.md` records the unsubscribe confirmation,
@@ -44,17 +58,3 @@ Changes to `ui.md` relative to v3:
 +- Home: subscription form and podcast cards with unsubscribe
 +  confirmation.
 ```
-
-## Run
-
-From the repository root:
-
-```bash
-cd examples/podlite/podlite-v4
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-dev.txt
-python -m streamlit run app.py --server.port 8504
-```
-
-Run tests with `python -m pytest` from the same directory.
