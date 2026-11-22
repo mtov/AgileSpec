@@ -40,7 +40,7 @@ project-wide decisions.
 ```mermaid
 flowchart LR
     A["Agile Methods<br/>(Scrum, XP, etc.)"] --> B["AgileSpec"]
-    B --> C["Maintainable Code"]
+    B --> C["Maintainable<br/>Code"]
     D["AI Agents"] <--> B
 ```
 
@@ -274,7 +274,7 @@ flowchart TD
     A["Inception"]
     B["Specification"]
     C["Implementation"]
-    D["Review and Verification"]
+    D["Review and<br/>Verification"]
     E["Consolidation"]
 
     A --> B
@@ -396,9 +396,9 @@ specifications, the corresponding story specs should also be updated.
 title: Review and Verification Workflow
 ---
 flowchart TD
-    A["Review and Verification"] --> B{"Approved?"}
+    A["Review and<br/>Verification"] --> B{"Approved?"}
     B -->|Yes| C["Consolidation"]
-    B -->|No| D["Revise Specs / Reimplement"]
+    B -->|No| D["Revise Specs/<br/>Reimplement"]
     D --> A
 ```
 
@@ -556,22 +556,6 @@ characteristics:
    coding agents, allowing teams to use their preferred development
    environments.
 
-```mermaid
-flowchart TB
-    A["AgileSpec"]
-    A --> B["Agile Foundation"]
-    A --> C["Specification-Driven"]
-    A --> D["Agent-Oriented"]
-
-    B --> E["Iterative Delivery"]
-    B --> F["Agile Events & Roles"]
-
-    C --> G["Traceability"]
-    C --> H["Conceptual Integrity"]
-
-    D --> I["Agent Autonomy"]
-    D --> J["Tool Independence"]
-```
 
 ## Example: PodLite
 
