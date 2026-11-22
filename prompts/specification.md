@@ -3,6 +3,7 @@
 Create the specifications for story N in [project directory].
 
 Read AgileSpec/project/ and the selected story in backlog.md.
+Review the existing implementation, when available.
 
 Create AgileSpec/stories/storyN/ with:
 - acceptance.md: Normal Case and Edge Cases.

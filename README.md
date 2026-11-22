@@ -112,13 +112,9 @@ At the Project Specs level, there are five main Markdown documents:
   all stories, such as passing tests, human validation, and consolidated
   project specs.
 
-- **`architecture.md`**: A high-level description of the system's
-  architecture, including its main modules, their responsibilities, and
-  architectural constraints. For example, a project may require services
-  to access the database through repositories. This document
-  should also describe the project's main technology choices, including
-  programming languages, frameworks, and databases, preferably in a
-  dedicated section.
+- **`architecture.md`**: Describes the system's main modules, their
+  responsibilities, architectural constraints, and technology choices,
+  including languages, frameworks, and databases.
 
 - **`database.md`**: Describes the database schema, including tables,
   their columns and data types, primary and foreign keys, relationships
@@ -159,9 +155,9 @@ prevent its gradual degradation as the software evolves.
 **Avoiding Big Design Up Front (BDUF).** Although project specs
 provide global guidance, they do not need to be complete
 before implementation begins. Requiring detailed specifications
-upfront would contradict agile principles and lead to Big Design
-Up Front (BDUF), an approach in which detailed design decisions
-are made before development starts. Instead, AgileSpec treats project
+upfront risks introducing Big Design Up Front (BDUF), an approach in
+which detailed design decisions are made before development starts.
+Instead, AgileSpec treats project
 documentation as a set of **living documents** that evolve alongside
 the software. They are progressively refined and consolidated as user
 stories are implemented.
@@ -309,6 +305,7 @@ The developer can prepare the specifications with a prompt such as:
 Create the specifications for story N in [project directory].
 
 Read AgileSpec/project/ and the selected story in backlog.md.
+Review the existing implementation, when available.
 
 Create AgileSpec/stories/storyN/ with:
 - acceptance.md: Normal Case and Edge Cases.
@@ -326,8 +323,7 @@ The specification prompt is available in
 [`prompts/specification.md`](prompts/specification.md). To use it:
 
 ```text
-Follow prompts/specification.md to specify story [n] in
-[project directory].
+Specify story [n] following prompts/specification.md.
 ```
 
 ### Implementation
@@ -371,8 +367,7 @@ The implementation prompt is available in
 [`prompts/implementation.md`](prompts/implementation.md). To use it:
 
 ```text
-Follow prompts/implementation.md to implement story [n] in
-[project directory].
+Implement story [n] following prompts/implementation.md.
 ```
 
 ### Review and Verification
@@ -511,8 +506,7 @@ The consolidation prompt is available in
 [`prompts/consolidation.md`](prompts/consolidation.md). To use it:
 
 ```text
-Follow prompts/consolidation.md to consolidate story [n] in
-[project directory].
+Consolidate story [n] following prompts/consolidation.md.
 ```
 
 ## Tool Independence
@@ -568,7 +562,6 @@ characteristics:
 8. **Tool Independence**: Does not depend on specific tools, IDEs, or AI
    coding agents, allowing teams to use their preferred development
    environments.
-
 
 ## Example: PodLite
 
