@@ -1,7 +1,6 @@
 # Story 2: Browse Episodes
 
-As a listener, I want to see a podcast's episodes so that I can choose
-what to listen to.
+As a listener, I want to see a podcast's episodes.
 
 ## Normal Case
 

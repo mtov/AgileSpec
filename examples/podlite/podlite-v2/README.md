@@ -2,8 +2,7 @@
 
 [PodLite](../README.md) | [AgileSpec](../../../README.md)
 
-As a listener, I want to see a podcast's episodes so that I can choose
-what to listen to.
+As a listener, I want to see a podcast's episodes.
 
 ## Project Specs
 

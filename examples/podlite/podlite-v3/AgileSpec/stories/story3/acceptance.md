@@ -1,7 +1,6 @@
 # Story 3: Play Episodes
 
-As a listener, I want to play, pause, and move through an episode so
-that I can control my listening.
+As a listener, I want to play, pause, and move through an episode.
 
 ## Normal Case
 

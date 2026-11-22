@@ -5,7 +5,7 @@ to further refinement and evolution.
   <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# An Agile Workflow for AI-Assisted Software Development
+# An Agile Workflow for AI-Assisted Software Delivery
 
 [Frequently Asked Questions](faq.md) |
 [PodLite Example](examples/podlite/README.md)
@@ -13,7 +13,7 @@ to further refinement and evolution.
 ## Table of Contents
 
 - [Motivation](#motivation)
-- [Who Should Use AgileSpec?](#who-should-use-agilespec)
+- [Who Is AgileSpec For?](#who-is-agilespec-for)
 - [Specifications](#specifications)
 - [Project Specs](#project-specs)
 - [User Story Specs](#user-story-specs)
@@ -41,7 +41,7 @@ To address this need, we propose **AgileSpec**, an agile workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
 
-## Who Should Use AgileSpec?
+## Who Is AgileSpec For?
 
 Teams and organizations that want to adopt an AI-first approach to
 software development while preserving lightweight specifications and

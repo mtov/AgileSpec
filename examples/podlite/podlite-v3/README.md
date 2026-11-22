@@ -2,8 +2,7 @@
 
 [PodLite](../README.md) | [AgileSpec](../../../README.md)
 
-As a listener, I want to play, pause, and move through an episode so
-that I can control my listening.
+As a listener, I want to play, pause, and move through an episode.
 
 ## Project Specs
 
