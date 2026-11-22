@@ -12,6 +12,8 @@ and backlog, capturing a development step.
   consolidated and approved.
 - [podlite-v2](podlite-v2/README.md): episode browsing, consolidated
   and approved.
+- [podlite-v3](podlite-v3/README.md): audio playback, consolidated
+  and approved.
 
 ## Setup and Run
 
@@ -26,4 +28,4 @@ source .venv/bin/activate
 
 Version v0 contains specifications only; there is no application to run
 yet. To run the application, follow the
-[v2 instructions](podlite-v2/README.md#run).
+[v3 instructions](podlite-v3/README.md#run).

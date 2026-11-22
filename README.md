@@ -37,6 +37,13 @@ AI coding agents during implementation, and verify that the resulting
 software meets its requirements while remaining consistent with
 project-wide decisions.
 
+```mermaid
+flowchart LR
+    A["Agile Methods<br/>(Scrum, XP, etc.)"] --> B["AgileSpec"]
+    B --> C["Maintainable Code"]
+    D["AI Agents"] <--> B
+```
+
 To address this need, we propose **AgileSpec**, an agile workflow for
 developing software with AI coding agents that emphasizes lightweight,
 living specifications.
@@ -62,10 +69,10 @@ AgileSpec organizes specifications into two main levels:
   while ensuring consistency with the project specs.
 
 The two specification levels are connected through a **Specification
-Alignment Loop**: project specs guide the creation and implementation of
-user story specs, while decisions made during story implementation are
-consolidated back into the project specs. This continuous feedback loop
-keeps both levels aligned as the system evolves.
+Alignment Loop**: project specs guide the specification and
+implementation of individual stories, while relevant story-level
+decisions are consolidated back into the project specs. This continuous
+feedback loop keeps both levels aligned as the system evolves.
 
 ```mermaid
 ---
@@ -106,8 +113,8 @@ At the Project Specs level, there are five main Markdown documents:
 
 - **`architecture.md`**: A high-level description of the system's
   architecture, including its main modules, their responsibilities, and
-  architectural constraints. For example, services must access the
-  database through repositories rather than directly. This document
+  architectural constraints. For example, a project may require services
+  to access the database through repositories. This document
   should also describe the project's main technology choices, including
   programming languages, frameworks, and databases, preferably in a
   dedicated section.
@@ -120,8 +127,8 @@ At the Project Specs level, there are five main Markdown documents:
 - **`ui.md`**: Describes the overall user interface structure,
   navigation, and shared design conventions. For example, it may define
   colors, typography, reusable components, and common layouts.
-  This document is optional for systems that do not have a user interface
-  (e.g., backend services or command-line tools).
+  This document is optional for systems without user-facing
+  interactions, such as internal backend services.
 
 ```mermaid
 flowchart LR
@@ -139,8 +146,8 @@ flowchart LR
     class B,A,D,U,F doc
 ```
 
-**Why project specs are important.** Together, these documents
-provide shared guidelines for AI agents, helping ensure that new
+**Why project specs are important.** These documents provide shared
+guidelines for AI agents, helping ensure that new
 implementations follow established architectural decisions, preserve the
 consistency and quality of the data model, and maintain a standardized
 and usable interface. They also establish common completion criteria,
@@ -220,8 +227,8 @@ my-project/
       backlog.md
       definition-of-done.md
       architecture.md
-      ui.md
-      database.md
+      ui.md (optional)
+      database.md (optional)
     stories/
       storyN/
         acceptance.md
@@ -233,12 +240,12 @@ my-project/
   other-folders/
 ```
 
-Even after a user story has been implemented, its directory and
-associated files should remain in the project repository. They serve as
-documentation for the story, support **traceability between
-requirements, design decisions, and the source code**, and can be
-particularly useful during future maintenance, such as fixing bugs or
-adapting to changes in business rules.
+Retain user story specifications in the repository while they remain
+useful for maintenance and traceability. They document the story and
+support **traceability between requirements, design decisions, and the
+source code**, helping developers fix bugs or adapt to changes in
+business rules. Specifications that no longer provide value can be
+archived.
 
 ## AgileSpec Workflow
 
@@ -313,6 +320,7 @@ Ask for clarification if requirements or important decisions are unclear.
 
 Do not implement the story. Submit the specifications for my review.
 ```
+
 The specification prompt is available in
 [`prompts/specification.md`](prompts/specification.md). To use it:
 
@@ -485,9 +493,9 @@ Use the following correspondence, skipping absent optional files:
 Incorporate relevant decisions and changes, keeping the documentation
 concise, accurate, and consistent with the implemented code.
 
-Preserve the distinction between project-wide documentation and
-story-specific implementation details. Do not copy entire story
-specifications into project-level documents.
+Summarize and combine decisions that will help guide future stories,
+keeping story-specific details in their original specifications.
+Do not copy entire story specifications into project-level documents.
 
 Do not modify the source code or story-level specifications.
 If the specifications and code disagree, report the discrepancy before
@@ -509,9 +517,9 @@ Follow prompts/consolidation.md to consolidate story [n] in
 ## Summary and Key Principles
 
 AgileSpec follows a
-[spec-anchored approach](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html): specifications are
-created before implementation, retained alongside the code, and
-continuously evolved to support software maintenance and evolution.
+[spec-anchored approach](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html):
+specifications are created before implementation, retained alongside the
+code, and continuously evolved to support maintenance and evolution.
 
 Its distinguishing feature is the **Specification Alignment Loop**,
 which ensures that project specs guide individual stories while

@@ -17,9 +17,9 @@ Use the following correspondence, skipping absent optional files:
 Incorporate relevant decisions and changes, keeping the documentation
 concise, accurate, and consistent with the implemented code.
 
-Preserve the distinction between project-wide documentation and
-story-specific implementation details. Do not copy entire story
-specifications into project-level documents.
+Summarize and combine decisions that will help guide future stories,
+keeping story-specific details in their original specifications.
+Do not copy entire story specifications into project-level documents.
 
 Do not modify the source code or story-level specifications.
 If the specifications and code disagree, report the discrepancy before
