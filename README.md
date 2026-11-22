@@ -136,8 +136,8 @@ flowchart LR
     P --> B["backlog.md"]
     P --> F["definition-of-done.md"]
     P --> A["architecture.md"]
-    P --> D["database.md (optional)"]
-    P --> U["ui.md (optional)"]
+    P --> D["database.md<br/>(optional)"]
+    P --> U["ui.md<br/>(optional)"]
 
     classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
     classDef doc fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
@@ -199,8 +199,8 @@ flowchart LR
     S["User Story Specs"]
     S --> A["acceptance.md"]
     S --> B["design.md"]
-    S --> C["views.md (optional)"]
-    S --> D["tables.md (optional)"]
+    S --> C["views.md<br/>(optional)"]
+    S --> D["tables.md<br/>(optional)"]
 
     classDef root fill:#dbeafe,stroke:#2563eb,color:#1e40af
     classDef doc fill:#f1f5f9,stroke:#94a3b8,color:#0f172a
@@ -444,8 +444,8 @@ flowchart LR
         direction TB
         S0["acceptance.md"]
         S1["design.md"]
-        S2["views.md (optional)"]
-        S3["tables.md (optional)"]
+        S2["views.md<br/>(optional)"]
+        S3["tables.md<br/>(optional)"]
     end
 
     subgraph P["Project Specs"]
