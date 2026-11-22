@@ -521,6 +521,11 @@ rapidly changing AI development ecosystem. Teams can adopt new
 coding agents or switch between tools without changing the core
 workflow or specification structure.
 
+The prompts provided in this repository can also be easily adapted into
+skills, following the syntax and conventions of the chosen coding agent.
+This lets teams use their preferred agent's capabilities while keeping
+the AgileSpec workflow unchanged.
+
 ## Summary and Key Principles
 
 AgileSpec follows a
