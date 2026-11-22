@@ -10,7 +10,7 @@ Stories are listed in priority order.
 3. [x] As a listener, I want to play, pause, and move through an
    episode.
 
-4. [ ] As a listener, I want to remove a podcast from my subscriptions.
+4. [ ] As a listener, I want to unsubscribe from a podcast.
 
 5. [ ] As a listener, I want to resume an episode from my saved
    position.

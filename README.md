@@ -37,16 +37,16 @@ AI coding agents during implementation, and verify that the resulting
 software meets its requirements while remaining consistent with
 project-wide decisions.
 
+To address this need, we propose **AgileSpec**, an agile workflow for
+developing software with AI coding agents that emphasizes lightweight,
+living specifications.
+
 ```mermaid
 flowchart LR
     A["Agile Methods<br/>(Scrum, XP, etc.)"] --> B["AgileSpec"]
     B --> C["Maintainable<br/>Code"]
     D["AI Agents"] <--> B
 ```
-
-To address this need, we propose **AgileSpec**, an agile workflow for
-developing software with AI coding agents that emphasizes lightweight,
-living specifications.
 
 ## Who Is AgileSpec For?
 
@@ -576,6 +576,8 @@ and its setup instructions.
   browsing), consolidated and approved.
 - [PodLite v3](examples/podlite/podlite-v3/README.md): Story 3 (audio
   playback), consolidated and approved.
+- [PodLite v4](examples/podlite/podlite-v4/README.md): Story 4
+  (unsubscribe), consolidated and approved.
 
 ## Frequently Asked Questions
 
