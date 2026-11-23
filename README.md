@@ -331,6 +331,13 @@ Specify story [n] following prompts/specification.md.
 Once the specs are approved, an AI coding agent implements the story
 using both the project and story specs.
 
+```mermaid
+flowchart TB
+    P["Project Specs"] --> A["AI Coding Agent"]
+    S["Story Specs"] --> A
+    A --> I["Story Implementation"]
+```
+
 The developer can initiate implementation with a prompt such as:
 
 ```text
@@ -582,6 +589,9 @@ and its setup instructions.
   <img src="examples/podlite/podlite-v1/screenshot1-v1.png"
        alt="PodLite: successful podcast subscription" width="480">
 </p>
+
+The versions below follow PodLite's development story by story, from
+inception through implementation and consolidation.
 
 - [PodLite v0](examples/podlite/podlite-v0/README.md): inception.
 - [PodLite v1](examples/podlite/podlite-v1/README.md): Story 1 (RSS
