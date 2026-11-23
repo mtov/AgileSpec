@@ -14,6 +14,7 @@ Use the following correspondence, skipping absent optional files:
 - views.md to ui.md: incorporate global UI structure and conventions
 - tables.md to database.md: incorporate schema changes
 
+Consolidation is required even when no project specs need updating.
 Incorporate relevant decisions and changes, keeping the documentation
 concise, accurate, and consistent with the implemented code.
 

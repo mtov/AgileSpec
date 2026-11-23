@@ -45,8 +45,8 @@ living specifications.
 ```mermaid
 flowchart LR
     A["Agile Methods<br/>(Scrum, XP, etc.)"] --> B["AgileSpec"]
-    B --> C["Maintainable<br/>Code"]
-    D["AI Agents"] <--> B
+    B <--> C["AI Agents"]
+    B --> D["Maintainable<br/>Code"]
 ```
 
 ## Who Is AgileSpec For?
@@ -412,6 +412,10 @@ to keep the project specs concise and focused on the system as a whole.
 Details that matter only to the current story remain in its own
 specifications.
 
+Consolidation is required for every story, even when no project specs
+need updating. A story is marked complete only after consolidation is
+approved and the Definition of Done is met.
+
 ```mermaid
 ---
 title: Consolidation Workflow
@@ -486,6 +490,7 @@ Use the following correspondence, skipping absent optional files:
 - views.md to ui.md: incorporate global UI structure and conventions
 - tables.md to database.md: incorporate schema changes
 
+Consolidation is required even when no project specs need updating.
 Incorporate relevant decisions and changes, keeping the documentation
 concise, accurate, and consistent with the implemented code.
 
