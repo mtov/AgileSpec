@@ -12,7 +12,7 @@ As a listener, I want to see a podcast's episodes.
 - [ui.md](AgileSpec/project/ui.md)
 - [database.md](AgileSpec/project/database.md)
 
-## Story 2 Specs
+## User Story Spec
 
 - [acceptance.md](AgileSpec/stories/story2/acceptance.md): expected behavior.
 - [design.md](AgileSpec/stories/story2/design.md): implementation decisions.
@@ -21,28 +21,7 @@ As a listener, I want to see a podcast's episodes.
 No `tables.md` is needed: episodes are read from RSS without database
 changes.
 
-## Screenshot
-
-<p align="center">
-  <img src="screenshot-v2.png" alt="PodLite episode list" width="480">
-</p>
-
-## Run
-
-From the repository root:
-
-```bash
-cd examples/podlite/podlite-v2
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-dev.txt
-python -m streamlit run app.py
-```
-
-Run tests with `python -m pytest` from the same directory.
-The database is local to this version at `data/podlite.db`.
-
-## What Was Consolidated?
+## Consolidation
 
 Changes relative to `podlite-v1-consolidated`: `-` removed, `+` added.
 
@@ -81,3 +60,24 @@ podcasts.
 +- Present podcasts and episodes as cards, with consistent metadata order.
 +- Provide navigation back to the podcast list from episode views.
 ```
+
+## Screenshot
+
+<p align="center">
+  <img src="screenshot-v2.png" alt="PodLite episode list" width="480">
+</p>
+
+## Run
+
+From the repository root:
+
+```bash
+cd examples/podlite/podlite-v2
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+python -m streamlit run app.py
+```
+
+Run tests with `python -m pytest` from the same directory.
+The database is local to this version at `data/podlite.db`.

@@ -2,8 +2,6 @@
 
 [PodLite](../README.md) | [AgileSpec](../../../README.md)
 
-## Story 4: Unsubscribe from a Podcast
-
 As a listener, I want to unsubscribe from a podcast.
 
 ## Project Specs
@@ -14,7 +12,7 @@ As a listener, I want to unsubscribe from a podcast.
 - [ui.md](AgileSpec/project/ui.md)
 - [database.md](AgileSpec/project/database.md)
 
-## Story 4 Specs
+## User Story Spec
 
 - [acceptance.md](AgileSpec/stories/story4/acceptance.md): expected behavior.
 - [design.md](AgileSpec/stories/story4/design.md): implementation decisions.
@@ -22,6 +20,13 @@ As a listener, I want to unsubscribe from a podcast.
 
 No `tables.md` is needed: unsubscribing uses the existing
 subscriptions table.
+
+## Consolidation
+
+Consolidation required no changes to `ui.md`, `architecture.md`, or
+`database.md`: the existing conventions, modules, and schema already
+support unsubscribing. Confirmation follows the global convention for
+destructive actions. Story 4 is marked complete in `backlog.md`.
 
 ## Screenshot
 
@@ -43,10 +48,3 @@ python -m streamlit run app.py --server.port 8504
 ```
 
 Run tests with `python -m pytest` from the same directory.
-
-## Consolidation
-
-Consolidation required no changes to `ui.md`, `architecture.md`, or
-`database.md`: the existing conventions, modules, and schema already
-support unsubscribing. Confirmation follows the global convention for
-destructive actions. Story 4 is marked complete in `backlog.md`.

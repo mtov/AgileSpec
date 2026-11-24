@@ -6,21 +6,25 @@ As a listener, I want to play, pause, and move through an episode.
 
 ## Project Specs
 
-Story 3 consolidated and approved:
-
 - [backlog.md](AgileSpec/project/backlog.md)
 - [definition-of-done.md](AgileSpec/project/definition-of-done.md)
 - [architecture.md](AgileSpec/project/architecture.md)
 - [ui.md](AgileSpec/project/ui.md)
 - [database.md](AgileSpec/project/database.md)
 
-## Story 3 Specs
+## User Story Spec
 
 - [acceptance.md](AgileSpec/stories/story3/acceptance.md): expected behavior.
 - [design.md](AgileSpec/stories/story3/design.md): implementation decisions.
 - [views.md](AgileSpec/stories/story3/views.md): audio controls and layout.
 
 No `tables.md` is needed: playback does not change the database.
+
+## Consolidation
+
+Story 3 consolidated and approved. `architecture.md` records direct
+audio playback, and `ui.md` specifies that playback starts only on user
+request. Story 3 is marked complete in `backlog.md`.
 
 ## Screenshot
 

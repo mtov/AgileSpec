@@ -19,14 +19,14 @@ Story 1 is complete; the remaining stories are planned:
 - [database.md](AgileSpec/project/database.md)
 - [definition-of-done.md](AgileSpec/project/definition-of-done.md)
 
-## User Story Specs
+## User Story Spec
 
 - [acceptance.md](AgileSpec/stories/story1/acceptance.md)
 - [design.md](AgileSpec/stories/story1/design.md)
 - [views.md](AgileSpec/stories/story1/views.md)
 - [tables.md](AgileSpec/stories/story1/tables.md)
 
-## What Was Consolidated?
+## Consolidation
 
 Changes relative to `podlite-v1`: `-` removed, `+` added.
 
@@ -83,3 +83,39 @@ Documented the database location and the structure of the
 +
 +Missing covers and descriptions are stored as NULL.
 ```
+
+## Screenshot
+
+### Normal Case
+
+<p align="center">
+  <img src="screenshot1-v1.png" alt="Successful podcast subscription"
+       width="650">
+</p>
+
+### Edge Cases
+
+<p align="center">
+  <img src="screenshot2-v1.png" alt="Duplicate subscription error"
+       width="650">
+</p>
+
+<p align="center">
+  <img src="screenshot3-v1.png" alt="RSS feed retrieval error"
+       width="650">
+</p>
+
+## Run
+
+From the repository root:
+
+```bash
+cd examples/podlite/podlite-v1-consolidated
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+python -m streamlit run app.py
+```
+
+Run tests from the same directory with `python -m pytest`.
+Subscriptions are stored locally in `data/podlite.db`.

@@ -15,7 +15,7 @@ Inherited from v0; this snapshot precedes consolidation:
 - [database.md](AgileSpec/project/database.md)
 - [definition-of-done.md](AgileSpec/project/definition-of-done.md)
 
-## User Story Specs
+## User Story Spec
 
 - [acceptance.md](AgileSpec/stories/story1/acceptance.md)
 
@@ -35,7 +35,12 @@ Inherited from v0; this snapshot precedes consolidation:
 
   Defines the `subscriptions` table, its columns, and constraints.
 
-## Screenshots
+## Consolidation
+
+This snapshot precedes consolidation. See
+[the consolidated version](../podlite-v1-consolidated/README.md).
+
+## Screenshot
 
 ### Normal Case
 
