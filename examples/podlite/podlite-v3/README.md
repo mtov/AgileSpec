@@ -26,6 +26,31 @@ Story 3 consolidated and approved. `architecture.md` records direct
 audio playback, and `ui.md` specifies that playback starts only on user
 request. Story 3 is marked complete in `backlog.md`.
 
+Changes relative to `podlite-v2`: `-` removed, `+` added.
+
+### architecture.md
+
+Recorded direct audio playback without storing audio files.
+
+```diff
+--- podlite-v2/architecture.md
++++ podlite-v3/architecture.md
+@@ -22,0 +23,2 @@
++
++Use `st.audio` to play audio from RSS URLs without storing audio files.
+```
+
+### ui.md
+
+Recorded that playback starts only on user request.
+
+```diff
+--- podlite-v2/ui.md
++++ podlite-v3/ui.md
+@@ -8,0 +9 @@
++- Start audio playback only on user request.
+```
+
 ## Screenshot
 
 <p align="center">
