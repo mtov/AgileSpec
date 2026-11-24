@@ -2,7 +2,7 @@
   <img src="logo.png" alt="AgileSpec logo" width="640">
 </p>
 
-# An Agile Workflow for AI-Assisted Software Development
+# An Agile Workflow for AI-Assisted Software Delivery
 
 ## Frequently Asked Questions
 
@@ -40,9 +40,9 @@ tests, human validation, and approved consolidation.
 
 ### 5. What is the difference between project specs and agent configuration files, such as `AGENTS.md`?
 
-Agent configuration files provide instructions that are included in the context
-of each prompt sent to an LLM. They should therefore contain information
-that the LLM should always be aware of.
+Agent configuration files provide working instructions and conventions.
+How they are loaded and where they apply depend on the agent and the
+scope of each file. Use them for guidance that applies across tasks.
 
 In contrast, project specs contain detailed information about the system
 under development and do not need to be included in every prompt.
