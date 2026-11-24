@@ -1,5 +1,6 @@
 # User Interface
 
-- Use Streamlit components with a simple, single-column layout.
+- Use Streamlit's native components and visual style.
+- Organize the main content vertically, grouping related actions together.
 - Keep labels and messages in English.
-- Use consistent headings and button labels.
+- Ask for confirmation before destructive actions.

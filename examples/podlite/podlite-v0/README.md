@@ -19,8 +19,8 @@ has been implemented.
 
 - [UI](AgileSpec/project/ui.md)
 
-  Defines a single-column Streamlit interface with English labels
-  and consistent controls.
+  Defines native Streamlit styling, vertically organized content,
+  English labels, and confirmation before destructive actions.
 
 - [Database](AgileSpec/project/database.md)
 

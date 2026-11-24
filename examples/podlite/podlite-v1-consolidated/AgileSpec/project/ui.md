@@ -1,11 +1,7 @@
 # User Interface
 
-- Use Streamlit components with a simple, single-column layout.
+- Use Streamlit's native components and visual style.
+- Organize the main content vertically, grouping related actions together.
 - Keep labels and messages in English.
-- Use consistent headings and button labels.
-- Use fallbacks for missing covers and descriptions.
-
-## Home
-
-A subscription form followed by podcast cards with cover, title, and
-plain-text description.
+- Ask for confirmation before destructive actions.
+- Present podcasts as cards with cover, title, and plain-text description.

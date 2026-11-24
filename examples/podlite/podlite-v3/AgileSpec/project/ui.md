@@ -1,11 +1,9 @@
 # User Interface
 
-- Use Streamlit components in a single-column layout.
+- Use Streamlit's native components and visual style.
+- Organize the main content vertically, grouping related actions together.
 - Keep labels and messages in English.
-- Use fallbacks for missing covers and descriptions.
-
-## Pages
-
-- Home: subscription form and subscribed podcasts.
-- Episodes: selected podcast's episodes, with navigation back to Home
-  and an audio player below each episode's description.
+- Ask for confirmation before destructive actions.
+- Present podcasts and episodes as cards, with consistent metadata order.
+- Provide navigation back to the podcast list from episode views.
+- Start audio playback only on user request.

@@ -70,22 +70,14 @@ Recorded page navigation and RSS episode retrieval without persistence.
 
 ### ui.md
 
-Simplified shared conventions and summarized the Home and Episodes pages.
+Extended the card convention to episodes and recorded navigation back to
+podcasts.
 
 ```diff
 --- previous/ui.md
 +++ v2/ui.md
-@@ -3 +3 @@
--- Use Streamlit components with a simple, single-column layout.
-+- Use Streamlit components in a single-column layout.
-@@ -5 +4,0 @@
--- Use consistent headings and button labels.
-@@ -8 +7 @@
--## Home
-+## Pages
-@@ -10,2 +9,2 @@
--A subscription form followed by podcast cards with cover, title, and
--plain-text description.
-+- Home: subscription form and subscribed podcasts.
-+- Episodes: selected podcast's episodes, with navigation back to Home.
+@@ -7 +7,2 @@
+-- Present podcasts as cards with cover, title, and plain-text description.
++- Present podcasts and episodes as cards, with consistent metadata order.
++- Provide navigation back to the podcast list from episode views.
 ```

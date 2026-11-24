@@ -46,15 +46,7 @@ Run tests with `python -m pytest` from the same directory.
 
 ## Consolidation
 
-Consolidation was simple: `ui.md` records the unsubscribe confirmation,
-and the story is marked complete in `backlog.md`. No changes were needed
-in `architecture.md` or `database.md`, since the existing modules and
-schema already support the feature.
-
-Changes to `ui.md` relative to v3:
-
-```diff
--- Home: subscription form and subscribed podcasts.
-+- Home: subscription form and podcast cards with unsubscribe
-+  confirmation.
-```
+Consolidation required no changes to `ui.md`, `architecture.md`, or
+`database.md`: the existing conventions, modules, and schema already
+support unsubscribing. Confirmation follows the global convention for
+destructive actions. Story 4 is marked complete in `backlog.md`.

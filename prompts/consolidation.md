@@ -12,8 +12,9 @@ Use the following correspondence, skipping absent optional files:
 - acceptance.md to backlog.md: adjust the story summary if needed
 - design.md to architecture.md: incorporate architectural decisions
 - views.md to ui.md: incorporate global UI decisions and conventions
-  not sufficiently explicit in existing components, stylesheets,
-  design systems, or screens
+  to preserve across future stories, even when already reflected in
+  existing screens or components; avoid screen-specific descriptions
+  and duplicated implementation details
 - tables.md to database.md: incorporate global persistence decisions
   not sufficiently explicit in existing models, schemas, or migrations
 

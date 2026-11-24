@@ -122,12 +122,13 @@ capture only global decisions and conventions regarding persistence
 strategies, data integrity, and data lifecycle management that are not sufficiently explicit in existing artifacts, such as ORM models, database
 schemas, and migration files. This document is optional.
 
-- **`ui.md`**: Aims to ensure visual and interaction consistency across
-features implemented by AI agents. It should capture only global user
-interface decisions and conventions that are not sufficiently explicit
-in existing artifacts, such as reusable components, stylesheets,
-design systems, and previously implemented screens.
-This document is optional.
+- **`ui.md`**: Defines global interface decisions and conventions that
+  should guide future stories, helping maintain visual and interaction
+  consistency. It may record conventions already reflected in existing
+  screens or components when they represent choices to preserve across
+  the system. Focus on shared guidance rather than describing individual
+  screens or duplicating implementation details. This document is
+  optional.
 
 ```mermaid
 flowchart LR
@@ -444,8 +445,9 @@ story specs:
 - **`design.md` → `architecture.md`**: Incorporate relevant
   architectural decisions.
 - **`views.md` → `ui.md`**: Incorporate global UI decisions and conventions
-  not sufficiently explicit in existing components, stylesheets,
-  design systems, or screens.
+  to preserve across future stories, even when already reflected in
+  existing screens or components. Avoid screen-specific descriptions
+  and duplicated implementation details.
 - **`tables.md` → `database.md`**: Incorporate global persistence
   decisions not sufficiently explicit in existing models, schemas,
   or migrations.
@@ -503,8 +505,9 @@ Use the following correspondence, skipping absent optional files:
 - acceptance.md to backlog.md: adjust the story summary if needed
 - design.md to architecture.md: incorporate architectural decisions
 - views.md to ui.md: incorporate global UI decisions and conventions
-  not sufficiently explicit in existing components, stylesheets,
-  design systems, or screens
+  to preserve across future stories, even when already reflected in
+  existing screens or components; avoid screen-specific descriptions
+  and duplicated implementation details
 - tables.md to database.md: incorporate global persistence decisions
   not sufficiently explicit in existing models, schemas, or migrations
 

@@ -51,19 +51,13 @@ the source code and clarifies where each responsibility is implemented.
 
 ### ui.md
 
-Added the home screen structure and metadata fallbacks. Podcast cards
-show the cover, title, and plain-text description.
+Recorded the podcast card convention to preserve across future stories.
 
 ```diff
 --- podlite-v1/ui.md
 +++ podlite-v1-consolidated/ui.md
-@@ -5,0 +6,6 @@
-+- Use fallbacks for missing covers and descriptions.
-+
-+## Home
-+
-+A subscription form followed by podcast cards with cover, title, and
-+plain-text description.
+@@ -6,0 +7 @@
++- Present podcasts as cards with cover, title, and plain-text description.
 ```
 
 ### database.md
