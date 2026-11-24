@@ -62,26 +62,16 @@ Recorded the podcast card convention to preserve across future stories.
 
 ### database.md
 
-Documented the database location and the structure of the
-`subscriptions` table. Missing covers and descriptions are stored as NULL.
+Recorded the database location and the convention for missing optional
+metadata. Table definitions remain in the story specifications and
+implementation.
 
 ```diff
 --- podlite-v1/database.md
 +++ podlite-v1-consolidated/database.md
-@@ -5,0 +6,13 @@
+@@ -5,0 +6,2 @@
 +- Store data in `data/podlite.db`, created on first use.
-+
-+## Subscriptions
-+
-+| Column | SQLite type | Constraints |
-+| --- | --- | --- |
-+| `id` | INTEGER | PRIMARY KEY |
-+| `feed_url` | TEXT | NOT NULL, UNIQUE |
-+| `title` | TEXT | NOT NULL |
-+| `cover_url` | TEXT | Nullable |
-+| `description` | TEXT | Nullable |
-+
-+Missing covers and descriptions are stored as NULL.
++- Store missing optional metadata as NULL, not UI fallback values.
 ```
 
 ## Screenshot

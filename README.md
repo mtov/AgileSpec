@@ -116,11 +116,13 @@ At the Project Specs level, there are five main Markdown documents:
   responsibilities, architectural constraints, and technology choices,
   including languages, frameworks, and databases.
 
-- **`database.md`:** Aims to ensure consistency in how data is stored,
-accessed, and managed across features implemented by AI agents. It should
-capture only global decisions and conventions regarding persistence
-strategies, data integrity, and data lifecycle management that are not sufficiently explicit in existing artifacts, such as ORM models, database
-schemas, and migration files. This document is optional.
+- **`database.md`**: Defines global persistence decisions and conventions
+  that should guide future stories, helping maintain data consistency
+  and integrity. It may record choices already reflected in models,
+  schemas, or migrations when they should be preserved across the
+  system. Focus on persistence strategies, integrity rules, and data
+  lifecycle policies rather than reproducing table definitions or
+  implementation details. This document is optional.
 
 - **`ui.md`**: Defines global interface decisions and conventions that
   should guide future stories, helping maintain visual and interaction
@@ -449,8 +451,9 @@ story specs:
   existing screens or components. Avoid screen-specific descriptions
   and duplicated implementation details.
 - **`tables.md` → `database.md`**: Incorporate global persistence
-  decisions not sufficiently explicit in existing models, schemas,
-  or migrations.
+  decisions and conventions to preserve across future stories, even
+  when already reflected in models, schemas, or migrations. Avoid
+  reproducing table definitions and implementation details.
 
 ```mermaid
 ---
@@ -509,7 +512,9 @@ Use the following correspondence, skipping absent optional files:
   existing screens or components; avoid screen-specific descriptions
   and duplicated implementation details
 - tables.md to database.md: incorporate global persistence decisions
-  not sufficiently explicit in existing models, schemas, or migrations
+  and conventions to preserve across future stories, even when already
+  reflected in models, schemas, or migrations; avoid reproducing table
+  definitions and implementation details
 
 Consolidation is required even when no project specs need updating.
 Incorporate relevant decisions and changes, keeping the documentation

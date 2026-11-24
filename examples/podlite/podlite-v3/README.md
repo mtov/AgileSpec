@@ -28,6 +28,8 @@ request. Story 3 is marked complete in `backlog.md`.
 
 Changes relative to `podlite-v2`: `-` removed, `+` added.
 
+No new persistence conventions were needed; `database.md` is unchanged.
+
 ### architecture.md
 
 Recorded direct audio playback without storing audio files.

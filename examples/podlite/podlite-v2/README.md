@@ -25,6 +25,8 @@ changes.
 
 Changes relative to `podlite-v1-consolidated`: `-` removed, `+` added.
 
+No new persistence conventions were needed; `database.md` is unchanged.
+
 ### architecture.md
 
 Recorded page navigation and RSS episode retrieval without persistence.

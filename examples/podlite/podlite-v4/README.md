@@ -28,18 +28,6 @@ Consolidation required no changes to `ui.md`, `architecture.md`, or
 support unsubscribing. Confirmation follows the global convention for
 destructive actions. Story 4 is marked complete in `backlog.md`.
 
-### backlog.md
-
-The only project spec change relative to v3 marks story 4 complete.
-
-```diff
---- podlite-v3/backlog.md
-+++ podlite-v4/backlog.md
-@@ -13 +13 @@
--4. [ ] As a listener, I want to unsubscribe from a podcast.
-+4. [x] As a listener, I want to unsubscribe from a podcast.
-```
-
 ## Screenshot
 
 <p align="center">

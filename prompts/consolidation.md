@@ -16,7 +16,9 @@ Use the following correspondence, skipping absent optional files:
   existing screens or components; avoid screen-specific descriptions
   and duplicated implementation details
 - tables.md to database.md: incorporate global persistence decisions
-  not sufficiently explicit in existing models, schemas, or migrations
+  and conventions to preserve across future stories, even when already
+  reflected in models, schemas, or migrations; avoid reproducing table
+  definitions and implementation details
 
 Consolidation is required even when no project specs need updating.
 Incorporate relevant decisions and changes, keeping the documentation
