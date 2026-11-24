@@ -91,9 +91,13 @@ reflects the system and its intended evolution.
 
 ```mermaid
 flowchart LR
-    H["Developers"] --> R["Review & Approve Specs"]
+    H["Developers"] --> R["Review & Approve<br/>Specs"]
     A["AI Agents"] --> C["Guided by Specs"]
 ```
+
+In other words, in AgileSpec, specifications serve as input to coding
+agents. However, they should remain concise so that developers can
+easily understand, validate, and continuously update them.
 
 ## Project Specs
 
