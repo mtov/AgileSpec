@@ -116,22 +116,24 @@ At the Project Specs level, there are five main Markdown documents:
   responsibilities, architectural constraints, and technology choices,
   including languages, frameworks, and databases.
 
-- **`database.md`**: Describes the database schema, including tables,
-  their columns and data types, primary and foreign keys, relationships
-  between tables, and integrity constraints. This document is optional
-  for systems that do not use a database.
+- **`database.md`:** Aims to ensure consistency in how data is stored,
+accessed, and managed across features implemented by AI agents. It should
+capture only global decisions and conventions regarding persistence
+strategies, data integrity, and data lifecycle management that are not sufficiently explicit in existing artifacts, such as ORM models, database
+schemas, and migration files. This document is optional.
 
-- **`ui.md`**: Describes the overall user interface structure,
-  navigation, and shared design conventions. For example, it may define
-  colors, typography, reusable components, and common layouts.
-  This document is optional for systems without user-facing
-  interactions, such as internal backend services.
+- **`ui.md`**: Aims to ensure visual and interaction consistency across
+features implemented by AI agents. It should capture only global user
+interface decisions and conventions that are not sufficiently explicit
+in existing artifacts, such as reusable components, stylesheets,
+design systems, and previously implemented screens.
+This document is optional.
 
 ```mermaid
 flowchart LR
     P["Project Specs"]
     P --> B["backlog.md"]
-    P --> F["definition-of-done.md"]
+    P --> F["definition-of-<br/>done.md"]
     P --> A["architecture.md"]
     P --> D["database.md<br/>(optional)"]
     P --> U["ui.md<br/>(optional)"]
@@ -334,8 +336,8 @@ using both the project and story specs.
 ```mermaid
 flowchart TB
     P["Project Specs"] --> A["AI Coding Agent"]
-    S["Story Specs"] --> A
-    A --> I["Story Implementation"]
+    S["User Story<br/>Specs"] --> A
+    A --> I["Story<br/>Implementation"]
 ```
 
 The developer can initiate implementation with a prompt such as:
@@ -441,11 +443,17 @@ story specs:
   Definition of Done is met.
 - **`design.md` → `architecture.md`**: Incorporate relevant
   architectural decisions.
-- **`views.md` → `ui.md`**: Incorporate relevant UI structure and
-  conventions.
-- **`tables.md` → `database.md`**: Incorporate database schema changes.
+- **`views.md` → `ui.md`**: Incorporate global UI decisions and conventions
+  not sufficiently explicit in existing components, stylesheets,
+  design systems, or screens.
+- **`tables.md` → `database.md`**: Incorporate global persistence
+  decisions not sufficiently explicit in existing models, schemas,
+  or migrations.
 
 ```mermaid
+---
+title: Specification Mapping
+---
 flowchart LR
     subgraph S["User Story Specs"]
         direction TB
@@ -494,8 +502,11 @@ Read, relative to that directory:
 Use the following correspondence, skipping absent optional files:
 - acceptance.md to backlog.md: adjust the story summary if needed
 - design.md to architecture.md: incorporate architectural decisions
-- views.md to ui.md: incorporate global UI structure and conventions
-- tables.md to database.md: incorporate schema changes
+- views.md to ui.md: incorporate global UI decisions and conventions
+  not sufficiently explicit in existing components, stylesheets,
+  design systems, or screens
+- tables.md to database.md: incorporate global persistence decisions
+  not sufficiently explicit in existing models, schemas, or migrations
 
 Consolidation is required even when no project specs need updating.
 Incorporate relevant decisions and changes, keeping the documentation

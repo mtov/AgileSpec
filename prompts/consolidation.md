@@ -11,8 +11,11 @@ Read, relative to that directory:
 Use the following correspondence, skipping absent optional files:
 - acceptance.md to backlog.md: adjust the story summary if needed
 - design.md to architecture.md: incorporate architectural decisions
-- views.md to ui.md: incorporate global UI structure and conventions
-- tables.md to database.md: incorporate schema changes
+- views.md to ui.md: incorporate global UI decisions and conventions
+  not sufficiently explicit in existing components, stylesheets,
+  design systems, or screens
+- tables.md to database.md: incorporate global persistence decisions
+  not sufficiently explicit in existing models, schemas, or migrations
 
 Consolidation is required even when no project specs need updating.
 Incorporate relevant decisions and changes, keeping the documentation
