@@ -148,14 +148,12 @@ flowchart LR
     class B,A,D,U,F doc
 ```
 
-**Why project specs are important.** These documents provide shared
-guidelines for AI agents, helping ensure that new
-implementations follow established architectural decisions, preserve the
-consistency and quality of the data model, and maintain a standardized
-and usable interface. They also establish common completion criteria,
-helping ensure that all deliverables meet minimum quality standards.
-Together, they help preserve the system's **conceptual integrity** and
-prevent its gradual degradation as the software evolves.
+**Why project specs are important.** These documents give developers and
+AI agents a common reference for architectural decisions, data integrity,
+interface conventions, and completion criteria. They guide new
+implementations and establish a shared baseline for quality. As the
+software evolves, they help preserve the system’s **conceptual integrity**
+and reduce the risk of inconsistent decisions across stories.
 
 **Avoiding Big Design Up Front (BDUF).** Although project specs
 provide global guidance, they do not need to be complete
@@ -313,12 +311,14 @@ Read AgileSpec/project/ and the selected story in backlog.md.
 Review the existing implementation, when available.
 
 Create AgileSpec/stories/storyN/ with:
-- acceptance.md: Normal Case and Edge Cases.
+- acceptance.md: functional requirements and acceptance criteria,
+  organized into Normal Case and Edge Cases.
 - design.md: implementation decisions.
 - views.md: UI changes, if needed.
 - tables.md: database changes, if needed.
 
 Keep specifications concise and avoid duplication.
+Keep database schema changes in tables.md, not design.md.
 Ask for clarification if requirements or important decisions are unclear.
 
 Do not implement the story. Submit the specifications for my review.
@@ -372,7 +372,9 @@ When finished, summarize:
 - Instructions for manually validating the story
 - Any Definition of Done criteria still pending
 
-Do not update project-level documentation or mark the story complete.
+Do not update project-level documentation.
+Stop after implementation and testing, and wait for developer validation.
+Do not consolidate or mark the story complete.
 ```
 
 The implementation prompt is available in
@@ -517,12 +519,9 @@ Use the following correspondence, skipping absent optional files:
   definitions and implementation details
 
 Consolidation is required even when no project specs need updating.
-Incorporate relevant decisions and changes, keeping the documentation
-concise, accurate, and consistent with the implemented code.
-
-Summarize and combine decisions that will help guide future stories,
-keeping story-specific details in their original specifications.
-Do not copy entire story specifications into project-level documents.
+Preserve only decisions useful for future stories, summarizing and
+combining them with existing guidance. Keep story-specific details
+in their original specifications.
 
 Do not modify the source code or story-level specifications.
 If the specifications and code disagree, report the discrepancy before

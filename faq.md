@@ -86,5 +86,5 @@ requiring all new code to pass automated security checks.
 
 There is no recommended amount. However, AgileSpec is designed to
 support the generation of a substantial portion of the code by 
-AI agents. This does not prevent developers from later reviewing, 
+AI agents. However, this does not prevent developers from later reviewing, 
 modifying, or improving the generated code.

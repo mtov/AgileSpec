@@ -26,4 +26,6 @@ When finished, summarize:
 - Instructions for manually validating the story
 - Any Definition of Done criteria still pending
 
-Do not update project-level documentation or mark the story complete.
+Do not update project-level documentation.
+Stop after implementation and testing, and wait for developer validation.
+Do not consolidate or mark the story complete.
