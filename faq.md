@@ -16,6 +16,12 @@ practices such as sprints, reviews, and retrospectives remain relevant
 but fall outside its scope. Of course, teams can continue using these
 practices alongside AgileSpec.
 
+In particular, sprints may continue to be useful for establishing a regular
+cadence for planning (Sprint Planning), daily team alignment (Daily Scrum),
+gathering feedback from users and stakeholders (Sprint Review), and continuous improvement (Sprint Retrospective). These activities remain important even
+when AI coding agents automate a substantial portion of the software 
+development process.
+
 ### 2. What about roles (e.g., Product Owner and Scrum Master) and artifacts (e.g., product backlog)?
 
 AgileSpec does not prescribe specific roles or a complete set of
@@ -88,3 +94,19 @@ There is no recommended amount. However, AgileSpec is designed to
 support the generation of a substantial portion of the code by 
 AI agents. However, this does not prevent developers from later reviewing, 
 modifying, or improving the generated code.
+
+### 9. How Does AgileSpec Handle Specification Drift?###
+
+Specification drift occurs when specifications become outdated or 
+inconsistent with the actual implementation as the software evolves.
+
+AgileSpec addresses this problem through two complementary strategies:
+
+- Lightweight specifications: Specifications should be concise and focus on 
+key decisions that help preserve the conceptual integrity of the system. 
+This makes them easier to understand, review, and update.
+
+- Explicit consolidation: AgileSpec includes a dedicated consolidation 
+phase at the end of each user story's development cycle. This phase 
+ensures that project-level specifications are regularly updated and 
+remain consistent with the evolving implementation.

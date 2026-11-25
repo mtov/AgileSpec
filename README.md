@@ -546,9 +546,9 @@ Consolidate story [n] following prompts/consolidation.md.
 ## Tool Independence
 
 AgileSpec is tool-independent by design. It does not require
-specific IDEs, development tools, or AI coding agents. Teams are
-free to choose the technologies and environments that best suit
-their needs.
+specific IDEs, development tools, AI coding agents, or language models.
+Teams are free to choose the technologies and environments that best
+suit their needs.
 
 This flexibility also allows AgileSpec to evolve alongside the
 rapidly changing AI development ecosystem. Teams can adopt new
